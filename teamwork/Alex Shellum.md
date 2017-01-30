@@ -1,3 +1,5 @@
+Personality type: INFP
+
 1. We have four people, so I expect to get an A in this class. I also expect to learn more about working as a team and that we all work hard for the good of the group.
 
 2. I get a little stubborn with my code, I have a hard time thinking that the way someone else discusses to solve a problem is better than mine. I want to try and kick that habit.
