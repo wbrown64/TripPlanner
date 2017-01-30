@@ -33,3 +33,4 @@
 17. It depends on how intensive it's going to end up being. if it isn't that much work I won't be that upset. If it is though, I'll ask somebody else to step up next time.
 
 18. Text from 9am - 8pm.
+Personality type: INFP
