@@ -1,3 +1,5 @@
+Personality type: INFP
+
 1. We have four people, so I expect to get an A in this class. I also expect to learn more about working as a team and that we all work hard for the good of the group.
 
 2. I get a little stubborn with my code, I have a hard time thinking that the way someone else discusses to solve a problem is better than mine. I want to try and kick that habit.
@@ -33,5 +35,3 @@
 17. It depends on how intensive it's going to end up being. if it isn't that much work I won't be that upset. If it is though, I'll ask somebody else to step up next time.
 
 18. Text from 9am - 8pm.
-
-Personality type: INFP
