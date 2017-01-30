@@ -1,35 +1,35 @@
-1. My expectations for what my team will accomplish this semester is being able to work cooperatively together, communicate very well, and develop team working skills that other projects/classes were not able to offer.
+1)I expect to complete all assignments, and to do well on all of them.  All the while exploring the new techniques that are being presented to us in class.  
 
-2. My personal goals for improving my team work and communication skills this semester is to take assignments seriously and to always accomplish weekly goals we set as a team.
+2)Flexibility, I aim to be comfortable working with people from a distance, and coordinating hours and work in a way that works for everyone.  
 
-3. The kind of obstacles I might encounter when trying to reach team and personal goals are our everyday lives. Each of us have different things going on in our lives everyday and sometimes unplanned events comes up and we might fall behind but that is okay because we have to put in extra work the next day.
+3)At some point, it may be noticed that we're falling behind, in which case I would start to ask that we all contribute more, and may be a little less flexible with hour hours of operation.  
 
-4. I think its important for everyone to strive for an "A" that way we establish a uniform goal for the semester but its not the end of the world if we end up getting a "B".
+4) I think the two sides should talk about it, and about what would need to be done in order to obtain an A. 
 
-5. I don't think its acceptable for one team member to do more work for others in order to get an "A". Each and everyone of us should put in equal amounts of work and hold each other accountable to do our necessary work load.
+5)Although I'm not entirely opposed to it, I do not think it is very fair to have some people do other team members work in order to get a good grade. 
 
-6. I think it could range each week but on average if I were to guess probably about 10 hours.
+6)  Although I do not know the assignments, I feel like 3-4 hours a week each should be plenty of time.  
 
-7. How we would decide who should do what on each activity is look at each others skills and personal strengths. We should do activities that cater to our strengths to maximize our efficiency.
+7)I think we should all talk about and coordinate our strengths and weaknesses, as well as what we like to work on normally. 
 
-8. If someone were to miss a deadline I would hope that person communicates effectively to the rest of the group so that everyone is on the same page to either help that person meet their deadline or figure out a way to make up for that missed deadline together.
+8)See why the deadline was missed, and make sure we can catch up what was lost.  If it becomes a problem, I would look to the rest of the group members to feel out the situation.  
 
-9. If people have different opinions on the work, I think we should all come together and decide on the best approach for the good of the overall team grade.
+9)We should talk about why a certain piece of work is or isn't, quality.  Looking to the rest of the team to decide if more work needs to be done or not.  
 
-10. Everyone has different work habits, its just a matter of maximizing each group member's strengths and making sure the weekly task gets accomplish. I don't think work habits will be much of a problem.
+10)By understanding these habits early on, in order to plan ahead and around any problem times.  
 
-11. I would prefer to have a meeting time every week outside of class depending on everyone's schedules.
+11)  I feel like a once a week, 30-1 hour long meeting couldn't hurt.  We could be flexible about it too, in case someone is swamped for time or anything along those lines.  
 
-12. I think the team needs to meet at least twice a week outside of class so that everyone is kept in the loop on where we stand as far as progress.
+12)  Again, once a week sounds good.  I think this very much depends on the workload and our ability to get work done.  
 
-13. I think its important to get everyone's opinion and ideas on a decision before making one final decision. 
+13) Big decisions, yes.  Smaller ones, not really.  
 
-14. If everyone except one person agrees on something I think its important to talk as a group and listen to each other for whats best for the group overall.
+14)  Everyone should talk about the dispute, and be open to others feelings and needs.  But, majority rules IMO. 
 
-15. We can rotate the facilitator position after every time our deadline is due.
+15)If everyones cool with it, maybe never?  I think if someone is good at keeping the process moving, they should keep doing it.  
 
-16. If one person seems to be dominating the team process I think its important for everyone to at least try to put in the same amount of work evenly.
+16)Let them know of your concern, and see what the other team members have to say about that claim.  If needed, have a group wide discussion about the matter. 
 
-17. If I feel like most of the facilitation responsibilities are falling on me I would bring it up at the next group meet and discuss different ways to share the work load evenly.
+17) Let the group know, and ask that they help out in order to meet deadlines.  
 
-18. It generally easiest to reach me by text at pretty much an hours everyday.
+18)  I check my rams email constantly during the day, and have my phone on me at almost all times.  Feel free to contact me 24/7, though I may be slightly slow on the response during the day.  
