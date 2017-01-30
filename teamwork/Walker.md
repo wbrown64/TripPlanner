@@ -1,3 +1,4 @@
+ENTJ
 1)I expect to complete all assignments, and to do well on all of them.  All the while exploring the new techniques that are being presented to us in class.  
 
 2)Flexibility, I aim to be comfortable working with people from a distance, and coordinating hours and work in a way that works for everyone.  
