@@ -1,3 +1,5 @@
+Personality type: INTP
+
 1.What are your expectations about what your team will accomplish this semester?
 
 We will learn to work as a team through working on the main project
