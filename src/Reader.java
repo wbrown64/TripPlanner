@@ -2,6 +2,9 @@ import java.util.ArrayList;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+
+import Model.Coordinates;
+import Model.Location;
 public class Reader {
 	
 	protected String filename;
@@ -18,13 +21,14 @@ public class Reader {
 			
 			while (scnr.hasNextLine()) {
 				String[] fields = scnr.nextLine().split(",");
-				if (!(fields.length == 6)) {
+				if (fields.length != 6) {
 					throw new Exception("Not enough input fields on a value");
 				}
 				for (int i = 0; i < fields.length; ++i) {
 					fields[i] = fields[i].trim();
 				}
-				locations.add(new Location(fields[0],fields[1],fields[2],fields[3],fields[4],Integer.parseInt(fields[5])));
+				Coordinates c=new Coordinates(fields[3],fields[4],fields[5]);
+				locations.add(new Location(fields[0],fields[1],fields[2],fields[3],fields[4],fields[5]));
 				System.out.println(locations.get(0));
 			}
 			scnr.close();
@@ -36,7 +40,6 @@ public class Reader {
 		return locations;
 		
 	}
-	
 	
 	public static void main(String[] args) {
 		Reader r = new Reader(args[0]);

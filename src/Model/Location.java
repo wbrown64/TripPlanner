@@ -1,3 +1,4 @@
+package Model;
 
 public class Location {
 	protected String id;
@@ -5,9 +6,9 @@ public class Location {
 	protected String city;
 	protected String latitude;
 	protected String longitude;
-	protected int altitude;
+	protected String altitude;
 	
-	public Location(String id, String brewery, String city, String latitude, String longitude, int altitude) {
+	public Location(String id, String brewery, String city, String latitude, String longitude, String altitude) {
 		this.id = id;
 		this.brewery = brewery;
 		this.city = city;
@@ -56,11 +57,11 @@ public class Location {
 		this.longitude = longitude;
 	}
 
-	public int getAltitude() {
+	public String getAltitude() {
 		return altitude;
 	}
 
-	public void setAltitude(int altitude) {
+	public void setAltitude(String altitude) {
 		this.altitude = altitude;
 	}
 	
