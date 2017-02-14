@@ -7,5 +7,9 @@ public class Model {
 		
 
 	}
+	int compute(){
+		
+		return 1;
+	}
 
 }
