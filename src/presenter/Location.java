@@ -1,3 +1,4 @@
+package presenter;
 
 public class Location {
 	protected String id;
