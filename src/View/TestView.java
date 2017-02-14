@@ -10,6 +10,7 @@ public class TestView {
 	public void testDisplay(){
 		assertEquals("text",View.display("text"));
 		//testing
+		//testing
 	}
 	
 }
