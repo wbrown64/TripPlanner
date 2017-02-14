@@ -10,8 +10,8 @@ public class TestPresenter {
 	@Test
 	public static void main(String args[]) {
 		Presenter p = new Presenter();
-		ArrayList<Location> locations = p.Driver(args);
-		for (Location lo : locations) {
+		ArrayList<Model.Location> locations = p.Driver(args);
+		for (Model.Location lo : locations) {
 			assertNotNull(lo);
 		}
 	}
