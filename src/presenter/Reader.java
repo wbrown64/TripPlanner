@@ -37,18 +37,5 @@ public class Reader {
 		return locations;
 		
 	}
-	
-	
-	public static void main(String[] args) {
-		Reader r = new Reader(args[0]);
-		try {
-			r.readFile();
-		} catch (Exception e) {
-			System.out.println("Caught exception");
-			System.exit(-1);
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 
 }
