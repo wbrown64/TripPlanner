@@ -11,8 +11,8 @@ public class Reader {
 		this.filename = filename;
 	}
 	
-	public ArrayList<Location> readFile() throws Exception {
-		ArrayList<Location> locations = new ArrayList<>(500);
+	public ArrayList<Model.Location> readFile() throws Exception {
+		ArrayList<Model.Location> locations = new ArrayList<>(500);
 		
 		try {
 			Scanner scnr = new Scanner(new File(filename));
@@ -36,19 +36,6 @@ public class Reader {
 		
 		return locations;
 		
-	}
-	
-	
-	public static void main(String[] args) {
-		Reader r = new Reader(args[0]);
-		try {
-			r.readFile();
-		} catch (Exception e) {
-			System.out.println("Caught exception");
-			System.exit(-1);
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 
 }
