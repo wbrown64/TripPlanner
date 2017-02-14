@@ -10,9 +10,9 @@ public class Presenter {
 		//this.v = v;
 	}
 
-	public ArrayList<Location> Driver(String[] args) {
+	public ArrayList<Model.Location> Driver(String[] args) {
 		Reader r = new Reader(args[0]);
-		ArrayList<Location> lo = new ArrayList<>();
+		ArrayList<Model.Location> lo = new ArrayList<>();
 		try {
 			lo =r.readFile();
 		} catch (Exception e) {
