@@ -23,5 +23,8 @@ public class TripCo {
 		Presenter presenter = new Presenter();
 		//presenter.start();
 	}
+	static String init(String input){
+		return input;
+	}
 }
 

@@ -7,8 +7,7 @@ public class Model {
 		
 
 	}
-	int compute(){
-		
+	static int compute(double lat, double longe){
 		return 1;
 	}
 
