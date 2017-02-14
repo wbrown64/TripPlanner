@@ -1,4 +1,6 @@
 import Model.Model;
+import View.View;
+import presenter.Presenter;
 
 public class TripCo {
 // This is essentially main, this file will do stuff, but not the same stuff
@@ -18,7 +20,7 @@ public class TripCo {
 		
 		Model model = new Model();
 		View view = new View();
-		//Presenter presenter = new Presenter(view, model);
+		Presenter presenter = new Presenter();
 		//presenter.start();
 	}
 }
