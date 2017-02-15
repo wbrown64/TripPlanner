@@ -9,6 +9,8 @@ public class TestView {
 	@Test
 	public void testDisplay(){
 		assertEquals("text",View.display("text"));
+		//testing
+		//testing
 	}
 	
 }
