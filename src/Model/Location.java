@@ -7,7 +7,7 @@ public class Location {
 	protected String latitude;
 	protected String longitude;
 	protected String altitude;
-	
+	protected Coordinates coord;
 	public Location(String id, String brewery, String city, String latitude, String longitude, String altitude) {
 		this.id = id;
 		this.brewery = brewery;

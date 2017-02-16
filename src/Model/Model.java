@@ -1,14 +1,26 @@
 package Model;
 
+import java.util.ArrayList;
+
+import presenter.Reader;
+
 public class Model {
-
-	public static void main(String[] args) {
-		// This is the Model class, stay tuned for more 
-		
-
+		protected ArrayList<Location>itinerary;
+	
+	public Model(String filename) throws Exception{
+		Reader read=new Reader(filename);
+		ArrayList<Location> i=read.readFile();
+		this.itinerary=i;
+		planTrip();
 	}
-	static int compute(double lat, double longe){
-		return 1;
+	
+	void planTrip(){
+		for(int i=0;i<itinerary.size();i++){
+			System.out.println(itinerary.get(i).brewery);
+		}
 	}
-
+	
+	public static void main(String[] args) throws Exception{
+		Model m=new Model("location.txt");
+	}
 }

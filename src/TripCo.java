@@ -4,6 +4,7 @@ import presenter.Presenter;
 
 public class TripCo {
 // This is essentially main, this file will do stuff, but not the same stuff
+	static String filename;
 	public static void main(String[] args) throws Exception {
 		// argument handling?
 		int argCount = args.length;
@@ -13,12 +14,12 @@ public class TripCo {
 			throw new Exception("Incorrect number of arguments!");
 		}
 		else {
-			String filename = args[0];
+			filename = args[0];
 			// check if file with name filename exists
 			System.out.println("Filename: "+filename);
 		}
 		
-		Model model = new Model();
+		Model model = new Model(filename);
 		View view = new View();
 		Presenter presenter = new Presenter();
 		//presenter.start();
