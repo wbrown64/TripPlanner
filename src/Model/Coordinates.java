@@ -7,18 +7,44 @@ public class Coordinates {
 	private double distance_to_next;
 	private double[] latitude;
 	private double[] longitude;
-	private char lat_direction;
-	private char lon_direction;
+	char lat_direction;
+	char long_direction;
+	double dd_lat;
+	double dd_long;
+	
 	
 	public Coordinates(String lat, String longe,String elevation){
-		latitude=new double[20];
-		longitude=new double[20];
+		latitude=new double[3];
+		longitude=new double[3];
 		this.elevation=Integer.parseInt(elevation);
-		parse_coordinates(lat,longe);
+		parse_strs(lat,latitude,0);
+		parse_strs(longe,longitude,1);
+		calculate_dd();
+
 	}
-	public void parse_coordinates(String lat, String longe) {
-		int counter=0;
 	
+	public void calculate_dd(){
+		dd_lat=latitude[0]+(latitude[1]/60)+(latitude[2]/3600);
+		dd_long=longitude[0]+(longitude[1]/60)+(longitude[2]/3600);
+		//System.out.println(dd_long);
+	}
+	
+	public void parse_strs(String str, double[] values,int val) {
+		String[] split=str.split("°");
+		String days=split[0];
+		String hours=split[1].substring(0,2);
+		String mins=split[1].substring(3,8);
+		values[0]=Double.parseDouble(days);
+		values[1]=Double.parseDouble(hours);
+		values[2]=Double.parseDouble(mins);
+		if(val==0)
+			lat_direction=str.charAt(str.length()-1);
+		else if(val==1)
+			long_direction=str.charAt(str.length()-1);
+
+//		for(int i=0;i<3;i++){
+//			System.out.println(values[i]);
+//		}
 	}
 	public double getX() {
 		return x;
