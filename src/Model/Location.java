@@ -24,7 +24,12 @@ public class Location {
 		isCurrent=false;
 		visited=false;
 	}
-
+	public double getLat_dd(){
+		return coord.dd_lat;
+	}
+	public double getLon_dd(){
+		return coord.dd_long;
+	}
 	public String getId() {
 		return id;
 	}
