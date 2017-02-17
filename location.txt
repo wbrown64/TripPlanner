@@ -1,4 +1,4 @@
- davematt,Steamworks Brewing Company,Durango,37°16'20.47" N, 107°52'47.83" W,6566
+davematt,Steamworks Brewing Company,Durango,37°16'20.47" N, 107°52'47.83" W,6566
 jrmuzzy1,Odell Brewing Company,Fort Collins, 40Â°35'21.56 N, 105Â° 3'47.61 W,4950
 shirazi,Aspen Brewing Co, Aspen, 39Â°11'25.192 N, 106Â°49'13.1441 W,1
 xiwei26,300 Suns Brewing,Longmont,40Â°09'35.7 N, 105Â°06'04.2 W,4949
@@ -62,7 +62,9 @@ jkraft,WeldWerks Brewing Company,Greeley,40°25'41.21" N,104°41'25.85" W,4658
 bmhogan,Grimm Brothers Brewhouse,Loveland,40°23'47.98" N,105°2'49.05" W,4953
 lsouth, Boggy Draw Brewery, Sheridan, 39.6529° N, 105.0105° W,5325
 ashellum,Declaration Brewing,Denver,39°40'47.28" N,104°59'26.8794" W,5280
-nfredrik,Prost Brewing,Denver,39°45'41.07" N,105°0'24.27" W,5238
+slofadop,Very Nice Brewing Company,Nederland,"39°57'35.9" N,"105°30'32.8" W,8242
+pello, 7 Hermits Brewing Company , Eagle, 39Â°38'28.79 N, 106Â°49'50.89 W,6597
+bpowley,New Image Brewing Company,Arvada,"39°79’96.433""N","105°08’41.736""W",5344
 spencerlofing,Very Nice Brewing Company,Nederland,"39°57'35.9""N","105°30'32.8""W",8242
 pello, 7 Hermits Brewing Company , Eagle, 39°38'28.79" N, 106°49'50.89" W,6597
 bpowley,New Image Brewing Company,Arvada, 39°79'96.43" N,105°08'23.20" W,5344

@@ -7,14 +7,22 @@ public class Location {
 	protected String latitude;
 	protected String longitude;
 	protected String altitude;
-	
-	public Location(String id, String brewery, String city, String latitude, String longitude, String altitude) {
+	public Coordinates coord;
+	protected boolean isStart;
+	protected boolean isCurrent;
+	protected boolean visited;
+	protected boolean isEnd;
+	public Location(String id, String brewery, String city, String latitude, String longitude, String altitude,Coordinates c) {
 		this.id = id;
 		this.brewery = brewery;
 		this.city = city;
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.altitude = altitude;
+		this.coord=c;
+		isStart=false;
+		isCurrent=false;
+		visited=false;
 	}
 
 	public String getId() {

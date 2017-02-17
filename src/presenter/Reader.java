@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+
+import Model.Coordinates;
 public class Reader {
 	
 	protected String filename;
@@ -26,7 +28,8 @@ public class Reader {
 				for (int i = 0; i < fields.length; ++i) {
 					fields[i] = fields[i].trim();
 				}
-				locations.add(new Model.Location(fields[0],fields[1],fields[2],fields[3],fields[4],fields[5]));
+				Coordinates c=new Coordinates(fields[3],fields[4],fields[5]);
+				locations.add(new Model.Location(fields[0],fields[1],fields[2],fields[3],fields[4],fields[5],c));
 				//System.out.println(locations.get(index++));
 			}
 			scnr.close();
