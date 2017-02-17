@@ -1,0 +1,7 @@
+How to write XML file:
+	Presenter goes through models data, passing legs for view to put on map.  View does all printing
+	Use java functions to write to .xml file.  XML library is overkill.  
+How to write SVG file: 
+	Same thing pretty much, print out line by line, dimensions can be hard coded 
+	Series of printlines 
+	
