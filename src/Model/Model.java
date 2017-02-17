@@ -34,9 +34,21 @@ public class Model {
 		}
 		return null;
 	}
-	int getLegDistance(Location l1, Location l2){
+	public double getLegDistance(Location l1, Location l2){
+		double lat1=l1.coord.dd_lat;
+		double lon1=l1.coord.dd_long;
+		double lat2=l2.coord.dd_lat;
+		double lon2=l2.coord.dd_long;
 		
-		return 0;
+		double dlat=Math.toRadians(lat2-lat1);
+		double dlon=Math.toRadians(lon2-lon1);
+		lat1=Math.toRadians(lat1);
+		lat2=Math.toRadians(lat2);
+		
+		double a = Math.pow(Math.sin(dlat / 2),2) + Math.pow(Math.sin(dlon / 2),2) * Math.cos(lat1) * Math.cos(lat2);
+		double c = 2 * Math.asin(Math.sqrt(a));
+		return 6372.8*c;
+		
 	}
 	public String getLocationName(double lat, double lon){
 		for(Location l:itinerary){
@@ -62,6 +74,7 @@ public class Model {
 	}
 	public static void main(String[] args) throws Exception{
 		Model m=new Model("small_locations.txt");
+		
 		
 	}
 }

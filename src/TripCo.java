@@ -20,10 +20,17 @@ public class TripCo {
 		//presenter.start();
 		
 		Location l=model.getLocation("durango");
-		System.out.println(l.coord.dd_long);
+		Location l2=model.getLocation("denver");
+//		System.out.println(l.coord.dd_long);
 		double d=l.coord.dd_lat;
 		double d1=l.coord.dd_long;
-		System.out.println(model.getLocationName(d,d1));
+		
+		double distance=model.getLegDistance(l,l2);
+		System.out.println("Distance between Denver and Durango: " +distance+"km");
+		Location l3=model.getLocation("loveland");
+		double distance2=model.getLegDistance(l2, l3);
+		System.out.println("Distance between Denver and Loveland: "+distance2+"km");
+		
 	}
 	static String init(String input){
 		return input;
