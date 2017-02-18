@@ -15,9 +15,13 @@ public class TripCo {
 		}
 		
 		Model model = new Model(filename);
+
+		
+
 		for(Location L:model.getItinerary()){
 			System.out.println(L.getCity());
 		}
+
 	}
 	static String init(String input){
 		return input;
