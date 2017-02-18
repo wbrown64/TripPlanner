@@ -9,6 +9,7 @@ public class Presenter {
 	protected View v;
 	
 	public Presenter() {
+		// This should take in a model and a view for arguments
 	}
 
 	public void planTrip(String[] args) {
