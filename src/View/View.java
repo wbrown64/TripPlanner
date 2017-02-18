@@ -1,9 +1,13 @@
 package View;
 
+import java.util.ArrayList;
+
 public class View {
 
 	public View(){
-		
+		int height = 1024;
+		int width = 1280;
+		//ArrayList<Leg> legs = new ArrayList();
 	}
 	
 	/*public void initializeTrip(stream,stream){
@@ -35,6 +39,7 @@ public class View {
 	public void finalizeTrip(){
 		//implement
 	}
+	
 	
 	public static void main(String args[]){
 		
