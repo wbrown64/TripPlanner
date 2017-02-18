@@ -29,6 +29,7 @@ public class Model {
 					index=i;
 				}
 			}
+			
 			current=getItinerary().get(index);
 			itinerary_copy.add(current);
 			getItinerary().remove(current);

@@ -12,6 +12,7 @@ public class Location {
 	protected boolean isCurrent;
 	protected boolean visited;
 	protected boolean isEnd;
+	
 	public Location(String id, String brewery, String city, String latitude, String longitude, String altitude,Coordinates c) {
 		this.id = id;
 		this.brewery = brewery;
