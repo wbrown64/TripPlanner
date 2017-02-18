@@ -22,7 +22,7 @@ public class TripCo {
 		Presenter presenter = new Presenter();
 		
 		// I'm trying to do almost all work in here
-		presenter.planTrip(args)
+		presenter.planTrip(args);
 		
 
 		for(Location L:model.getItinerary()){
