@@ -15,7 +15,7 @@ public class TripCo {
 		}
 		
 		Model model = new Model(filename);
-
+		View view = new View(model.getItinerary());
 		
 
 		for(Location L:model.getItinerary()){
