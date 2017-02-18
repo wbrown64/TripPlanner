@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<svg width="1280" height="1024" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+<g>
+<title>Borders</title>
+<line id="north" y2="50" x2="1230" y1="50" x1="50" stroke-width="5" stroke="#666666"/>
+<line id="east" y2="974" x2="1230" y1="50" x1="1230" stroke-width="5" stroke="#666666"/>
+<line id="south" y2="974" x2="50" y1="974" x1="1230" stroke-width="5" stroke="#666666"/>
+<line id="west" y2="50" x2="50" y1="974" x1="50" stroke-width="5" stroke="#666666"/>
+</g>
+<g>
+<title>Titles</title>
+<text text-anchor="middle" font-family="Sans-serif" font-size="24" id="state" y="40" x="640">Colorado</text>
+text text-anchor="middle" font-family="Sans-serif" font-size="24" id="distance" y="1014" x="640">9999miles</text>
+</g>
+</svg>

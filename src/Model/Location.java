@@ -12,6 +12,7 @@ public class Location {
 	protected boolean isCurrent;
 	protected boolean visited;
 	protected boolean isEnd;
+	
 	public Location(String id, String brewery, String city, String latitude, String longitude, String altitude,Coordinates c) {
 		this.id = id;
 		this.brewery = brewery;
@@ -24,7 +25,12 @@ public class Location {
 		isCurrent=false;
 		visited=false;
 	}
-
+	public double getLat_dd(){
+		return coord.dd_lat;
+	}
+	public double getLon_dd(){
+		return coord.dd_long;
+	}
 	public String getId() {
 		return id;
 	}
