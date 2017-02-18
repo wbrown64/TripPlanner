@@ -4,4 +4,7 @@ How to write XML file:
 How to write SVG file: 
 	Same thing pretty much, print out line by line, dimensions can be hard coded 
 	Series of printlines 
-	
+
+Bugs in Model: Parsing with extra whitespace
+			   How to get a location when there are multiple instances of city in location
+			   
