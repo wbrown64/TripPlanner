@@ -9,6 +9,34 @@ import Model.Location;
 public class View {
 	protected ArrayList<Leg> legArray = new ArrayList<Leg>();
 	protected ArrayList<Location> itinerary;
+	protected boolean showMileage = false;
+	protected boolean showID = false;
+	protected boolean showName = false;
+	
+	public boolean isShowMileage() {
+		return showMileage;
+	}
+
+	public void setShowMileage(boolean showMileage) {
+		this.showMileage = showMileage;
+	}
+
+	public boolean isShowID() {
+		return showID;
+	}
+
+	public void setShowID(boolean showID) {
+		this.showID = showID;
+	}
+
+	public boolean isShowName() {
+		return showName;
+	}
+
+	public void setShowName(boolean showName) {
+		this.showName = showName;
+	}
+
 	public View(ArrayList<Location> itinerary){//ArrayList<Location> itinerary
 		this.itinerary = itinerary;
 	}
@@ -63,6 +91,19 @@ public class View {
 		writer.println("<title>Titles</title>");
 		writer.println("<text text-anchor=\"middle\" font-family=\"Sans-serif\" font-size=\"24\" id=\"state\" y=\"40\" x=\"640\">Colorado</text>");
 		writer.println("<text text-anchor=\"middle\" font-family=\"Sans-serif\" font-size=\"24\" id=\"distance\" y=\"1014\" x=\"640\">" + 9999 + " miles</text>");
+		writer.println("</g>");
+	}
+	
+	public void createLegs(PrintWriter writer, ArrayList<Location> itinerary){
+		writer.println("<g>");
+		writer.println("<title>Legs</title>");
+		for(int i = 0; i < itinerary.size()-1; i++){
+			int x1 = itinerary.get(i).getLon_dd();
+			int y1 = itinerary.get(i).getLat_dd();
+			int x2 = itinerary.get(i+1).getLon_dd();
+			int y2 = itinerary.get(i+1).getLat_dd();
+			writer.println("<line id=\"leg" + i +"\" y2=\"" +y2 +"\" x2=\"" + x2 + "\" y1=\"" +y1 +"\" x1=\"" +x1 +"\" stroke-width=\"3\" stroke=\"#999999\"/>");
+		}
 		writer.println("</g>");
 	}
 	public void createSvg(ArrayList<Location> itinerary){
