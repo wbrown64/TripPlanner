@@ -33,12 +33,12 @@ public class Coordinates {
 	public void parse_strs(String str, double[] values,int val) {
 		str=str.replaceAll("[°\'\"]", " ");
 //		str=str.replaceAll(" ", "");
-		System.out.println(str);
+		//System.out.println(str);
 		String[] parts=str.split(" ");
 		
-		for(int i=0;i<parts.length;i++){
-			System.out.println(parts[i]);
-		}
+//		for(int i=0;i<parts.length;i++){
+//			System.out.println(parts[i]);
+//		}
 		values[0]=Double.parseDouble(parts[0]);
 		values[1]=Double.parseDouble(parts[1]);
 		values[2]=Double.parseDouble(parts[2]);

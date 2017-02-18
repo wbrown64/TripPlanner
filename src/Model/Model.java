@@ -5,20 +5,41 @@ import java.util.ArrayList;
 import presenter.Reader;
 
 public class Model {
-		protected ArrayList<Location>itinerary;
+		private ArrayList<Location>itinerary;
 	
 	public Model(String filename) throws Exception{
 		Reader read=new Reader(filename);
 		ArrayList<Location> i=read.readFile();
-		this.itinerary=i;
+		this.setItinerary(i);
 		planTrip();
 	}
 	
-	void planTrip(){
-//		for(int i=0;i<itinerary.size();i++){
-//			System.out.println(itinerary.get(i).brewery);
+	public void planTrip(){
+		ArrayList<Location> itinerary_copy=new ArrayList<Location>();
+		Location current=getItinerary().get(0);
+		double min_distance=getLegDistance(current,getItinerary().get(1));
+		itinerary_copy.add(current);
+		getItinerary().remove(current);
+		int index=1;
+		while(getItinerary().size()!=0){
+			for(int i=0;i<getItinerary().size();i++){
+				double distance=getLegDistance(current,getItinerary().get(i));
+				if(distance<=min_distance){
+					min_distance=distance;
+					index=i;
+				}
+			}
+			
+			current=getItinerary().get(index);
+			itinerary_copy.add(current);
+			getItinerary().remove(current);
+			if(getItinerary().size()!=0)
+			min_distance=getLegDistance(current,getItinerary().get(0));
+		}
+//		for(Location L:itinerary_copy){
+//			System.out.println(L.city);
 //		}
-		getlegStartLocation(itinerary);
+		setItinerary(itinerary_copy);
 	}
 	Location getlegStartLocation(ArrayList<Location> itinerary){
 		for(Location l:itinerary){
@@ -51,16 +72,16 @@ public class Model {
 		
 	}
 	public String getLocationName(double lat, double lon){
-		for(Location l:itinerary){
+		for(Location l:getItinerary()){
 			if(l.coord.dd_lat==lat&&l.coord.dd_long==lon){
 				return l.city;
 			}
 		}
 		return null;
 	}
-	public Location getLocation(String name){
-		for(Location l:itinerary){
-			if(l.city.equalsIgnoreCase(name)){
+	public Location getLocation(String brewery_name){
+		for(Location l:getItinerary()){
+			if(l.brewery.equalsIgnoreCase(brewery_name)){
 				return l;
 			}
 		}
@@ -76,5 +97,13 @@ public class Model {
 		Model m=new Model("small_locations.txt");
 		
 		
+	}
+
+	public ArrayList<Location> getItinerary() {
+		return itinerary;
+	}
+
+	public void setItinerary(ArrayList<Location> itinerary) {
+		this.itinerary = itinerary;
 	}
 }

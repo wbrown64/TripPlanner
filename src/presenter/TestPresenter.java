@@ -8,12 +8,16 @@ public class TestPresenter {
 	//locations.size should be 91
 	
 	@Test
-	public static void main(String args[]) {
-		Presenter p = new Presenter();
-		ArrayList<Model.Location> locations = p.Driver(args);
-		for (Model.Location lo : locations) {
-			assertNotNull(lo);
+	public static void testDriver(String args[]) {
+		Model.Model m = null;
+		try {
+			m = new Model.Model(args[0]);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		View.View v = new View.View();
+		Presenter p = new Presenter(m,v);
 	}
 	
 
