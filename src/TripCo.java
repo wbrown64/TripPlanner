@@ -15,9 +15,9 @@ public class TripCo {
 		}
 		
 		Model model = new Model(filename);
-		View view = new View();
-		Presenter presenter = new Presenter();
-		//presenter.start();
+		View view = new View(m.itinerary);
+		Presenter presenter = new Presenter(model,view);
+		presenter.planTrip(args);
 		
 		Location l=model.getLocation("durango");
 		Location l2=model.getLocation("denver");
