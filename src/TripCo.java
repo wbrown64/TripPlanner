@@ -17,12 +17,12 @@ public class TripCo {
 		// These objects only exist in this class, Presenter creates its own
 		Model model = new Model(filename);
 		View view = new View(model.getItinerary());
+
 		// I changed this back to no parameters, solves problems with command line flags
 		Presenter presenter = new Presenter();
 		
 		// I'm trying to do almost all work in here
-		presenter.planTrip(args);
-
+		presenter.planTrip(args)
 		
 
 		for(Location L:model.getItinerary()){
