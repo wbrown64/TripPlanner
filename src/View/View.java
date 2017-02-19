@@ -42,7 +42,8 @@ public class View {
 	}
 	
 	public void initializeTrip(){
-		createSvg(itinerary);
+		createSvg(itinerary,"out.txt");
+		createSvg(itinerary,"out.svg");
 	}
 	
 	public String display(String text){
@@ -75,7 +76,18 @@ public class View {
 	public void finalizeTrip(){
 		//implement
 	}
-	
+	public double[] toCartesian(double x,double y){
+		double[] vals=new double[2];
+		System.out.println("x is: "+x);
+		vals[0]= (Math.abs(x-(-109)) / Math.abs((-102) - (-109)))*(1230-50);
+		double t=(Math.abs(x-(-109)) / Math.abs((-102) - (-109)))*(1230-50);
+		System.out.println(t);
+		vals[1]= (Math.abs(y-41) / (Math.abs(37-41))*(974-50));
+		for(double i:vals){
+			System.out.println(i);
+		}
+		return vals;
+	}
 	public void createBorders(PrintWriter writer){
 		writer.println("<g>");
 		writer.println("<title>Borders</title>");
@@ -95,24 +107,40 @@ public class View {
 	}
 	
 	public void createLegs(PrintWriter writer, ArrayList<Location> itinerary){
+//		for(Location L:itinerary){
+//			System.out.println(L.getBrewery());
+//			System.out.println("lat: "+L.getLat_dd()+" lon: "+L.getLon_dd());
+//		}
 		writer.println("<g>");
 		writer.println("<title>Legs</title>");
 		for(int i = 0; i < itinerary.size()-1; i++){
-			int x1 = itinerary.get(i).getLon_dd();
-			int y1 = itinerary.get(i).getLat_dd();
-			int x2 = itinerary.get(i+1).getLon_dd();
-			int y2 = itinerary.get(i+1).getLat_dd();
+			double x1 = itinerary.get(i).getLon_dd();
+			double y1 = itinerary.get(i).getLat_dd();
+			double x2 = itinerary.get(i+1).getLon_dd();
+			double y2 = itinerary.get(i+1).getLat_dd();
+  			//System.out.println(x1p+" "+x2p);
+			double[] vals=toCartesian(x1,y1);
+			double[] vals2=toCartesian(x2,y2);
+			x1=vals[0];
+			y1=vals[1];
+			x2=vals2[0];
+			y2=vals2[1];
+			//System.out.println(itinerary.get(i).getCity());
+			//System.out.println(itinerary.get(i+1).getCity());
+			//System.out.println("x1: "+x1+" y1: "+y1+" x2: "+x2+" y2: "+y2);
+
 			writer.println("<line id=\"leg" + i +"\" y2=\"" +y2 +"\" x2=\"" + x2 + "\" y1=\"" +y1 +"\" x1=\"" +x1 +"\" stroke-width=\"3\" stroke=\"#999999\"/>");
 		}
 		writer.println("</g>");
 	}
-	public void createSvg(ArrayList<Location> itinerary){
+	public void createSvg(ArrayList<Location> itinerary,String filename){
 		try{
-			PrintWriter writer = new PrintWriter("out.svg", "UTF-8");
+			PrintWriter writer = new PrintWriter(filename, "UTF-8");
 			writer.println("<?xml version=\"1.0\"?>");
 			writer.println("<svg width=\"1280\" height=\"1024\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\">");
 			createBorders(writer);
 			createTitles(writer);
+			createLegs(writer,itinerary);
 			writer.println("</svg>");
 			writer.close();
 		}
@@ -122,7 +150,7 @@ public class View {
 	}
 	
 	
-	public void Driver(String args[]){
+	public void Driver(){
 		initializeTrip();
 	}
 }
