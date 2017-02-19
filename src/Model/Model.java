@@ -14,7 +14,7 @@ public class Model {
 		planTrip();
 	}
 	
-	public void planTrip(){
+	public void planTrip(){ // should this be private?
 		ArrayList<Location> itinerary_copy=new ArrayList<Location>();
 		Location current=getItinerary().get(0);
 		double min_distance=getLegDistance(current,getItinerary().get(1));
@@ -55,7 +55,7 @@ public class Model {
 		}
 		return null;
 	}
-	public double getLegDistance(Location l1, Location l2){
+	public double getLegDistance(Location l1, Location l2){  // this could be a static method
 		double lat1=l1.coord.dd_lat;
 		double lon1=l1.coord.dd_long;
 		double lat2=l2.coord.dd_lat;
