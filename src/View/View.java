@@ -133,6 +133,58 @@ public class View {
 		}
 		writer.println("</g>");
 	}
+	
+	public void createLocations(PrintWriter writer,ArrayList<Location> itinerary){
+		writer.println("<g>");
+		writer.println("<title>Locations</title>");
+		for(int i = 0; i < itinerary.size(); i++){
+			double x1 = itinerary.get(i).getLon_dd();
+			double y1 = itinerary.get(i).getLat_dd();
+			String city = itinerary.get(i).getCity();
+			double[] vals=toCartesian(x1,y1);
+			x1 = vals[0];
+			y1 = vals[1];
+		
+			writer.println("<text font-family=\"Sans-serif\" font-size=\"16\" id=\"id" + i + "\" y=\"" + y1 +"\" x=\"" + x1 +"\">" + city + "</text>");
+		}
+		writer.println("</g>");
+	}
+	
+	public void createDistances(PrintWriter writer,ArrayList<Location> itinerary){
+		writer.println("<g>");
+		writer.println("<title>Distances</title>");
+		for(int i = 0; i < itinerary.size()-1; i++){
+			double x1 = itinerary.get(i).getLon_dd();
+			double y1 = itinerary.get(i).getLat_dd();
+			double x2 = itinerary.get(i+1).getLon_dd();
+			double y2 = itinerary.get(i+1).getLat_dd();
+			
+			double[] vals=toCartesian(x1,y1);
+			double[] vals2=toCartesian(x2,y2);
+			double mid = Math.abs((vals[0]-vals2[0]) / 2);
+			double mid2 = Math.abs((vals[1]-vals2[1]) / 2);
+			double x = 0;
+			double y = 0;
+			
+			if(vals[0] < vals2[0]){
+				x = x1 + mid;
+			}
+			else{
+				x = x2 + mid;
+			}
+			if(vals[1] < vals2[1]){
+				y = y1 + mid2;
+			}
+			else{
+				y = y2 + mid2;
+			}
+			//CHECK i and verify distance!!!!!!!!!!!!!!!!
+			writer.println("<text font-family=\"Sans-serif\" font-size=\"16\" id=\"leg" + i + "\" y=\"" + y +"\" x=\"" + x +"\">" + distance + "</text>");
+			
+		}
+		writer.println("</g>");
+	}
+	
 	public void createSvg(ArrayList<Location> itinerary,String filename){
 		try{
 			PrintWriter writer = new PrintWriter(filename, "UTF-8");
@@ -141,6 +193,8 @@ public class View {
 			createBorders(writer);
 			createTitles(writer);
 			createLegs(writer,itinerary);
+			createLocations(writer,itinerary);
+			createDistances(writer,itinerary);
 			writer.println("</svg>");
 			writer.close();
 		}
