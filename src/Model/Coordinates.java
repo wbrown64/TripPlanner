@@ -3,7 +3,6 @@ package Model;
 public class Coordinates {
 	private double x;
 	private double y;
-	private int elevation;
 	private double distance_to_next;
 	private double[] latitude;
 	private double[] longitude;
@@ -13,10 +12,9 @@ public class Coordinates {
 	public double dd_long;
 	
 	
-	public Coordinates(String lat, String longe,String elevation){
+	public Coordinates(String lat, String longe){
 		latitude=new double[3];
 		longitude=new double[3];
-		this.elevation=Integer.parseInt(elevation);
 		parse_strs(lat,latitude,0);
 		parse_strs(longe,longitude,1);
 		calculate_dd();
@@ -76,17 +74,8 @@ public class Coordinates {
 		this.distance_to_next = distance_to_next;
 	}
 
-	
-	public int getElevation() {
-		return elevation;
-	}
-
-	public void setElevation(int elevation) {
-		this.elevation = elevation;
-	}
-
 	public static void main(String[] args) {
-		Coordinates C=new Coordinates("39°40'47.28\" N","104°59'26.8794\" W","5280");
+		Coordinates C=new Coordinates("39°40'47.28\" N","104°59'26.8794\" W");
 
 	}
 
