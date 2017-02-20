@@ -19,7 +19,7 @@ public class TripCo {
 		View view = new View(model.getItinerary());
 		view.initializeTrip();
 		// I changed this back to no parameters, solves problems with command line flags
-		//Presenter presenter = new Presenter();
+		Presenter presenter = new Presenter();
 		
 		// I'm trying to do almost all work in here
 		presenter.planTrip(args);
