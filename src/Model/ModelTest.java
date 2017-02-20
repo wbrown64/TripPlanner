@@ -15,8 +15,8 @@ public class ModelTest {
 	public void testLegDistance(){ // creates a model to use for testing getLegDistance (static?)
 		try {
 			Model myModel = new Model("test.csv");
-			Location l1 = new Location("1", "Brewery", "City", "0", "0", "0", new Coordinates("0", "0", "0"));
-			Location l2 = new Location("1", "Brewery", "City", "0", "0", "0", new Coordinates("0", "0", "0"));
+			Location l1 = new Location("1", "Brewery", "City", "0", "0", "0", new Coordinates("0", "0"));
+			Location l2 = new Location("1", "Brewery", "City", "0", "0", "0", new Coordinates("0", "0"));
 			assertEquals(0,myModel.getLegDistance(l1, l2));  
 			// planning on replacing this test with something a bit more involved
 			//for now just making sure it doesn't crash
