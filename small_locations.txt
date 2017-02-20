@@ -1,3 +1,4 @@
+id, name, city, latitude, longitude, altitude
 davematt,Steamworks Brewing Company,Durango,37°16'20.47" N, 107°52'47.83" W,6566
 kdmnance,Climb Hard Cider,Loveland,40°24'28.7" N,105°06'52.1" W,4982
 wbrown64, Ska Brewing Company, Durango, 37°14'19.68" N, 107°52'34.14" W,6512
