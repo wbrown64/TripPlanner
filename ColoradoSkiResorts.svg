@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<svg width="1280" height="1024" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+<g>
+<title>Borders</title>
+<line id="north" y2="50" x2="1230" y1="50" x1="50" stroke-width="5" stroke="#666666"/>
+<line id="east" y2="974" x2="1230" y1="50" x1="1230" stroke-width="5" stroke="#666666"/>
+<line id="south" y2="974" x2="50" y1="974" x1="1230" stroke-width="5" stroke="#666666"/>
+<line id="west" y2="50" x2="50" y1="974" x1="50" stroke-width="5" stroke="#666666"/>
+</g>
+<g>
+<title>Titles</title>
+<text text-anchor="middle" font-family="Sans-serif" font-size="24" id="state" y="40" x="640">Colorado</text>
+<text text-anchor="middle" font-family="Sans-serif" font-size="24" id="distance" y="1014" x="640">751 miles</text>
+</g>
+<g>
+<title>Legs</title>
+<line id="leg0" y2="719.8858333333341" x2="224.66825396825408" y1="814.9166666666669" x1="372.02777777777794" stroke-width="3" stroke="#999999"/>
+<line id="leg1" y2="707.6941666666676" x2="194.5126984127004" y1="719.8858333333341" x1="224.66825396825408" stroke-width="3" stroke="#999999"/>
+<line id="leg2" y2="778.4058333333334" x2="199.85079365079315" y1="707.6941666666676" x1="194.5126984127004" stroke-width="3" stroke="#999999"/>
+<line id="leg3" y2="485.35666666666623" x2="343.08968253968277" y1="778.4058333333334" x1="199.85079365079315" stroke-width="3" stroke="#999999"/>
+<line id="leg4" y2="417.66083333333484" x2="365.8936507936526" y1="485.35666666666623" x1="343.08968253968277" stroke-width="3" stroke="#999999"/>
+<line id="leg5" y2="378.71166666666636" x2="454.7214285714294" y1="417.66083333333484" x1="365.8936507936526" stroke-width="3" stroke="#999999"/>
+<line id="leg6" y2="350.7991666666655" x2="499.25238095238205" y1="378.71166666666636" x1="454.7214285714294" stroke-width="3" stroke="#999999"/>
+<line id="leg7" y2="314.15999999999985" x2="442.6404761904784" y1="350.7991666666655" x1="499.25238095238205" stroke-width="3" stroke="#999999"/>
+<line id="leg8" y2="257.0516666666671" x2="546.0777777777778" y1="314.15999999999985" x1="442.6404761904784" stroke-width="3" stroke="#999999"/>
+<line id="leg9" y2="245.24500000000018" x2="576.0928571428578" y1="257.0516666666671" x1="546.0777777777778" stroke-width="3" stroke="#999999"/>
+<line id="leg10" y2="303.95750000000095" x2="586.4880952380961" y1="245.24500000000018" x1="576.0928571428578" stroke-width="3" stroke="#999999"/>
+<line id="leg11" y2="166.1274999999999" x2="584.0531746031744" y1="303.95750000000095" x1="586.4880952380961" stroke-width="3" stroke="#999999"/>
+<line id="leg12" y2="126.15166666666627" x2="370.10793650793687" y1="166.1274999999999" x1="584.0531746031744" stroke-width="3" stroke="#999999"/>
+<line id="leg13" y2="446.9850000000005" x2="143.37936507936323" y1="126.15166666666627" x1="370.10793650793687" stroke-width="3" stroke="#999999"/>
+<line id="leg14" y2="574.4199999999995" x2="449.66428571428634" y1="446.9850000000005" x1="143.37936507936323" stroke-width="3" stroke="#999999"/>
+<line id="leg15" y2="814.9166666666669" x2="372.02777777777794" y1="574.4199999999995" x1="449.66428571428634" stroke-width="3" stroke="#999999"/>
+</g>
+<g>
+<title>Locations</title>
+<text font-family="Sans-serif" font-size="16" id="id0" y="814.9166666666669" x="372.02777777777794">1</text>
+<text font-family="Sans-serif" font-size="16" id="id1" y="719.8858333333341" x="224.66825396825408">4</text>
+<text font-family="Sans-serif" font-size="16" id="id2" y="707.6941666666676" x="194.5126984127004">2</text>
+<text font-family="Sans-serif" font-size="16" id="id3" y="778.4058333333334" x="199.85079365079315">5</text>
+<text font-family="Sans-serif" font-size="16" id="id4" y="485.35666666666623" x="343.08968253968277">6</text>
+<text font-family="Sans-serif" font-size="16" id="id5" y="417.66083333333484" x="365.8936507936526">8</text>
+<text font-family="Sans-serif" font-size="16" id="id6" y="378.71166666666636" x="454.7214285714294">9</text>
+<text font-family="Sans-serif" font-size="16" id="id7" y="350.7991666666655" x="499.25238095238205">11</text>
+<text font-family="Sans-serif" font-size="16" id="id8" y="314.15999999999985" x="442.6404761904784">10</text>
+<text font-family="Sans-serif" font-size="16" id="id9" y="257.0516666666671" x="546.0777777777778">16</text>
+<text font-family="Sans-serif" font-size="16" id="id10" y="245.24500000000018" x="576.0928571428578">15</text>
+<text font-family="Sans-serif" font-size="16" id="id11" y="303.95750000000095" x="586.4880952380961">12</text>
+<text font-family="Sans-serif" font-size="16" id="id12" y="166.1274999999999" x="584.0531746031744">14</text>
+<text font-family="Sans-serif" font-size="16" id="id13" y="126.15166666666627" x="370.10793650793687">13</text>
+<text font-family="Sans-serif" font-size="16" id="id14" y="446.9850000000005" x="143.37936507936323">7</text>
+<text font-family="Sans-serif" font-size="16" id="id15" y="574.4199999999995" x="449.66428571428634">3</text>
+</g>
+<g>
+<title>Distances</title>
+<text font-family="Sans-serif" font-size="16" id="leg0" y="767.4012500000005" x="298.34801587301604">56</text>
+<text font-family="Sans-serif" font-size="16" id="leg1" y="713.7900000000009" x="209.59047619047723">10</text>
+<text font-family="Sans-serif" font-size="16" id="leg2" y="743.0500000000004" x="197.18174603174677">21</text>
+<text font-family="Sans-serif" font-size="16" id="leg3" y="631.8812499999998" x="271.47023809523796">99</text>
+<text font-family="Sans-serif" font-size="16" id="leg4" y="451.50875000000053" x="354.4916666666677">22</text>
+<text font-family="Sans-serif" font-size="16" id="leg5" y="398.1862500000006" x="410.307539682541">31</text>
+<text font-family="Sans-serif" font-size="16" id="leg6" y="364.75541666666595" x="476.98690476190575">16</text>
+<text font-family="Sans-serif" font-size="16" id="leg7" y="332.4795833333327" x="470.94642857143026">21</text>
+<text font-family="Sans-serif" font-size="16" id="leg8" y="285.60583333333346" x="494.3591269841281">37</text>
+<text font-family="Sans-serif" font-size="16" id="leg9" y="251.14833333333362" x="561.0853174603178">10</text>
+<text font-family="Sans-serif" font-size="16" id="leg10" y="274.60125000000056" x="581.290476190477">18</text>
+<text font-family="Sans-serif" font-size="16" id="leg11" y="235.04250000000042" x="585.2706349206353">41</text>
+<text font-family="Sans-serif" font-size="16" id="leg12" y="146.1395833333331" x="477.08055555555563">68</text>
+<text font-family="Sans-serif" font-size="16" id="leg13" y="286.5683333333334" x="256.74365079365003">120</text>
+<text font-family="Sans-serif" font-size="16" id="leg14" y="510.7025" x="296.52182539682474">105</text>
+<text font-family="Sans-serif" font-size="16" id="leg15" y="694.6683333333332" x="410.84603174603217">76</text>
+</g>
+</svg>
