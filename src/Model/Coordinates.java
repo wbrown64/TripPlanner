@@ -19,7 +19,6 @@ public class Coordinates {
 	public Coordinates(String lat, String longe){
 		latitude=new ArrayList<Double>();
 		longitude=new ArrayList<Double>();
-
 		parse_strs(lat,latitude,0);
 		parse_strs(longe,longitude,1);
 		calculate_dd();
