@@ -16,7 +16,7 @@ public class TestPresenter {
 	public static void testPlanTrip(String args[]) {
 		ArrayList<Location> testList = new ArrayList<Location>(0);
 		testList.add(new Location("1", "Brewery", "City", "2", "3", "4", new Coordinates("2", "3")));
-		View myView = new View(testList);
+		View myView = new View(testList, "placeholder.txt");
 		try {
 			Model myModel = new Model("test.csv");
 		} catch (Exception e) {

@@ -15,9 +15,6 @@ public class TripCo {
 		}
 		
 		// These objects only exist in this class, Presenter creates its own
-		Model model = new Model(filename);
-		View view = new View(model.getItinerary());
-		view.initializeTrip();
 		// I changed this back to no parameters, solves problems with command line flags
 		Presenter presenter = new Presenter();
 		
