@@ -11,9 +11,11 @@ public class View {
 	protected boolean showMileage = false;
 	protected boolean showID = false;
 	protected boolean showName = false;
+	protected String filename;
 	
-	public View(ArrayList<Location> itinerary){
+	public View(ArrayList<Location> itinerary, String filename){
 		this.itinerary = itinerary;
+		this.filename = filename;
 	}
 	
 	public void initializeTrip(){

@@ -17,6 +17,13 @@ public class Presenter {
 		switch (args.length){
 		case 1: {
 			filename = args[0];
+			try {
+				m = new Model(filename);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			v = new View(m.getItinerary(),filename);
 			break;
 		}
 		case 2: {
@@ -27,7 +34,7 @@ public class Presenter {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			v = new View(m.getItinerary());
+			v = new View(m.getItinerary(),filename);
 			checkFlags(args[0]);
 			break;
 		}
@@ -39,7 +46,7 @@ public class Presenter {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			v = new View(m.getItinerary());
+			v = new View(m.getItinerary(),filename);
 			checkFlags(args[0]);
 			checkFlags(args[1]);
 			break;
@@ -52,21 +59,21 @@ public class Presenter {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			v = new View(m.getItinerary());
+			v = new View(m.getItinerary(),filename);
 			checkFlags(args[0]);
 			checkFlags(args[1]);
 			checkFlags(args[2]);
+			break;
 		}
 		
-			try {
+			/*try {
 				m = new Model(filename);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				System.err.println("Problem constructing Model");
 				e.printStackTrace();
 			}
-		v = new View(m.getItinerary());
-		break;
+		v = new View(m.getItinerary()); */
 		default: {
 			System.err.println("Usage: Executable <optional flags> filename");
 			System.err.println("where optional flags are -m, -i, or -n and filename is a csv");
@@ -83,6 +90,7 @@ public class Presenter {
 			System.exit(-1);
 			e.printStackTrace();
 		}*/
+		v.initializeTrip();
 	}
 	
 	public void checkFlags(String arg) {
