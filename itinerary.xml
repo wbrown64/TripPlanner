@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trip>
+<!--
+sequence - the order of the legs
+start - the name of the starting location for a leg
+finish - the name of the finishing location for a leg
+mileage - the number of miles (to the nearest whole mile) between the starting and finishing locations
+-->
+<leg>
+<sequence>1</sequence>
+<start>Durango</start>
+<finish>Durango</finish>
+<mileage>2</mileage>
+</leg>
+<leg>
+<sequence>2</sequence>
+<start>Durango</start>
+<finish>Denver</finish>
+<mileage>230</mileage>
+</leg>
+<leg>
+<sequence>3</sequence>
+<start>Denver</start>
+<finish>Aurora</finish>
+<mileage>9</mileage>
+</leg>
+<leg>
+<sequence>4</sequence>
+<start>Aurora</start>
+<finish>Loveland</finish>
+<mileage>48</mileage>
+</leg>
+<leg>
+<sequence>5</sequence>
+<start>Loveland</start>
+<finish>Steamboat Springs</finish>
+<mileage>92</mileage>
+</leg>
+<leg>
+<sequence>5</sequence>
+<start>Steamboat Springs</start>
+<finish>Durango</finish>
+<mileage>230</mileage>
+</leg>
+</trip>

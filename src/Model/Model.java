@@ -12,6 +12,7 @@ public class Model {
 		ArrayList<Location> i=read.readFile();
 		this.setItinerary(i);
 		planTrip();
+		setLegDistance(itinerary);
 	}
 	
 	public void planTrip(){ // should this be private?
@@ -41,6 +42,23 @@ public class Model {
 //		}
 		setItinerary(itinerary_copy);
 	}
+	
+	public void setLegDistance(ArrayList<Location> itinerary){
+		for(int i = 0; i < itinerary.size()-1; i++){
+			double temp = getLegDistance(itinerary.get(i),itinerary.get(i+1));
+			temp = temp * 0.621371;
+			temp = Math.round(temp);
+			int d = (int) temp;
+			itinerary.get(i).legDistance = d;
+		}
+		double temp = getLegDistance(itinerary.get(itinerary.size()-1),itinerary.get(0));
+		temp = temp * 0.621371;
+		temp = Math.round(temp);
+		int d = (int) temp;
+		itinerary.get(itinerary.size()-1).legDistance = d;
+		
+	}
+	
 	Location getlegStartLocation(ArrayList<Location> itinerary){
 		for(Location l:itinerary){
 			if(l.isStart)

@@ -12,6 +12,7 @@ public class Location {
 	protected boolean isCurrent;
 	protected boolean visited;
 	protected boolean isEnd;
+	public int legDistance;
 	
 	public Location(String id, String brewery, String city, String latitude, String longitude, String altitude,Coordinates c) {
 		this.id = id;
@@ -25,6 +26,7 @@ public class Location {
 		isCurrent=false;
 		visited=false;
 	}
+	
 	public double getLat_dd(){
 		return coord.dd_lat;
 	}
