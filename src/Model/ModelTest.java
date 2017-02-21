@@ -1,11 +1,16 @@
 package Model;
+import java.util.ArrayList;
+
 import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
 public class ModelTest {
 	//@Test
-	public void testConstructor(){ // just tests creation of model (and planTrip atm)
+	public void testGetItinerary(){ // just tests creation of model (and planTrip atm)
 		try {
-			Model myModel = new Model("test.csv"); // requires test dummy file, or this fails regardless of later code
+			Model myModel = new Model("small_locations.txt"); 
+			ArrayList<Location> i=myModel.getItinerary();
+			assertEquals(i,myModel.getItinerary());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

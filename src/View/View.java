@@ -20,11 +20,11 @@ public class View {
 	
 	
 	public void initializeTrip(){
-//		String svg = filename + ".svg";
-//		String xml = filename + ".xml";
+
 		filename=filename.substring(0,filename.length()-4);
 		createSvg(itinerary,filename+".svg");
 		createXML(itinerary,filename+".xml");
+
 	}
 	
 	private void createSvg(ArrayList<Location> itinerary,String filename){
@@ -40,6 +40,7 @@ public class View {
 			}
 			if(showID == true){
 			createLocations(writer,itinerary,false);
+
 			}
 			if(showMileage == true){
 			createDistances(writer,itinerary);
