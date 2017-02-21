@@ -90,6 +90,8 @@ public class Presenter {
 			System.exit(-1);
 			e.printStackTrace();
 		}*/
+		//for (int i = 0; i < m.getItinerary().size(); ++i)
+		//	System.out.println(m.getItinerary().get(i).getCity());
 		v.initializeTrip();
 	}
 	

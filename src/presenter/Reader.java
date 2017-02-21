@@ -37,6 +37,7 @@ public class Reader {
 				fields = scnr.nextLine().split(",");
 				for (int i = 0; i < fields.length; ++i) {
 					fields[i] = fields[i].toLowerCase().trim();
+					//System.out.println(i + ": " + fields[i]);
 					switch (fields[i]) {
 					case "name":
 						breweryIndex = i;
@@ -56,8 +57,9 @@ public class Reader {
 					case "altitude":
 						altitudeIndex = i;
 						break;
-					}
 				}
+				if (cityIndex == 0)
+					cityIndex = breweryIndex;
 			}
 			while (scnr.hasNextLine()) {
 				fields = scnr.nextLine().split(",");
@@ -69,10 +71,12 @@ public class Reader {
 					fields[i] = fields[i].trim();
 				}
 				Coordinates c=new Coordinates(fields[latitudeIndex],fields[longitudeIndex]);
+				//System.out.println(fields[breweryIndex]);
 				locations.add(new Model.Location(fields[idIndex],fields[breweryIndex],fields[cityIndex],fields[latitudeIndex],fields[longitudeIndex],fields[altitudeIndex],c));
 				//System.out.println(locations.get(index++));
 			}
 			scnr.close();
+			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
