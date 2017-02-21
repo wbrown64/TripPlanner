@@ -34,11 +34,11 @@ public class Coordinates {
 	public void calculate_dd(){
 		if(latitude.size()==1){
 			dd_lat=latitude.get(0);
-			System.out.println(dd_lat);
+//			System.out.println(dd_lat);
 		}
 		if(longitude.size()==1){
-			dd_long=longitude.get(0);
-			System.out.println(dd_long);
+			dd_long=longitude.get(0)*-1;
+//			System.out.println(dd_long);
 		}
 		else{
 		dd_lat=(latitude.get(0)+(latitude.get(1)/60)+(latitude.get(2)/3600));
