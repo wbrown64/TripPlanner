@@ -19,10 +19,10 @@ public class View {
 	}
 	
 	public void initializeTrip(){
-		createSvg(itinerary,"out.txt");
-		createSvg(itinerary,"out.svg");
-		createXML(itinerary,"itinerary.xml");
-		createXML(itinerary,"itinerary.txt");
+		String svg = filename + ".svg";
+		String xml = filename + ".xml";
+		createSvg(itinerary,svg);
+		createXML(itinerary,xml);
 	}
 	
 	private void createSvg(ArrayList<Location> itinerary,String filename){
@@ -33,8 +33,15 @@ public class View {
 			createBorders(writer);
 			createTitles(writer,itinerary);
 			createLegs(writer,itinerary);
-			createLocations(writer,itinerary);
+			if(showName == true){
+			createLocations(writer,itinerary,true);
+			}
+			else{
+				createLocations(writer,itinerary,false);
+			}
+			if(showMileage == true){
 			createDistances(writer,itinerary);
+			}
 			writer.println("</svg>");
 			writer.close();
 		}
@@ -177,18 +184,24 @@ public class View {
 		writer.println("</g>");
 	}
 	
-	private void createLocations(PrintWriter writer,ArrayList<Location> itinerary){
+	private void createLocations(PrintWriter writer,ArrayList<Location> itinerary,boolean name){
 		writer.println("<g>");
 		writer.println("<title>Locations</title>");
 		for(int i = 0; i < itinerary.size(); i++){
 			double x1 = itinerary.get(i).getLon_dd();
 			double y1 = itinerary.get(i).getLat_dd();
-			String city = itinerary.get(i).getCity();
+			String var;
+			if(name){
+				var = itinerary.get(i).getCity();
+			}
+			else{
+				var = itinerary.get(i).getId();
+			}
 			double[] vals=toCartesian(x1,y1);
 			x1 = vals[0];
 			y1 = vals[1];
 		
-			writer.println("<text font-family=\"Sans-serif\" font-size=\"16\" id=\"id" + i + "\" y=\"" + y1 +"\" x=\"" + x1 +"\">" + city + "</text>");
+			writer.println("<text font-family=\"Sans-serif\" font-size=\"16\" id=\"id" + i + "\" y=\"" + y1 +"\" x=\"" + x1 +"\">" + var + "</text>");
 		}
 		writer.println("</g>");
 	}
@@ -257,10 +270,5 @@ public class View {
 		}
 		writer.println("<text font-family=\"Sans-serif\" font-size=\"16\" id=\"leg" + (itinerary.size()-1) + "\" y=\"" + y +"\" x=\"" + x +"\">" + distance + "</text>");
 		writer.println("</g>");
-	}
-	
-	
-	public void Driver(){
-		initializeTrip();
 	}
 }
