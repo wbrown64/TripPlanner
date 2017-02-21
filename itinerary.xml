@@ -8,6 +8,7 @@ mileage - the number of miles (to the nearest whole mile) between the starting a
 -->
 <leg>
 <sequence>1</sequence>
+<<<<<<< HEAD
 <start>Mount Elbert</start>
 <finish>Mount Massive</finish>
 <mileage>5</mileage>
