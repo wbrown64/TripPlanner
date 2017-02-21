@@ -8,554 +8,320 @@ mileage - the number of miles (to the nearest whole mile) between the starting a
 -->
 <leg>
 <sequence>1</sequence>
-<start>Durango</start>
-<finish>Loveland</finish>
-<mileage>0</mileage>
-</leg>
-<leg>
-<sequence>2</sequence>
-<start>Loveland</start>
-<finish>Durango</finish>
-<mileage>0</mileage>
-</leg>
-<leg>
-<sequence>3</sequence>
-<start>Durango</start>
-<finish>Durango</finish>
-<mileage>3</mileage>
-</leg>
-<leg>
-<sequence>4</sequence>
-<start>Durango</start>
-<finish>Cortez</finish>
-<mileage>40</mileage>
-</leg>
-<leg>
-<sequence>5</sequence>
-<start>Cortez</start>
-<finish>Telluride</finish>
-<mileage>59</mileage>
-</leg>
-<leg>
-<sequence>6</sequence>
-<start>Telluride</start>
-<finish>Golden</finish>
-<mileage>12</mileage>
-</leg>
-<leg>
-<sequence>7</sequence>
-<start>Golden</start>
-<finish>Silverton</finish>
-<mileage>0</mileage>
-</leg>
-<leg>
-<sequence>8</sequence>
-<start>Silverton</start>
-<finish>Gunnison</finish>
-<mileage>65</mileage>
-</leg>
-<leg>
-<sequence>9</sequence>
-<start>Gunnison</start>
-<finish>Aspen</finish>
-<mileage>45</mileage>
-</leg>
-<leg>
-<sequence>10</sequence>
-<start>Aspen</start>
-<finish>Eagle</finish>
-<mileage>31</mileage>
-</leg>
-<leg>
-<sequence>11</sequence>
-<start>Eagle</start>
-<finish>Eagle</finish>
-<mileage>0</mileage>
-</leg>
-<leg>
-<sequence>12</sequence>
-<start>Eagle</start>
-<finish>eagle</finish>
-<mileage>1</mileage>
-</leg>
-<leg>
-<sequence>13</sequence>
-<start>eagle</start>
-<finish>Edwards</finish>
-<mileage>12</mileage>
-</leg>
-<leg>
-<sequence>14</sequence>
-<start>Edwards</start>
-<finish>Vail</finish>
-<mileage>7</mileage>
-</leg>
-<leg>
-<sequence>15</sequence>
-<start>Vail</start>
-<finish>Dillon</finish>
-<mileage>22</mileage>
-</leg>
-<leg>
-<sequence>16</sequence>
-<start>Dillon</start>
-<finish>Breckenridge</finish>
-<mileage>8</mileage>
-</leg>
-<leg>
-<sequence>17</sequence>
-<start>Breckenridge</start>
-<finish>Winter Park</finish>
-<mileage>31</mileage>
-</leg>
-<leg>
-<sequence>18</sequence>
-<start>Winter Park</start>
-<finish>Nederland</finish>
-<mileage>15</mileage>
-</leg>
-<leg>
-<sequence>19</sequence>
-<start>Nederland</start>
-<finish>Boulder</finish>
-<mileage>13</mileage>
-</leg>
-<leg>
-<sequence>20</sequence>
-<start>Boulder</start>
-<finish>Boulder</finish>
-<mileage>2</mileage>
-</leg>
-<leg>
-<sequence>21</sequence>
-<start>Boulder</start>
-<finish>Boulder</finish>
-<mileage>1</mileage>
-</leg>
-<leg>
-<sequence>22</sequence>
-<start>Boulder</start>
-<finish>Boulder</finish>
-<mileage>0</mileage>
-</leg>
-<leg>
-<sequence>23</sequence>
-<start>Boulder</start>
-<finish>Louisville</finish>
-<mileage>6</mileage>
-</leg>
-<leg>
-<sequence>24</sequence>
-<start>Louisville</start>
-<finish>Lafayette</finish>
-<mileage>2</mileage>
-</leg>
-<leg>
-<sequence>25</sequence>
-<start>Lafayette</start>
-<finish>Lafayette</finish>
-<mileage>1</mileage>
-</leg>
-<leg>
-<sequence>26</sequence>
-<start>Lafayette</start>
-<finish>Erie</finish>
-<mileage>4</mileage>
-</leg>
-<leg>
-<sequence>27</sequence>
-<start>Erie</start>
-<finish>Frederick</finish>
-<mileage>7</mileage>
-</leg>
-<leg>
-<sequence>28</sequence>
-<start>Frederick</start>
-<finish>Longmont</finish>
-<mileage>9</mileage>
-</leg>
-<leg>
-<sequence>29</sequence>
-<start>Longmont</start>
-<finish>Longmont</finish>
-<mileage>0</mileage>
-</leg>
-<leg>
-<sequence>30</sequence>
-<start>Longmont</start>
-<finish>Longmont</finish>
-<mileage>0</mileage>
-</leg>
-<leg>
-<sequence>31</sequence>
-<start>Longmont</start>
-<finish>Longmont</finish>
-<mileage>1</mileage>
-</leg>
-<leg>
-<sequence>32</sequence>
-<start>Longmont</start>
-<finish>Arvada</finish>
-<mileage>13</mileage>
-</leg>
-<leg>
-<sequence>33</sequence>
-<start>Arvada</start>
-<finish>Loveland</finish>
+<start>Mount Elbert</start>
+<finish>Mount Massive</finish>
 <mileage>5</mileage>
 </leg>
 <leg>
-<sequence>34</sequence>
-<start>Loveland</start>
-<finish>Loveland</finish>
+<sequence>2</sequence>
+<start>Mount Massive</start>
+<finish>La Plata Peak</finish>
+<mileage>11</mileage>
+</leg>
+<leg>
+<sequence>3</sequence>
+<start>La Plata Peak</start>
+<finish>Huron Peak</finish>
+<mileage>6</mileage>
+</leg>
+<leg>
+<sequence>4</sequence>
+<start>Huron Peak</start>
+<finish>Missouri Mountain</finish>
+<mileage>3</mileage>
+</leg>
+<leg>
+<sequence>5</sequence>
+<start>Missouri Mountain</start>
+<finish>Mount Belford</finish>
+<mileage>1</mileage>
+</leg>
+<leg>
+<sequence>6</sequence>
+<start>Mount Belford</start>
+<finish>Mount Oxford</finish>
+<mileage>1</mileage>
+</leg>
+<leg>
+<sequence>7</sequence>
+<start>Mount Oxford</start>
+<finish>Mount Harvard</finish>
+<mileage>3</mileage>
+</leg>
+<leg>
+<sequence>8</sequence>
+<start>Mount Harvard</start>
+<finish>Mount Columbia</finish>
+<mileage>2</mileage>
+</leg>
+<leg>
+<sequence>9</sequence>
+<start>Mount Columbia</start>
+<finish>Mount Yale</finish>
+<mileage>4</mileage>
+</leg>
+<leg>
+<sequence>10</sequence>
+<start>Mount Yale</start>
+<finish>Mount Princeton</finish>
+<mileage>8</mileage>
+</leg>
+<leg>
+<sequence>11</sequence>
+<start>Mount Princeton</start>
+<finish>Mount Antero</finish>
+<mileage>5</mileage>
+</leg>
+<leg>
+<sequence>12</sequence>
+<start>Mount Antero</start>
+<finish>Tabeguache Peak</finish>
+<mileage>3</mileage>
+</leg>
+<leg>
+<sequence>13</sequence>
+<start>Tabeguache Peak</start>
+<finish>Mount Shavano</finish>
+<mileage>1</mileage>
+</leg>
+<leg>
+<sequence>14</sequence>
+<start>Mount Shavano</start>
+<finish>Mount Sherman</finish>
+<mileage>42</mileage>
+</leg>
+<leg>
+<sequence>15</sequence>
+<start>Mount Sherman</start>
+<finish>Mount Democrat</finish>
+<mileage>8</mileage>
+</leg>
+<leg>
+<sequence>16</sequence>
+<start>Mount Democrat</start>
+<finish>Mount Lincoln</finish>
+<mileage>2</mileage>
+</leg>
+<leg>
+<sequence>17</sequence>
+<start>Mount Lincoln</start>
+<finish>Mount Bross</finish>
+<mileage>1</mileage>
+</leg>
+<leg>
+<sequence>18</sequence>
+<start>Mount Bross</start>
+<finish>Quandary Peak</finish>
+<mileage>4</mileage>
+</leg>
+<leg>
+<sequence>19</sequence>
+<start>Quandary Peak</start>
+<finish>Mount of the Holy Cross</finish>
+<mileage>21</mileage>
+</leg>
+<leg>
+<sequence>20</sequence>
+<start>Mount of the Holy Cross</start>
+<finish>Pyramid Peak</finish>
+<mileage>37</mileage>
+</leg>
+<leg>
+<sequence>21</sequence>
+<start>Pyramid Peak</start>
+<finish>Maroon Peak</finish>
+<mileage>2</mileage>
+</leg>
+<leg>
+<sequence>22</sequence>
+<start>Maroon Peak</start>
+<finish>Snowmass Mountain</finish>
+<mileage>5</mileage>
+</leg>
+<leg>
+<sequence>23</sequence>
+<start>Snowmass Mountain</start>
+<finish>Capitol Peak</finish>
+<mileage>2</mileage>
+</leg>
+<leg>
+<sequence>24</sequence>
+<start>Capitol Peak</start>
+<finish>Castle Peak</finish>
+<mileage>15</mileage>
+</leg>
+<leg>
+<sequence>25</sequence>
+<start>Castle Peak</start>
+<finish>Grays Peak</finish>
+<mileage>71</mileage>
+</leg>
+<leg>
+<sequence>26</sequence>
+<start>Grays Peak</start>
+<finish>Torreys Peak</finish>
+<mileage>1</mileage>
+</leg>
+<leg>
+<sequence>27</sequence>
+<start>Torreys Peak</start>
+<finish>Mount Bierstadt</finish>
+<mileage>9</mileage>
+</leg>
+<leg>
+<sequence>28</sequence>
+<start>Mount Bierstadt</start>
+<finish>Mount Evans</finish>
+<mileage>1</mileage>
+</leg>
+<leg>
+<sequence>29</sequence>
+<start>Mount Evans</start>
+<finish>Longs Peak</finish>
+<mileage>46</mileage>
+</leg>
+<leg>
+<sequence>30</sequence>
+<start>Longs Peak</start>
+<finish>Pikes Peak</finish>
+<mileage>102</mileage>
+</leg>
+<leg>
+<sequence>31</sequence>
+<start>Pikes Peak</start>
+<finish>Humboldt Peak</finish>
+<mileage>66</mileage>
+</leg>
+<leg>
+<sequence>32</sequence>
+<start>Humboldt Peak</start>
+<finish>Crestone Needle</finish>
+<mileage>1</mileage>
+</leg>
+<leg>
+<sequence>33</sequence>
+<start>Crestone Needle</start>
+<finish>Crestone Peak</finish>
 <mileage>0</mileage>
 </leg>
 <leg>
+<sequence>34</sequence>
+<start>Crestone Peak</start>
+<finish>Kit Carson Peak</finish>
+<mileage>1</mileage>
+</leg>
+<leg>
 <sequence>35</sequence>
-<start>Loveland</start>
-<finish>Loveland</finish>
+<start>Kit Carson Peak</start>
+<finish>Challenger Point</finish>
 <mileage>0</mileage>
 </leg>
 <leg>
 <sequence>36</sequence>
-<start>Loveland</start>
-<finish>Loveland</finish>
-<mileage>2</mileage>
+<start>Challenger Point</start>
+<finish>Ellingwood Point</finish>
+<mileage>28</mileage>
 </leg>
 <leg>
 <sequence>37</sequence>
-<start>Loveland</start>
-<finish>Loveland</finish>
-<mileage>0</mileage>
+<start>Ellingwood Point</start>
+<finish>Blanca Peak</finish>
+<mileage>1</mileage>
 </leg>
 <leg>
 <sequence>38</sequence>
-<start>Loveland</start>
-<finish>Loveland</finish>
+<start>Blanca Peak</start>
+<finish>Little Bear Peak</finish>
 <mileage>1</mileage>
 </leg>
 <leg>
 <sequence>39</sequence>
-<start>Loveland</start>
-<finish>windsor</finish>
-<mileage>8</mileage>
-</leg>
-<leg>
-<sequence>40</sequence>
-<start>windsor</start>
-<finish>Fort Collins</finish>
-<mileage>8</mileage>
-</leg>
-<leg>
-<sequence>41</sequence>
-<start>Fort Collins</start>
-<finish>Fort Collins</finish>
+<start>Little Bear Peak</start>
+<finish>Mount Lindsey</finish>
 <mileage>3</mileage>
 </leg>
 <leg>
+<sequence>40</sequence>
+<start>Mount Lindsey</start>
+<finish>Culebra Peak</finish>
+<mileage>35</mileage>
+</leg>
+<leg>
+<sequence>41</sequence>
+<start>Culebra Peak</start>
+<finish>San Luis Peak</finish>
+<mileage>113</mileage>
+</leg>
+<leg>
 <sequence>42</sequence>
-<start>Fort Collins</start>
-<finish>Fort Collins</finish>
-<mileage>1</mileage>
+<start>San Luis Peak</start>
+<finish>Redcloud Peak</finish>
+<mileage>27</mileage>
 </leg>
 <leg>
 <sequence>43</sequence>
-<start>Fort Collins</start>
-<finish>Fort Collins</finish>
+<start>Redcloud Peak</start>
+<finish>Sunshine Peak</finish>
 <mileage>1</mileage>
 </leg>
 <leg>
 <sequence>44</sequence>
-<start>Fort Collins</start>
-<finish>Fort Collins</finish>
-<mileage>0</mileage>
+<start>Sunshine Peak</start>
+<finish>Handies Peak</finish>
+<mileage>4</mileage>
 </leg>
 <leg>
 <sequence>45</sequence>
-<start>Fort Collins</start>
-<finish>Fort Collins</finish>
-<mileage>0</mileage>
+<start>Handies Peak</start>
+<finish>Wetterhorn Peak</finish>
+<mileage>10</mileage>
 </leg>
 <leg>
 <sequence>46</sequence>
-<start>Fort Collins</start>
-<finish>Fort Collins</finish>
-<mileage>0</mileage>
+<start>Wetterhorn Peak</start>
+<finish>Uncompahgre Peak</finish>
+<mileage>3</mileage>
 </leg>
 <leg>
 <sequence>47</sequence>
-<start>Fort Collins</start>
-<finish>Fort Collins</finish>
-<mileage>1</mileage>
+<start>Uncompahgre Peak</start>
+<finish>Mount Sneffels</finish>
+<mileage>19</mileage>
 </leg>
 <leg>
 <sequence>48</sequence>
-<start>Fort Collins</start>
-<finish>Fort Collins</finish>
-<mileage>0</mileage>
+<start>Mount Sneffels</start>
+<finish>Wilson Peak</finish>
+<mileage>14</mileage>
 </leg>
 <leg>
 <sequence>49</sequence>
-<start>Fort Collins</start>
-<finish>Fort Collins</finish>
-<mileage>0</mileage>
+<start>Wilson Peak</start>
+<finish>Mount Wilson</finish>
+<mileage>2</mileage>
 </leg>
 <leg>
 <sequence>50</sequence>
-<start>Fort Collins</start>
-<finish>Fort Collins</finish>
-<mileage>1</mileage>
+<start>Mount Wilson</start>
+<finish>Mount Eolus</finish>
+<mileage>25</mileage>
 </leg>
 <leg>
 <sequence>51</sequence>
-<start>Fort Collins</start>
-<finish>Fort Collins</finish>
+<start>Mount Eolus</start>
+<finish>Sunlight Peak</finish>
+<mileage>2</mileage>
+</leg>
+<leg>
+<sequence>52</sequence>
+<start>Sunlight Peak</start>
+<finish>Windom Peak</finish>
 <mileage>0</mileage>
 </leg>
 <leg>
 <sequence>52</sequence>
-<start>Fort Collins</start>
-<finish>Greely</finish>
-<mileage>19</mileage>
-</leg>
-<leg>
-<sequence>53</sequence>
-<start>Greely</start>
-<finish>Greeley</finish>
-<mileage>4</mileage>
-</leg>
-<leg>
-<sequence>54</sequence>
-<start>Greeley</start>
-<finish>Greeley</finish>
-<mileage>0</mileage>
-</leg>
-<leg>
-<sequence>55</sequence>
-<start>Greeley</start>
-<finish>Westminster</finish>
-<mileage>41</mileage>
-</leg>
-<leg>
-<sequence>56</sequence>
-<start>Westminster</start>
-<finish>Arvada</finish>
-<mileage>8</mileage>
-</leg>
-<leg>
-<sequence>57</sequence>
-<start>Arvada</start>
-<finish>Denver</finish>
-<mileage>3</mileage>
-</leg>
-<leg>
-<sequence>58</sequence>
-<start>Denver</start>
-<finish>Denver</finish>
-<mileage>2</mileage>
-</leg>
-<leg>
-<sequence>59</sequence>
-<start>Denver</start>
-<finish>Denver</finish>
-<mileage>1</mileage>
-</leg>
-<leg>
-<sequence>60</sequence>
-<start>Denver</start>
-<finish>Denver</finish>
-<mileage>1</mileage>
-</leg>
-<leg>
-<sequence>61</sequence>
-<start>Denver</start>
-<finish>Denver</finish>
-<mileage>1</mileage>
-</leg>
-<leg>
-<sequence>62</sequence>
-<start>Denver</start>
-<finish>Denver</finish>
-<mileage>1</mileage>
-</leg>
-<leg>
-<sequence>63</sequence>
-<start>Denver</start>
-<finish>Denver</finish>
-<mileage>4</mileage>
-</leg>
-<leg>
-<sequence>64</sequence>
-<start>Denver</start>
-<finish>Denver</finish>
-<mileage>1</mileage>
-</leg>
-<leg>
-<sequence>65</sequence>
-<start>Denver</start>
-<finish>Denver</finish>
-<mileage>1</mileage>
-</leg>
-<leg>
-<sequence>66</sequence>
-<start>Denver</start>
-<finish>Sheridan</finish>
-<mileage>3</mileage>
-</leg>
-<leg>
-<sequence>67</sequence>
-<start>Sheridan</start>
-<finish>Sheridan</finish>
-<mileage>0</mileage>
-</leg>
-<leg>
-<sequence>68</sequence>
-<start>Sheridan</start>
-<finish>Littleton</finish>
-<mileage>4</mileage>
-</leg>
-<leg>
-<sequence>69</sequence>
-<start>Littleton</start>
-<finish>Littleton</finish>
-<mileage>2</mileage>
-</leg>
-<leg>
-<sequence>70</sequence>
-<start>Littleton</start>
-<finish>Aurora</finish>
-<mileage>11</mileage>
-</leg>
-<leg>
-<sequence>71</sequence>
-<start>Aurora</start>
-<finish>Aurora</finish>
-<mileage>7</mileage>
-</leg>
-<leg>
-<sequence>72</sequence>
-<start>Aurora</start>
-<finish>Denver</finish>
-<mileage>8</mileage>
-</leg>
-<leg>
-<sequence>73</sequence>
-<start>Denver</start>
-<finish>Golden</finish>
-<mileage>13</mileage>
-</leg>
-<leg>
-<sequence>74</sequence>
-<start>Golden</start>
-<finish>Idaho Springs</finish>
-<mileage>16</mileage>
-</leg>
-<leg>
-<sequence>75</sequence>
-<start>Idaho Springs</start>
-<finish>Bailey</finish>
-<mileage>23</mileage>
-</leg>
-<leg>
-<sequence>76</sequence>
-<start>Bailey</start>
-<finish>Colorado Springs</finish>
-<mileage>6</mileage>
-</leg>
-<leg>
-<sequence>77</sequence>
-<start>Colorado Springs</start>
-<finish>Woodland Park</finish>
-<mileage>32</mileage>
-</leg>
-<leg>
-<sequence>78</sequence>
-<start>Woodland Park</start>
-<finish>Monument</finish>
-<mileage>12</mileage>
-</leg>
-<leg>
-<sequence>79</sequence>
-<start>Monument</start>
-<finish>Monument</finish>
-<mileage>0</mileage>
-</leg>
-<leg>
-<sequence>80</sequence>
-<start>Monument</start>
-<finish>Colorado Springs</finish>
-<mileage>8</mileage>
-</leg>
-<leg>
-<sequence>81</sequence>
-<start>Colorado Springs</start>
-<finish>Colorado Springs</finish>
-<mileage>7</mileage>
-</leg>
-<leg>
-<sequence>82</sequence>
-<start>Colorado Springs</start>
-<finish>Colorado Springs</finish>
-<mileage>1</mileage>
-</leg>
-<leg>
-<sequence>83</sequence>
-<start>Colorado Springs</start>
-<finish>Colorado Springs</finish>
-<mileage>3</mileage>
-</leg>
-<leg>
-<sequence>84</sequence>
-<start>Colorado Springs</start>
-<finish>Pueblo</finish>
-<mileage>41</mileage>
-</leg>
-<leg>
-<sequence>85</sequence>
-<start>Pueblo</start>
-<finish>Parker</finish>
-<mileage>88</mileage>
-</leg>
-<leg>
-<sequence>86</sequence>
-<start>Parker</start>
-<finish>Vail</finish>
-<mileage>124</mileage>
-</leg>
-<leg>
-<sequence>87</sequence>
-<start>Vail</start>
-<finish>Steamboat Springs</finish>
-<mileage>29</mileage>
-</leg>
-<leg>
-<sequence>88</sequence>
-<start>Steamboat Springs</start>
-<finish>Hayden</finish>
-<mileage>22</mileage>
-</leg>
-<leg>
-<sequence>89</sequence>
-<start>Hayden</start>
-<finish>Glenwood Springs</finish>
-<mileage>65</mileage>
-</leg>
-<leg>
-<sequence>90</sequence>
-<start>Glenwood Springs</start>
-<finish>Fruita</finish>
-<mileage>80</mileage>
-</leg>
-<leg>
-<sequence>91</sequence>
-<start>Fruita</start>
-<finish>Alamosa</finish>
-<mileage>194</mileage>
-</leg>
-<leg>
-<sequence>91</sequence>
-<start>Alamosa</start>
-<finish>Durango</finish>
-<mileage>111</mileage>
+<start>Windom Peak</start>
+<finish>Mount Elbert</finish>
+<mileage>121</mileage>
 </leg>
 </trip>
