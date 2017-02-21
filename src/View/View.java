@@ -18,6 +18,7 @@ public class View {
 		this.filename = filename;
 	}
 	
+	
 	public void initializeTrip(){
 //		String svg = filename + ".svg";
 //		String xml = filename + ".xml";
