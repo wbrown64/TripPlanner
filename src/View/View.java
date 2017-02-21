@@ -19,7 +19,7 @@ public class View {
 	}
 	
 	public void initializeTrip(){
-		filename=filename.substring(0,filename.length()-5);
+		filename=filename.substring(0,filename.length()-4);
 		createSvg(itinerary,filename+".svg");
 		createXML(itinerary,filename+".xml");
 
