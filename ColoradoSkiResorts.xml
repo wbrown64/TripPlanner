@@ -8,98 +8,98 @@ mileage - the number of miles (to the nearest whole mile) between the starting a
 -->
 <leg>
 <sequence>1</sequence>
-<start>1</start>
-<finish>4</finish>
+<start>Wolf Creek</start>
+<finish>Silverton</finish>
 <mileage>56</mileage>
 </leg>
 <leg>
 <sequence>2</sequence>
-<start>4</start>
-<finish>2</finish>
+<start>Silverton</start>
+<finish>Telluride</finish>
 <mileage>10</mileage>
 </leg>
 <leg>
 <sequence>3</sequence>
-<start>2</start>
-<finish>5</finish>
+<start>Telluride</start>
+<finish>Purgatory</finish>
 <mileage>21</mileage>
 </leg>
 <leg>
 <sequence>4</sequence>
-<start>5</start>
-<finish>6</finish>
+<start>Purgatory</start>
+<finish>Crested Butte</finish>
 <mileage>99</mileage>
 </leg>
 <leg>
 <sequence>5</sequence>
-<start>6</start>
-<finish>8</finish>
+<start>Crested Butte</start>
+<finish>Aspen mountain</finish>
 <mileage>22</mileage>
 </leg>
 <leg>
 <sequence>6</sequence>
-<start>8</start>
-<finish>9</finish>
+<start>Aspen mountain</start>
+<finish>Ski Cooper</finish>
 <mileage>31</mileage>
 </leg>
 <leg>
 <sequence>7</sequence>
-<start>9</start>
-<finish>11</finish>
+<start>Ski Cooper</start>
+<finish>Breckenridge</finish>
 <mileage>16</mileage>
 </leg>
 <leg>
 <sequence>8</sequence>
-<start>11</start>
-<finish>10</finish>
+<start>Breckenridge</start>
+<finish>Vail</finish>
 <mileage>21</mileage>
 </leg>
 <leg>
 <sequence>9</sequence>
-<start>10</start>
-<finish>16</finish>
+<start>Vail</start>
+<finish>Winter Park</finish>
 <mileage>37</mileage>
 </leg>
 <leg>
 <sequence>10</sequence>
-<start>16</start>
-<finish>15</finish>
+<start>Winter Park</start>
+<finish>Eldora Mountain</finish>
 <mileage>10</mileage>
 </leg>
 <leg>
 <sequence>11</sequence>
-<start>15</start>
-<finish>12</finish>
+<start>Eldora Mountain</start>
+<finish>Echo Mountain</finish>
 <mileage>18</mileage>
 </leg>
 <leg>
 <sequence>12</sequence>
-<start>12</start>
-<finish>14</finish>
+<start>Echo Mountain</start>
+<finish>Estes Valley</finish>
 <mileage>41</mileage>
 </leg>
 <leg>
 <sequence>13</sequence>
-<start>14</start>
-<finish>13</finish>
+<start>Estes Valley</start>
+<finish>Steamboat</finish>
 <mileage>68</mileage>
 </leg>
 <leg>
 <sequence>14</sequence>
-<start>13</start>
-<finish>7</finish>
+<start>Steamboat</start>
+<finish>Powderhorn</finish>
 <mileage>120</mileage>
 </leg>
 <leg>
 <sequence>15</sequence>
-<start>7</start>
-<finish>3</finish>
+<start>Powderhorn</start>
+<finish>Monarch</finish>
 <mileage>105</mileage>
 </leg>
 <leg>
 <sequence>15</sequence>
-<start>3</start>
-<finish>1</finish>
+<start>Monarch</start>
+<finish>Wolf Creek</finish>
 <mileage>76</mileage>
 </leg>
 </trip>
