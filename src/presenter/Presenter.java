@@ -66,6 +66,13 @@ public class Presenter {
 				e.printStackTrace();
 			}
 		v = new View(m.getItinerary());
+		break;
+		default: {
+			System.err.println("Usage: Executable <optional flags> filename");
+			System.err.println("where optional flags are -m, -i, or -n and filename is a csv");
+			System.err.println("with at least the fields name, id, latitude, city, and longitude");
+			System.exit(-1);
+		}
 		
 			
 		}

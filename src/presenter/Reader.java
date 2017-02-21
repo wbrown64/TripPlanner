@@ -8,9 +8,11 @@ import Model.Coordinates;
 public class Reader {
 	
 	protected String filename;
+	protected ArrayList<Boolean>  isCart;
 	
 	public Reader(String filename) {
 		this.filename = filename;
+		isCart = new ArrayList<Boolean>();
 	}
 	
 	public ArrayList<Model.Location> readFile() throws Exception {
@@ -78,5 +80,17 @@ public class Reader {
 		return locations;
 		
 	}
+	
+	public void testCoordType(String latitude) {
+		if (latitude.contains("'") || latitude.contains("\""))
+			isCart.add(false);
+		else
+			isCart.add(true);
+	}
+	
+	public ArrayList<Boolean> getIsCart() {
+		return isCart;
+	}
+	
 
 }
