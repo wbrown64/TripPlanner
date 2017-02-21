@@ -106,7 +106,6 @@ public class View {
 		double[] vals=new double[2];
 		//System.out.println("x is: "+x);
 		vals[0]= (Math.abs(x-(-109)) / Math.abs((-102) - (-109)))*(1230-50);
-		double t=(Math.abs(x-(-109)) / Math.abs((-102) - (-109)))*(1230-50);
 		//System.out.println(t);
 		vals[1]= (Math.abs(y-41) / (Math.abs(37-41))*(974-50));
 //		for(double i:vals){

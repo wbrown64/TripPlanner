@@ -20,21 +20,42 @@ public class Presenter {
 			break;
 		}
 		case 2: {
-			checkFlags(args[0]);
 			filename = args[1];
+			try {
+				m = new Model(filename);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			v = new View(m.getItinerary());
+			checkFlags(args[0]);
 			break;
 		}
 		case 3: {
+			filename = args[2];
+			try {
+				m = new Model(filename);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			v = new View(m.getItinerary());
 			checkFlags(args[0]);
 			checkFlags(args[1]);
-			filename = args[2];
 			break;
 		}
 		case 4: {
+			filename = args[3];
+			try {
+				m = new Model(filename);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			v = new View(m.getItinerary());
 			checkFlags(args[0]);
 			checkFlags(args[1]);
 			checkFlags(args[2]);
-			filename = args[3];
 		}
 		
 			try {
@@ -45,6 +66,13 @@ public class Presenter {
 				e.printStackTrace();
 			}
 		v = new View(m.getItinerary());
+		break;
+		default: {
+			System.err.println("Usage: Executable <optional flags> filename");
+			System.err.println("where optional flags are -m, -i, or -n and filename is a csv");
+			System.err.println("with at least the fields name, id, latitude, city, and longitude");
+			System.exit(-1);
+		}
 		
 			
 		}
