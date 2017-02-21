@@ -19,10 +19,15 @@ public class Coordinates {
 	public Coordinates(String lat, String longe){
 		latitude=new ArrayList<Double>();
 		longitude=new ArrayList<Double>();
-
+		if(lat.contains("'")||lat.contains("\"")||lat.contains("°")){
 		parse_strs(lat,latitude,0);
 		parse_strs(longe,longitude,1);
 		calculate_dd();
+		}
+		else{
+			dd_lat=Double.parseDouble(lat);
+			dd_long=Double.parseDouble(longe);
+		}
 
 	}
 	
