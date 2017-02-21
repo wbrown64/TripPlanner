@@ -27,7 +27,7 @@ public class Presenter {
 			break;
 		}
 		case 2: {
-			filename = args[1];
+			filename = args[0];
 			try {
 				m = new Model(filename);
 			} catch (Exception e) {
@@ -35,11 +35,11 @@ public class Presenter {
 				e.printStackTrace();
 			}
 			v = new View(m.getItinerary(),filename);
-			checkFlags(args[0]);
+			checkFlags(args[1]);
 			break;
 		}
 		case 3: {
-			filename = args[2];
+			filename = args[0];
 			try {
 				m = new Model(filename);
 			} catch (Exception e) {
@@ -47,12 +47,12 @@ public class Presenter {
 				e.printStackTrace();
 			}
 			v = new View(m.getItinerary(),filename);
-			checkFlags(args[0]);
 			checkFlags(args[1]);
+			checkFlags(args[2]);
 			break;
 		}
 		case 4: {
-			filename = args[3];
+			filename = args[0];
 			try {
 				m = new Model(filename);
 			} catch (Exception e) {
@@ -60,9 +60,9 @@ public class Presenter {
 				e.printStackTrace();
 			}
 			v = new View(m.getItinerary(),filename);
-			checkFlags(args[0]);
 			checkFlags(args[1]);
 			checkFlags(args[2]);
+			checkFlags(args[3]);
 			break;
 		}
 		
@@ -94,11 +94,11 @@ public class Presenter {
 	}
 	
 	public void checkFlags(String arg) {
-		if (arg == "-m")
+		if (arg.equals("-m"))
 			v.setShowMileage(true);
-		else if (arg == "-i")
+		else if (arg.equals("-i"))
 			v.setShowID(true);
-		else if (arg == "-n")
+		else if (arg.equals("-n"))
 			v.setShowName(true);
 		else {
 			System.err.println("Invalid command line input");

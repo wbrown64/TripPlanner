@@ -7,7 +7,7 @@ public class TripCo {
 	static String filename;
 	public static void main(String[] args) throws Exception {
 		int argCount = args.length;
-		if (argCount!=1) {
+		if (argCount>4) {
 			throw new Exception("Incorrect number of arguments!");
 		}
 		else {
@@ -27,8 +27,6 @@ public class TripCo {
 //		}
 
 	}
-	static String init(String input){
-		return input;
-	}
+	
 }
 
