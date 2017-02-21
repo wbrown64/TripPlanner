@@ -21,7 +21,7 @@ public class View {
 	public void initializeTrip(){
 //		String svg = filename + ".svg";
 //		String xml = filename + ".xml";
-		filename=filename.substring(0,filename.length()-5);
+		filename=filename.substring(0,filename.length()-4);
 		createSvg(itinerary,filename+".svg");
 		createXML(itinerary,filename+".xml");
 	}
@@ -38,7 +38,7 @@ public class View {
 			createLocations(writer,itinerary,true);
 			}
 			if(showID == true){
-				createLocations(writer,itinerary,false);
+			createLocations(writer,itinerary,false);
 			}
 			if(showMileage == true){
 			createDistances(writer,itinerary);

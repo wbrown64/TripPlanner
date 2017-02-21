@@ -15,7 +15,7 @@ public class Model {
 		setLegDistance(itinerary);
 	}
 	
-	public void planTrip(){ // should this be private?
+	private void planTrip(){ // should this be private?
 		ArrayList<Location> itinerary_copy=new ArrayList<Location>();
 		Location current=getItinerary().get(0);
 		double min_distance=getLegDistance(current,getItinerary().get(1));
@@ -43,7 +43,7 @@ public class Model {
 		setItinerary(itinerary_copy);
 	}
 	
-	public void setLegDistance(ArrayList<Location> itinerary){
+	private void setLegDistance(ArrayList<Location> itinerary){
 		for(int i = 0; i < itinerary.size()-1; i++){
 			double temp = getLegDistance(itinerary.get(i),itinerary.get(i+1));
 			temp = temp * 0.621371;
@@ -59,21 +59,21 @@ public class Model {
 		
 	}
 	
-	Location getlegStartLocation(ArrayList<Location> itinerary){
+	private Location getlegStartLocation(ArrayList<Location> itinerary){
 		for(Location l:itinerary){
 			if(l.isStart)
 				return l;
 		}
 		return null;
 	}
-	Location getlegFinishLocation(ArrayList<Location> itinerary){
+	private Location getlegFinishLocation(ArrayList<Location> itinerary){
 		for(Location l:itinerary){
 			if(l.isEnd)
 				return l;
 		}
 		return null;
 	}
-	public double getLegDistance(Location l1, Location l2){  // this could be a static method
+	private double getLegDistance(Location l1, Location l2){  // this could be a static method
 		double lat1=l1.coord.dd_lat;
 		double lon1=l1.coord.dd_long;
 		double lat2=l2.coord.dd_lat;
@@ -89,7 +89,7 @@ public class Model {
 		return 6372.8*c;
 		
 	}
-	public String getLocationName(double lat, double lon){
+	private String getLocationName(double lat, double lon){
 		for(Location l:getItinerary()){
 			if(l.coord.dd_lat==lat&&l.coord.dd_long==lon){
 				return l.city;
@@ -97,7 +97,7 @@ public class Model {
 		}
 		return null;
 	}
-	public Location getLocation(String brewery_name){
+	private Location getLocation(String brewery_name){
 		for(Location l:getItinerary()){
 			if(l.brewery.equalsIgnoreCase(brewery_name)){
 				return l;
@@ -105,10 +105,10 @@ public class Model {
 		}
 		return null;
 	}
-	double getLat(Location l){
+	private double getLat(Location l){
 		return l.coord.dd_lat;
 	}
-	double getLon(Location l){
+	private double getLon(Location l){
 		return l.coord.dd_long;
 	}
 	public static void main(String[] args) throws Exception{
@@ -121,7 +121,7 @@ public class Model {
 		return itinerary;
 	}
 
-	public void setItinerary(ArrayList<Location> itinerary) {
+	private void setItinerary(ArrayList<Location> itinerary) {
 		this.itinerary = itinerary;
 	}
 }
