@@ -17,56 +17,63 @@ public class Presenter {
 		switch (args.length){
 		case 1: {
 			filename = args[0];
+			try {
+				m = new Model(filename);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			v = new View(m.getItinerary(),filename);
 			break;
 		}
 		case 2: {
-			filename = args[1];
+			filename = args[0];
 			try {
 				m = new Model(filename);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			v = new View(m.getItinerary());
-			checkFlags(args[0]);
+			v = new View(m.getItinerary(),filename);
+			checkFlags(args[1]);
 			break;
 		}
 		case 3: {
-			filename = args[2];
+			filename = args[0];
 			try {
 				m = new Model(filename);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			v = new View(m.getItinerary());
-			checkFlags(args[0]);
+			v = new View(m.getItinerary(),filename);
 			checkFlags(args[1]);
+			checkFlags(args[2]);
 			break;
 		}
 		case 4: {
-			filename = args[3];
+			filename = args[0];
 			try {
 				m = new Model(filename);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			v = new View(m.getItinerary());
-			checkFlags(args[0]);
+			v = new View(m.getItinerary(),filename);
 			checkFlags(args[1]);
 			checkFlags(args[2]);
+			checkFlags(args[3]);
+			break;
 		}
 		
-			try {
+			/*try {
 				m = new Model(filename);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				System.err.println("Problem constructing Model");
 				e.printStackTrace();
 			}
-		v = new View(m.getItinerary());
-		break;
+		v = new View(m.getItinerary()); */
 		default: {
 			System.err.println("Usage: Executable <optional flags> filename");
 			System.err.println("where optional flags are -m, -i, or -n and filename is a csv");
@@ -83,14 +90,15 @@ public class Presenter {
 			System.exit(-1);
 			e.printStackTrace();
 		}*/
+		v.initializeTrip();
 	}
 	
 	public void checkFlags(String arg) {
-		if (arg == "-m")
+		if (arg.equals("-m"))
 			v.setShowMileage(true);
-		else if (arg == "-i")
+		else if (arg.equals("-i"))
 			v.setShowID(true);
-		else if (arg == "-n")
+		else if (arg.equals("-n"))
 			v.setShowName(true);
 		else {
 			System.err.println("Invalid command line input");

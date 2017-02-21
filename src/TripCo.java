@@ -7,7 +7,7 @@ public class TripCo {
 	static String filename;
 	public static void main(String[] args) throws Exception {
 		int argCount = args.length;
-		if (argCount!=1) {
+		if (argCount>4) {
 			throw new Exception("Incorrect number of arguments!");
 		}
 		else {
@@ -15,9 +15,6 @@ public class TripCo {
 		}
 		
 		// These objects only exist in this class, Presenter creates its own
-		Model model = new Model(filename);
-		View view = new View(model.getItinerary());
-		view.initializeTrip();
 		// I changed this back to no parameters, solves problems with command line flags
 		Presenter presenter = new Presenter();
 		
@@ -30,8 +27,6 @@ public class TripCo {
 //		}
 
 	}
-	static String init(String input){
-		return input;
-	}
+	
 }
 
