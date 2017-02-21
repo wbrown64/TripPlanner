@@ -1,0 +1,13 @@
+TripCo Team 25
+
+Usage: Run TripCo.java <inputfilename.csv> [-m -n -i] to produce <inputfilename.xml> and <inputfilename.svg>
+
+Purpose: The program is intended for mapping trips across Colorado. When given a csv file containing a list of locations to visit,
+the program will generate an svg image displaying the route for the trip, as well as an xml file with details about the journey.
+The -m flag will add mileage to the svg display
+The -n flag adds the names of locations to the map
+The -i flag displays the indices of each location on the map
+
+Issue summary: Currently using closest neighbor for routing, rather than finding the actual shortest trip
+
+Notes: This program was made while using Git and Eclipse
