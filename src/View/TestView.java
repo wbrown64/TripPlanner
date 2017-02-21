@@ -15,7 +15,7 @@ public class TestView {
 	@Test
 	public void testDisplay(){
 		ArrayList<Location> testList = new ArrayList<Location>(0);
-		testList.add(new Location("1", "Brewery", "City", "2", "3", "4", new Coordinates("2", "3", "4")));
+		testList.add(new Location("1", "Brewery", "City", "2", "3", "4", new Coordinates("2", "3")));
 		View myView = new View(testList);
 		assertEquals("text",myView.display("text"));
 		//testing

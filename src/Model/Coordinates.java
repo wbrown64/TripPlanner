@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class Coordinates {
 	private double x;
 	private double y;
-	private int elevation;
 	private double distance_to_next;
 	ArrayList<Double> longitude;
 	ArrayList<Double> latitude;
@@ -15,10 +14,12 @@ public class Coordinates {
 	public double dd_long;
 	
 	
-	public Coordinates(String lat, String longe,String elevation){
+
+
+	public Coordinates(String lat, String longe){
 		latitude=new ArrayList<Double>();
 		longitude=new ArrayList<Double>();
-		this.elevation=Integer.parseInt(elevation);
+
 		parse_strs(lat,latitude,0);
 		parse_strs(longe,longitude,1);
 		calculate_dd();
@@ -81,17 +82,8 @@ public class Coordinates {
 		this.distance_to_next = distance_to_next;
 	}
 
-	
-	public int getElevation() {
-		return elevation;
-	}
-
-	public void setElevation(int elevation) {
-		this.elevation = elevation;
-	}
-
 	public static void main(String[] args) {
-		Coordinates C=new Coordinates("39°40'47.28\" N","104°59'26.8794\" W","5280");
+		Coordinates C=new Coordinates("39°40'47.28\" N","104°59'26.8794\" W");
 
 	}
 
