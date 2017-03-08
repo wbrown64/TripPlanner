@@ -6,10 +6,6 @@ import presenter.Presenter;
 public class TripCo {
 	static String filename;
 	public static void main(String[] args) throws Exception {
-		int argCount = args.length;
-		if (argCount>4) {
-			throw new Exception("Incorrect number of arguments!");
-		}
 		
 		// These objects only exist in this class, Presenter creates its own
 		// I changed this back to no parameters, solves problems with command line flags
