@@ -13,8 +13,6 @@ public class Coordinates {
 	public double dd_lat;
 	public double dd_long;
 	
-	
-
 
 	public Coordinates(String lat, String longe){
 		latitude=new ArrayList<Double>();

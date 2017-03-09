@@ -7,104 +7,64 @@ import View.View;
 public class Presenter {
 	protected Model m;
 	protected View v;
+	public boolean TwoOpt = false;
+	public boolean ThreeOpt = false;
+	public boolean GUI = false;
 	
 	public Presenter() {
 		// This should take in a model and a view for arguments
 	}
 
-	public void planTrip(String[] args) {
-		String filename;
-		switch (args.length){
-		case 1: {
-			filename = args[0];
-			try {
-				m = new Model(filename);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			v = new View(m.getItinerary(),filename);
-			break;
-		}
-		case 2: {
-			filename = args[0];
-			try {
-				m = new Model(filename);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			v = new View(m.getItinerary(),filename);
-			checkFlags(args[1]);
-			break;
-		}
-		case 3: {
-			filename = args[0];
-			try {
-				m = new Model(filename);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			v = new View(m.getItinerary(),filename);
-			checkFlags(args[1]);
-			checkFlags(args[2]);
-			break;
-		}
-		case 4: {
-			filename = args[0];
-			try {
-				m = new Model(filename);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			v = new View(m.getItinerary(),filename);
-			checkFlags(args[1]);
-			checkFlags(args[2]);
-			checkFlags(args[3]);
-			break;
-		}
+	public void planTrip(String[] args){
+		String filename = "";
+		String XML = "";
+		String SVG = "";
 		
-			/*try {
+			for(int i = 0;i < args.length;i++){
+				//System.out.println(args[i].substring(args[i].length()-4, args[i].length()));
+				
+				if(args[i].length() > 4 && args[i].substring(args[i].length()-4, args[i].length()).equals(".csv")){
+					filename = args[i];
+				}
+				else if(args[i].length() > 4 && args[i].substring(args[i].length()-4, args[i].length()).equals(".xml")){
+					XML = args[i];
+				}
+				else if(args[i].length() > 4 && args[i].substring(args[i].length()-4, args[i].length()).equals(".svg")){
+					SVG = args[i];
+				}
+			}
+			try {
 				m = new Model(filename);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
-				System.err.println("Problem constructing Model");
 				e.printStackTrace();
 			}
-		v = new View(m.getItinerary()); */
-		default: {
-			System.err.println("Usage: Executable <optional flags> filename");
-			System.err.println("where optional flags are -m, -i, or -n and filename is a csv");
-			System.err.println("with at least the fields name, id, latitude, city, and longitude");
-			System.exit(-1);
-		}
-		
+			v = new View(m.getItinerary(),filename);
+			for(int i = 0; i < args.length;i++){
+				checkFlags(args[i]);
+			}
 			
-		}
-		/*try {
-			lo =r.readFile();
-		} catch (Exception e) {
-			System.out.println("Exception caught from readFile");
-			System.exit(-1);
-			e.printStackTrace();
-		}*/
-		//for (int i = 0; i < m.getItinerary().size(); ++i)
-		//	System.out.println(m.getItinerary().get(i).getCity());
 		v.initializeTrip();
 	}
 	
 	public void checkFlags(String arg) {
-		if (arg.equals("-m"))
+		if(arg.equals("-m")){
 			v.setShowMileage(true);
-		else if (arg.equals("-i"))
+		}
+		else if(arg.equals("-i")){
 			v.setShowID(true);
-		else if (arg.equals("-n"))
+		}
+		else if(arg.equals("-n")){
 			v.setShowName(true);
-		else {
-			System.err.println("Invalid command line input");
-			System.exit(-1);
+		}
+		else if(arg.equals("-2")){
+			TwoOpt = true;
+		}
+		else if(arg.equals("-3")){
+			ThreeOpt = true;
+		}
+		else if(arg.equals("-g")){
+			GUI = true;
 		}
 			
 	}
