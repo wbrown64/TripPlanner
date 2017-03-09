@@ -44,7 +44,7 @@ public class Presenter {
 				checkFlags(args[i]);
 			}
 			
-		v.initializeTrip();
+		v.initializeTrip(this);
 	}
 	
 	public void checkFlags(String arg) {

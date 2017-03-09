@@ -8,7 +8,10 @@ package View;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+
 import javax.swing.JFileChooser;
+
+import presenter.Presenter;
 
 /**
  *
@@ -28,12 +31,15 @@ import javax.swing.JFileChooser;
         }
     }
 public class GUI extends javax.swing.JFrame {
+	Presenter P;
 
     /**
      * Creates new form GUIexampleUI
+     * @param presenter 
      */
-    public GUI() {
+    public GUI(Presenter presenter) {
         initComponents();
+        P=presenter;
     }
 
     /**
@@ -202,11 +208,12 @@ public class GUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GUI().setVisible(true);
+                new GUI(null).setVisible(true);
             }
         });
     }
 
+    
     // Variables declaration - do not modify                     
     private javax.swing.JMenuItem Exit;
     private javax.swing.JMenuItem Open;

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
+import presenter.Presenter;
 import Model.Location;
 
 public class View {
@@ -19,11 +20,16 @@ public class View {
 	}
 	
 	
-	public void initializeTrip(){
+	public void initializeTrip(Presenter presenter){
 
 		filename=filename.substring(0,filename.length()-4);
 		createSvg(itinerary,filename+".svg");
 		createXML(itinerary,filename+".xml");
+		if(presenter.GUI){
+			GUI g=new GUI(presenter);
+			String[] args = null;
+			g.main(args);
+		}
 
 	}
 	
