@@ -1,9 +1,13 @@
 package View;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Scanner;
 
+import presenter.Presenter;
 import Model.Location;
 
 public class View {
@@ -12,26 +16,37 @@ public class View {
 	protected boolean showID = false;
 	protected boolean showName = false;
 	protected String filename;
+	protected String SVG;
+	protected String XML;
 	
 	public View(ArrayList<Location> itinerary, String filename){
 		this.itinerary = itinerary;
 		this.filename = filename;
+		
 	}
 	
 	
-	public void initializeTrip(){
-
+	public void initializeTrip(Presenter presenter){
 		filename=filename.substring(0,filename.length()-4);
-		createSvg(itinerary,filename+".svg");
-		createXML(itinerary,filename+".xml");
+		this.SVG=presenter.SVG;
+		this.XML=presenter.XML;
+		if(presenter.GUI){
+			GUI gui=new GUI(this);
+			GUI.main(null);
+		}
+		else{
+			createSvg(itinerary,filename+".svg",presenter.SVG);
+			createXML(itinerary,filename+".xml");
+		}
 
 	}
 	
-	private void createSvg(ArrayList<Location> itinerary,String filename){
+	void createSvg(ArrayList<Location> itinerary,String filename, String SVG){
 		try{
 			PrintWriter writer = new PrintWriter(filename, "UTF-8");
 			writer.println("<?xml version=\"1.0\"?>");
 			writer.println("<svg width=\"1280\" height=\"1024\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\">");
+			writeBackgroundSVG(filename,SVG,writer);		//this write's the given svg before appending our code 
 			createBorders(writer);
 			createTitles(writer,itinerary);
 			createLegs(writer,itinerary);
@@ -53,7 +68,27 @@ public class View {
 		}
 	}
 	
-	private void createXML(ArrayList<Location> itinerary,String filename){
+	private void writeBackgroundSVG(String filename, String SVG, PrintWriter printer) {
+		 try {
+		        File input = new File(SVG);
+		        File output = new File(filename);
+		        Scanner sc = new Scanner(input);
+		        sc.nextLine();					//skip the already in place xml tags 
+		        sc.nextLine();					//skip the already in place xml tags 
+		        while(sc.hasNextLine()) {
+		            String s = sc.nextLine();
+		           // System.out.println(s);
+		            printer.write(s+"\n");
+		        }
+		    }
+		    catch(FileNotFoundException e) {
+		        System.err.println("File not found. Please scan in new file.");
+		    }
+		
+	}
+
+
+	void createXML(ArrayList<Location> itinerary,String filename){
 		try{
 			PrintWriter writer = new PrintWriter(filename, "UTF-8");
 			writer.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
