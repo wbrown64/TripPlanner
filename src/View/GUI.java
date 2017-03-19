@@ -261,9 +261,12 @@ public class GUI extends javax.swing.JFrame {
     }                                             
     
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        System.out.println("pressing generate map button ");
+		view.createSvg(itinerary,view.filename+".svg",view.SVG);
+		view.createXML(itinerary,view.filename+".xml");
+    	
+//    	System.out.println("pressing generate map button ");
         JFrame frame = new JFrame("JSVGCanvas Demo");
-        frame.setSize(800, 800);
+        frame.setSize(500, 500);
 
         frame.addWindowListener(new WindowAdapter() {
           public void windowClosing(WindowEvent ev) {
