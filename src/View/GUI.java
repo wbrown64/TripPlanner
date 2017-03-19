@@ -5,6 +5,8 @@
  */
 package View;
 
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -13,6 +15,9 @@ import java.util.Arrays;
 
 import javax.swing.JFileChooser;
 import javax.swing.DefaultListModel;
+import javax.swing.JFrame;
+
+import org.apache.batik.swing.JSVGCanvas;
 
 import Model.Location;
 
@@ -131,6 +136,11 @@ public class GUI extends javax.swing.JFrame {
         jLabel1.setText("Options");
 
         jButton3.setText("Generate Map");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jMenu1.setText("File");
 
@@ -249,7 +259,20 @@ public class GUI extends javax.swing.JFrame {
     		view.showMileage=true;
     	System.out.println("mileage is now: "+view.showMileage);
     }                                             
+    
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        System.out.println("pressing generate map button ");
+        JFrame frame = new JFrame("JSVGCanvas Demo");
+        frame.setSize(800, 800);
 
+        frame.addWindowListener(new WindowAdapter() {
+          public void windowClosing(WindowEvent ev) {
+            System.exit(0);
+          }
+        });
+        System.out.println(view.filename+".svg");
+        new SVGCanvas(frame,view.filename+".svg");
+    } 
     /**
      */
     public static void main(String[] args) {

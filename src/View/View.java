@@ -31,7 +31,7 @@ public class View {
 		
 		if(presenter.GUI){
 			GUI gui=new GUI(this);
-			gui.main(null);
+			GUI.main(null);
 
 			
 		}
