@@ -18,7 +18,6 @@ public class TripCo {
 //		for(Location L:model.getItinerary()){
 //			System.out.println(L.getCity());
 //		}
-
 	}
 	
 }
