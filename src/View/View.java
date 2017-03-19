@@ -16,34 +16,37 @@ public class View {
 	protected boolean showID = false;
 	protected boolean showName = false;
 	protected String filename;
+	protected String SVG;
+	protected String XML;
 	
 	public View(ArrayList<Location> itinerary, String filename){
 		this.itinerary = itinerary;
 		this.filename = filename;
+		
 	}
 	
 	
 	public void initializeTrip(Presenter presenter){
-
 		filename=filename.substring(0,filename.length()-4);
-		createSvg(itinerary,filename+".svg",presenter.SVG);
-		createXML(itinerary,filename+".xml");
-		
+		this.SVG=presenter.SVG;
+		this.XML=presenter.XML;
 		if(presenter.GUI){
 			GUI gui=new GUI(this);
 			GUI.main(null);
-
-			
+		}
+		else{
+			createSvg(itinerary,filename+".svg",presenter.SVG);
+			createXML(itinerary,filename+".xml");
 		}
 
 	}
 	
-	private void createSvg(ArrayList<Location> itinerary,String filename, String SVG){
+	void createSvg(ArrayList<Location> itinerary,String filename, String SVG){
 		try{
 			PrintWriter writer = new PrintWriter(filename, "UTF-8");
 			writer.println("<?xml version=\"1.0\"?>");
 			writer.println("<svg width=\"1280\" height=\"1024\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\">");
-			//writeBackgroundSVG(filename,SVG,writer);		//this write's the given svg before appending our code 
+			writeBackgroundSVG(filename,SVG,writer);		//this write's the given svg before appending our code 
 			createBorders(writer);
 			createTitles(writer,itinerary);
 			createLegs(writer,itinerary);
@@ -85,7 +88,7 @@ public class View {
 	}
 
 
-	private void createXML(ArrayList<Location> itinerary,String filename){
+	void createXML(ArrayList<Location> itinerary,String filename){
 		try{
 			PrintWriter writer = new PrintWriter(filename, "UTF-8");
 			writer.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
