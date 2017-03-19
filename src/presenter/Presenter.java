@@ -10,15 +10,15 @@ public class Presenter {
 	public boolean TwoOpt = false;
 	public boolean ThreeOpt = false;
 	public boolean GUI = false;
-	
+	public String filename = "";
+	public String XML = "";
+	public String SVG = "";
 	public Presenter() {
 		// This should take in a model and a view for arguments
 	}
 
 	public void planTrip(String[] args){
-		String filename = "";
-		String XML = "";
-		String SVG = "";
+		
 		
 			for(int i = 0;i < args.length;i++){
 				//System.out.println(args[i].substring(args[i].length()-4, args[i].length()));
@@ -35,16 +35,17 @@ public class Presenter {
 			}
 			try {
 				m = new Model(filename);
-			} catch (Exception e) {
+			} 
+			catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			v = new View(m.getItinerary(),filename);
+			v = new View(m.getItinerary(),filename);			
+
 			for(int i = 0; i < args.length;i++){
 				checkFlags(args[i]);
 			}
-			
-		v.initializeTrip();
+			v.initializeTrip(this);
 	}
 	
 	public void checkFlags(String arg) {
