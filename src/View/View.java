@@ -46,7 +46,7 @@ public class View {
 			PrintWriter writer = new PrintWriter(filename, "UTF-8");
 			writer.println("<?xml version=\"1.0\"?>");
 			writer.println("<svg width=\"1280\" height=\"1024\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\">");
-		//	writeBackgroundSVG(filename,SVG,writer);		//this write's the given svg before appending our code 
+			writeBackgroundSVG(filename,SVG,writer);		//this write's the given svg before appending our code 
 			createBorders(writer);
 			createTitles(writer,itinerary);
 			createLegs(writer,itinerary);
