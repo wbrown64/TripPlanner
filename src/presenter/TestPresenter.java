@@ -26,6 +26,19 @@ public class TestPresenter {
 		}
 		Presenter presenter = new Presenter(); // new Presenter(myView, myModel);
 	}
-	
+	@Test
+	public void testGuiFlag(){
+		Presenter p = new Presenter();
+		assertFalse("failure - should be false",p.GUI);
+	}
+	@Test
+	public void testCheckFlags(){
+		ArrayList<Location> testList = new ArrayList<Location>(0);
+		testList.add(new Location("1", "Brewery", "City", "2", "3", "4", new Coordinates("2", "3")));
+		Presenter p = new Presenter();
+		View v = new View(testList, "placeholder.txt");
+		p.checkFlags("-m");
+		assertTrue("failure - should be true",v.isShowMileage());
+	}
 
 }
