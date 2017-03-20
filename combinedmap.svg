@@ -1,5 +1,5 @@
-<?xml version="1.0"?>
-<svg width="1280" height="1024" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
 <svg
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
@@ -465,8 +465,6 @@
 		</g>
 
   </g>
-
-</svg>
 <g>
 <title>Borders</title>
 <line id="north" y2="50" x2="1230" y1="50" x1="50" stroke-width="5" stroke="#666666"/>
@@ -498,4 +496,44 @@
 <line id="leg14" y2="574.4199999999995" x2="449.66428571428634" y1="446.9850000000005" x1="143.37936507936323" stroke-width="3" stroke="#999999"/>
 <line id="leg15" y2="814.9166666666669" x2="372.02777777777794" y1="574.4199999999995" x1="449.66428571428634" stroke-width="3" stroke="#999999"/>
 </g>
+<g>
+<title>Locations</title>
+<text font-family="Sans-serif" font-size="16" id="id0" y="814.9166666666669" x="372.02777777777794">Wolf Creek</text>
+<text font-family="Sans-serif" font-size="16" id="id1" y="719.8858333333341" x="224.66825396825408">Silverton</text>
+<text font-family="Sans-serif" font-size="16" id="id2" y="707.6941666666676" x="194.5126984127004">Telluride</text>
+<text font-family="Sans-serif" font-size="16" id="id3" y="778.4058333333334" x="199.85079365079315">Purgatory</text>
+<text font-family="Sans-serif" font-size="16" id="id4" y="485.35666666666623" x="343.08968253968277">Crested Butte</text>
+<text font-family="Sans-serif" font-size="16" id="id5" y="417.66083333333484" x="365.8936507936526">Aspen mountain</text>
+<text font-family="Sans-serif" font-size="16" id="id6" y="378.71166666666636" x="454.7214285714294">Ski Cooper</text>
+<text font-family="Sans-serif" font-size="16" id="id7" y="350.7991666666655" x="499.25238095238205">Breckenridge</text>
+<text font-family="Sans-serif" font-size="16" id="id8" y="314.15999999999985" x="442.6404761904784">Vail</text>
+<text font-family="Sans-serif" font-size="16" id="id9" y="257.0516666666671" x="546.0777777777778">Winter Park</text>
+<text font-family="Sans-serif" font-size="16" id="id10" y="245.24500000000018" x="576.0928571428578">Eldora Mountain</text>
+<text font-family="Sans-serif" font-size="16" id="id11" y="303.95750000000095" x="586.4880952380961">Echo Mountain</text>
+<text font-family="Sans-serif" font-size="16" id="id12" y="166.1274999999999" x="584.0531746031744">Estes Valley</text>
+<text font-family="Sans-serif" font-size="16" id="id13" y="126.15166666666627" x="370.10793650793687">Steamboat</text>
+<text font-family="Sans-serif" font-size="16" id="id14" y="446.9850000000005" x="143.37936507936323">Powderhorn</text>
+<text font-family="Sans-serif" font-size="16" id="id15" y="574.4199999999995" x="449.66428571428634">Monarch</text>
+</g>
+<g>
+<title>Distances</title>
+<text font-family="Sans-serif" font-size="16" id="leg0" y="767.4012500000005" x="298.34801587301604">56</text>
+<text font-family="Sans-serif" font-size="16" id="leg1" y="713.7900000000009" x="209.59047619047723">10</text>
+<text font-family="Sans-serif" font-size="16" id="leg2" y="743.0500000000004" x="197.18174603174677">21</text>
+<text font-family="Sans-serif" font-size="16" id="leg3" y="631.8812499999998" x="271.47023809523796">99</text>
+<text font-family="Sans-serif" font-size="16" id="leg4" y="451.50875000000053" x="354.4916666666677">22</text>
+<text font-family="Sans-serif" font-size="16" id="leg5" y="398.1862500000006" x="410.307539682541">31</text>
+<text font-family="Sans-serif" font-size="16" id="leg6" y="364.75541666666595" x="476.98690476190575">16</text>
+<text font-family="Sans-serif" font-size="16" id="leg7" y="332.4795833333327" x="470.94642857143026">21</text>
+<text font-family="Sans-serif" font-size="16" id="leg8" y="285.60583333333346" x="494.3591269841281">37</text>
+<text font-family="Sans-serif" font-size="16" id="leg9" y="251.14833333333362" x="561.0853174603178">10</text>
+<text font-family="Sans-serif" font-size="16" id="leg10" y="274.60125000000056" x="581.290476190477">18</text>
+<text font-family="Sans-serif" font-size="16" id="leg11" y="235.04250000000042" x="585.2706349206353">41</text>
+<text font-family="Sans-serif" font-size="16" id="leg12" y="146.1395833333331" x="477.08055555555563">68</text>
+<text font-family="Sans-serif" font-size="16" id="leg13" y="286.5683333333334" x="256.74365079365003">120</text>
+<text font-family="Sans-serif" font-size="16" id="leg14" y="510.7025" x="296.52182539682474">105</text>
+<text font-family="Sans-serif" font-size="16" id="leg15" y="694.6683333333332" x="410.84603174603217">76</text>
+</g>
+
+
 </svg>

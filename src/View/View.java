@@ -152,9 +152,11 @@ public class View {
 	private double[] toCartesian(double x,double y){
 		double[] vals=new double[2];
 		//System.out.println("x is: "+x);
-		vals[0]= (Math.abs(x-(-109)) / Math.abs((-102) - (-109)))*(1230-50);
+		vals[0]= (Math.abs(x-(-109)) / Math.abs((-102) - (-109)))*(1063.0085-50);
+		//vals[0] = ((1180/7) * (x-109))+50;
 		//System.out.println(t);
-		vals[1]= (Math.abs(y-41) / (Math.abs(37-41))*(974-50));
+		vals[1]= (Math.abs(y-41) / (Math.abs(37-41))*(779.5144-50));
+		//vals[1] = ((1180/7)*(41-y)) + ((1024-(4 * 1180/7))/2);
 //		for(double i:vals){
 //			System.out.println(i);
 //		}
@@ -163,10 +165,10 @@ public class View {
 	private void createBorders(PrintWriter writer){
 		writer.println("<g>");
 		writer.println("<title>Borders</title>");
-		writer.println("<line id=\"north\" y2=\"50\" x2=\"1230\" y1=\"50\" x1=\"50\" stroke-width=\"5\" stroke=\"#666666\"/>");
-		writer.println("<line id=\"east\" y2=\"974\" x2=\"1230\" y1=\"50\" x1=\"1230\" stroke-width=\"5\" stroke=\"#666666\"/>");
-		writer.println("<line id=\"south\" y2=\"974\" x2=\"50\" y1=\"974\" x1=\"1230\" stroke-width=\"5\" stroke=\"#666666\"/>");
-		writer.println("<line id=\"west\" y2=\"50\" x2=\"50\" y1=\"974\" x1=\"50\" stroke-width=\"5\" stroke=\"#666666\"/>");
+		writer.println("<line id=\"north\" y2=\"34.76269\" x2=\"1027.66\" y1=\"34.76269\" x1=\"34.72952\" stroke-width=\"5\" stroke=\"#666666\"/>");
+		writer.println("<line id=\"east\" y2=\"744.70214\" x2=\"1027.6634\" y1=\"34.76269\" x1=\"1027\" stroke-width=\"5\" stroke=\"#666666\"/>");
+		writer.println("<line id=\"south\" y2=\"744.70214\" x2=\"34\" y1=\"744.70214\" x1=\"1027.6634\" stroke-width=\"5\" stroke=\"#666666\"/>");
+		writer.println("<line id=\"west\" y2=\"34.76269\" x2=\"34.72952\" y1=\"744.70214\" x1=\"34\" stroke-width=\"5\" stroke=\"#666666\"/>");
 		writer.println("</g>");
 		
 	}
@@ -182,8 +184,8 @@ public class View {
 		
 		writer.println("<g>");
 		writer.println("<title>Titles</title>");
-		writer.println("<text text-anchor=\"middle\" font-family=\"Sans-serif\" font-size=\"24\" id=\"state\" y=\"40\" x=\"640\">Colorado</text>");
-		writer.println("<text text-anchor=\"middle\" font-family=\"Sans-serif\" font-size=\"24\" id=\"distance\" y=\"1014\" x=\"640\">" + totalDistance + " miles</text>");
+		writer.println("<text text-anchor=\"middle\" font-family=\"Sans-serif\" font-size=\"24\" id=\"state\" y=\"30\" x=\"531\">Colorado</text>");
+		writer.println("<text text-anchor=\"middle\" font-family=\"Sans-serif\" font-size=\"24\" id=\"distance\" y=\"775\" x=\"531\">" + totalDistance + " miles</text>");
 		writer.println("</g>");
 	}
 	

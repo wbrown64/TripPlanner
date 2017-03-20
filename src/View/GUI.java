@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package View;
-
+//This is for testing purposes
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
@@ -335,7 +335,7 @@ public class GUI extends javax.swing.JFrame {
 	private String[] list=new String[1];
 	protected ArrayList<Location> itinerary;
 
-    void checkFlags(){
+    private void checkFlags(){
     	if(view.showID){
     		jRadioButton2.setSelected(true);
     	}
@@ -346,7 +346,7 @@ public class GUI extends javax.swing.JFrame {
     		jRadioButton3.setSelected(true);
     	}
     }
-    void setjLists(){
+   private void setjLists(){
     	for(int i=0;i<view.itinerary.size();i++){
     		list[i]=view.itinerary.get(i).getBrewery();
     		//System.out.println(view.itinerary.get(i).getBrewery());
@@ -355,7 +355,7 @@ public class GUI extends javax.swing.JFrame {
     	}
 
     }
-    void toggleButton(Boolean b){
+    private void toggleButton(Boolean b){
     	if(b)
     		b=false;
     	else
