@@ -14,6 +14,7 @@ public class TripCo {
 		// I'm trying to do almost all work in here
 		presenter.planTrip(args);
 		
+		
 
 //		for(Location L:model.getItinerary()){
 //			System.out.println(L.getCity());
