@@ -94,10 +94,10 @@ public class Coordinates {
 		this.distance_to_next = distance_to_next;
 	}
 
-	public static void main(String[] args) {
-		Coordinates C=new Coordinates("39°40'47.28\" N","104°59'26.8794\" W");
+	//public static void main(String[] args) {
+	//	Coordinates C=new Coordinates("39°40'47.28\" N","104°59'26.8794\" W");
 
-	}
+	//}
 
 	
 
