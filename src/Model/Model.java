@@ -6,6 +6,9 @@ import presenter.Reader;
 
 public class Model {
 		private ArrayList<Location>itinerary;
+		private ArrayList<Edge> edges = new ArrayList<Edge>(500);
+		private boolean twoOpt = false;
+		private boolean threeOpt = false;
 	
 	public Model(String filename) throws Exception{
 		Reader read=new Reader(filename);
@@ -13,6 +16,8 @@ public class Model {
 		this.setItinerary(i);
 		planTrip();
 		setLegDistance(itinerary);
+//		edges = new ArrayList<Edge>(500);
+		
 	}
 	
 	private void planTrip(){ // should this be private?
@@ -31,9 +36,12 @@ public class Model {
 				}
 			}
 			
-			
+			Location oldCurrent = current;
 			current=getItinerary().get(index);
 			itinerary_copy.add(current);
+			Edge addingEdge = new Edge(oldCurrent,current);
+			addingEdge.setDistance(min_distance);
+			edges.add(addingEdge);
 			getItinerary().remove(current);
 			if(getItinerary().size()!=0)
 			min_distance=getLegDistance(current,getItinerary().get(0));
@@ -90,6 +98,66 @@ public class Model {
 		return 6372.8*c;
 		
 	}
+	
+	public void twoOpt() {// you guys suck
+		for (int firstThingy = 0; firstThingy < edges.size(); ++firstThingy) {
+			Edge i = edges.get(firstThingy);
+			
+			for (int secondThingy = 0; secondThingy < edges.size(); ++secondThingy) {
+				Edge j;
+				if (!(firstThingy == secondThingy)) {
+					j = edges.get(secondThingy);
+				}
+				else 
+					continue;
+				
+				for (int thirdThingy = 0; thirdThingy < edges.size(); ++thirdThingy) {
+					Edge k;
+					if (!(firstThingy == thirdThingy || thirdThingy == secondThingy)) {
+						k = edges.get(thirdThingy);
+					}
+					else
+						continue;
+					//swapping i & j
+					evaluateEdges(i, j);
+					
+					//swapping j & k
+					evaluateEdges(j, k);
+					
+					//swapping i & k
+					evaluateEdges(i, k);
+					
+					
+				}
+			}
+		}
+		
+	}
+	//creates new nodes for 2Opt Evaluation, calls Swap Edge if distance is better
+	private void evaluateEdges(Edge e1, Edge e2) {
+		Edge newE1 = new Edge(e1.getfrom(),e2.getfrom());
+		Edge newE2 = new Edge(e1.getTo(),e2.getTo());
+		
+		double newE2Dist = getLegDistance(e1.getTo(),e2.getTo());
+		double newE1Dist = getLegDistance(e1.getfrom(),e2.getfrom());
+		
+		newE1.setDistance(newE1Dist);
+		newE2.setDistance(newE2Dist);
+		
+		if ((newE1Dist + newE2Dist) < (e1.getDistance() + e2.getDistance())){
+			swapEdge(e1,e2,newE1,newE2);
+		}
+	}
+	
+	// if the new edges are better, swaps them out for the old ones using the .equals methods defined in Location and Edge
+	private void swapEdge(Edge oldE1, Edge oldE2, Edge newE1, Edge newE2) {
+		int e1Index = edges.indexOf(oldE1);
+		int e2Index = edges.indexOf(oldE2);
+		
+		edges.set(e1Index, newE1);
+		edges.set(e2Index, newE2);
+	}
+	
 	private String getLocationName(double lat, double lon){
 		for(Location l:getItinerary()){
 			if(l.coord.dd_lat==lat&&l.coord.dd_long==lon){
@@ -114,10 +182,18 @@ public class Model {
 	}
 	public static void main(String[] args) throws Exception{
 		Model m=new Model("small_locations.txt");
-		
+
 		
 	}
+	
+	public void setTwoOpt(boolean t) {
+		twoOpt = t;
+	}
 
+	public void setThreeOpt(boolean t) {
+		threeOpt = t;
+	}
+	
 	public ArrayList<Location> getItinerary() {
 		return itinerary;
 	}

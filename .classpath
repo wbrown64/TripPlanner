@@ -4,11 +4,12 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jUnit"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="/Users/wbrown/Downloads/batik-1-2.8/batik-1.8.jar"/>
-	<classpathentry kind="lib" path="/Users/wbrown/Downloads/batik-1-2.8/batik-rasterizer-1.8.jar"/>
-	<classpathentry kind="lib" path="/Users/wbrown/Downloads/batik-1-2.8/batik-slideshow-1.8.jar"/>
-	<classpathentry kind="lib" path="/Users/wbrown/Downloads/batik-1-2.8/batik-squiggle-1.8.jar"/>
-	<classpathentry kind="lib" path="/Users/wbrown/Downloads/batik-1-2.8/batik-svgpp-1.8.jar"/>
-	<classpathentry kind="lib" path="/Users/wbrown/Downloads/batik-1-2.8/batik-ttf2svg-1.8.jar"/>
+	<classpathentry kind="lib" path="/s/bach/d/under/ashellum/Downloads/batik-1.8.jar"/>
+	<classpathentry kind="lib" path="/s/bach/d/under/ashellum/Downloads/batik-bin-1.8.zip"/>
+	<classpathentry kind="lib" path="/s/bach/d/under/ashellum/Downloads/batik-rasterizer-1.8.jar"/>
+	<classpathentry kind="lib" path="/s/bach/d/under/ashellum/Downloads/batik-slideshow-1.8.jar"/>
+	<classpathentry kind="lib" path="/s/bach/d/under/ashellum/Downloads/batik-squiggle-1.8.jar"/>
+	<classpathentry kind="lib" path="/s/bach/d/under/ashellum/Downloads/batik-svgpp-1.8.jar"/>
+	<classpathentry kind="lib" path="/s/bach/d/under/ashellum/Downloads/batik-ttf2svg-1.8.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
