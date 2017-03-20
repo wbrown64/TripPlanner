@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package View;
-
+//This is for testing purposes
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
