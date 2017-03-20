@@ -82,7 +82,18 @@ public class Location {
 	}
 	
 	public String toString() {
-		return "id: " + id + ", " + "Brewery: " + brewery + ", City: " + city + ", latitude: " + latitude
+		return "id: " + id + ", " + "name: " + brewery + ", City: " + city + ", latitude: " + latitude
 				+ ", longitude: " + longitude + ", altitude " + altitude; 
+	}
+	
+	public boolean equals(Location l) {
+		return (this.id.equals(l.id) && this.brewery.equals(l.brewery) && this.city.equals(l.city) && this.latitude.equals(l.latitude)
+				&& this.longitude.equals(l.longitude) && this.altitude.equals(l.altitude));
+	}
+	
+	public static void main(String[] args) {
+		Location loc1 = new Location("1","2","3","4","5","6", new Coordinates("1","1"));
+		Location loc2 = new Location("1","2","3","4","5","7", new Coordinates("1","1"));
+		System.out.println(loc1.equals(loc2));
 	}
 }
