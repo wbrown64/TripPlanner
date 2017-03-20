@@ -4,15 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jUnit"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-<<<<<<< HEAD
-	<classpathentry kind="lib" path="/s/bach/d/under/ashellum/Downloads/batik-1.8.jar"/>
-	<classpathentry kind="lib" path="/s/bach/d/under/ashellum/Downloads/batik-bin-1.8.zip"/>
-	<classpathentry kind="lib" path="/s/bach/d/under/ashellum/Downloads/batik-rasterizer-1.8.jar"/>
-	<classpathentry kind="lib" path="/s/bach/d/under/ashellum/Downloads/batik-slideshow-1.8.jar"/>
-	<classpathentry kind="lib" path="/s/bach/d/under/ashellum/Downloads/batik-squiggle-1.8.jar"/>
-	<classpathentry kind="lib" path="/s/bach/d/under/ashellum/Downloads/batik-svgpp-1.8.jar"/>
-	<classpathentry kind="lib" path="/s/bach/d/under/ashellum/Downloads/batik-ttf2svg-1.8.jar"/>
-=======
 	<classpathentry kind="lib" path="lib/batik-anim-1.8.jar"/>
 	<classpathentry kind="lib" path="lib/batik-awt-util-1.8.jar"/>
 	<classpathentry kind="lib" path="lib/batik-bridge-1.8.jar"/>
@@ -38,6 +29,5 @@
 	<classpathentry kind="lib" path="lib/xml-apis-1.3.04.jar"/>
 	<classpathentry kind="lib" path="lib/xml-apis-ext-1.3.04.jar"/>
 	<classpathentry kind="lib" path="lib/xmlgraphics-commons-2.0.jar"/>
->>>>>>> 6a85225f46fee6333ee94014cc45a5ce626fcd6d
 	<classpathentry kind="output" path="bin"/>
 </classpath>
