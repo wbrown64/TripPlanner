@@ -105,6 +105,69 @@ public class Model {
 			
 			for (int secondThingy = 0; secondThingy < edges.size(); ++secondThingy) {
 				Edge j;
+				
+				if (!(firstThingy == secondThingy)) {
+					j = edges.get(secondThingy);
+				}
+				else 
+					continue;
+				
+				for (int thirdThingy = 0; thirdThingy < edges.size(); ++thirdThingy) {
+					
+					Edge k;
+					
+					if (!(firstThingy == thirdThingy || thirdThingy == secondThingy)) {
+						k = edges.get(thirdThingy);
+					}
+					else
+						continue;
+					
+					//swapping i & j
+					evaluateEdges2Opt(i, j);
+					
+					//swapping j & k
+					evaluateEdges2Opt(j, k);
+					
+					//swapping k & i
+					evaluateEdges2Opt(k, i);
+					
+					
+				}
+			}
+		}
+		
+	}
+	//creates new nodes for 2Opt Evaluation, calls Swap Edge if distance is better
+	private void evaluateEdges2Opt(Edge e1, Edge e2) {
+		Edge newE1 = new Edge(e1.getfrom(),e2.getfrom());
+		Edge newE2 = new Edge(e1.getTo(),e2.getTo());
+		
+		double newE2Dist = getLegDistance(e1.getTo(),e2.getTo());
+		double newE1Dist = getLegDistance(e1.getfrom(),e2.getfrom());
+		
+		newE1.setDistance(newE1Dist);
+		newE2.setDistance(newE2Dist);
+		
+		if ((newE1Dist + newE2Dist) < (e1.getDistance() + e2.getDistance())){
+			swapEdge2Opt(e1,e2,newE1,newE2);
+		}
+	}
+	
+	// if the new edges are better, swaps them out for the old ones using the .equals methods defined in Location and Edge
+	private void swapEdge2Opt(Edge oldE1, Edge oldE2, Edge newE1, Edge newE2) {
+		int e1Index = edges.indexOf(oldE1);
+		int e2Index = edges.indexOf(oldE2);
+		
+		edges.set(e1Index, newE1);
+		edges.set(e2Index, newE2);
+	}
+	
+	public void threeOpt() {
+		for (int firstThingy = 0; firstThingy < edges.size(); ++firstThingy) {
+			Edge i = edges.get(firstThingy);
+			
+			for (int secondThingy = 0; secondThingy < edges.size(); ++secondThingy) {
+				Edge j;
 				if (!(firstThingy == secondThingy)) {
 					j = edges.get(secondThingy);
 				}
@@ -119,43 +182,18 @@ public class Model {
 					else
 						continue;
 					//swapping i & j
-					evaluateEdges(i, j);
+					evaluateEdges2Opt(i, j);
 					
 					//swapping j & k
-					evaluateEdges(j, k);
+					evaluateEdges2Opt(j, k);
 					
-					//swapping i & k
-					evaluateEdges(i, k);
+					//swapping k & i
+					evaluateEdges2Opt(k, i);
 					
 					
 				}
 			}
 		}
-		
-	}
-	//creates new nodes for 2Opt Evaluation, calls Swap Edge if distance is better
-	private void evaluateEdges(Edge e1, Edge e2) {
-		Edge newE1 = new Edge(e1.getfrom(),e2.getfrom());
-		Edge newE2 = new Edge(e1.getTo(),e2.getTo());
-		
-		double newE2Dist = getLegDistance(e1.getTo(),e2.getTo());
-		double newE1Dist = getLegDistance(e1.getfrom(),e2.getfrom());
-		
-		newE1.setDistance(newE1Dist);
-		newE2.setDistance(newE2Dist);
-		
-		if ((newE1Dist + newE2Dist) < (e1.getDistance() + e2.getDistance())){
-			swapEdge(e1,e2,newE1,newE2);
-		}
-	}
-	
-	// if the new edges are better, swaps them out for the old ones using the .equals methods defined in Location and Edge
-	private void swapEdge(Edge oldE1, Edge oldE2, Edge newE1, Edge newE2) {
-		int e1Index = edges.indexOf(oldE1);
-		int e2Index = edges.indexOf(oldE2);
-		
-		edges.set(e1Index, newE1);
-		edges.set(e2Index, newE2);
 	}
 	
 	private String getLocationName(double lat, double lon){
