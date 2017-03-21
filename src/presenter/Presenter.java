@@ -33,8 +33,12 @@ public class Presenter {
 					SVG = args[i];
 				}
 			}
+			
+			for(int i = 0; i < args.length;i++){
+				checkFlags(args[i]);
+			}
 			try {
-				m = new Model(filename);
+				m = new Model(filename,TwoOpt,ThreeOpt);
 			} 
 			catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -42,9 +46,7 @@ public class Presenter {
 			}
 			v = new View(m.getItinerary(),filename);			
 
-			for(int i = 0; i < args.length;i++){
-				checkFlags(args[i]);
-			}
+			
 			v.initializeTrip(this);
 	}
 	

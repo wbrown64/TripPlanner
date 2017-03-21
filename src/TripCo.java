@@ -10,7 +10,6 @@ public class TripCo {
 		// These objects only exist in this class, Presenter creates its own
 		// I changed this back to no parameters, solves problems with command line flags
 		Presenter presenter = new Presenter();
-		System.out.println("ha;sdlfjk");
 		// I'm trying to do almost all work in here
 		presenter.planTrip(args);
 

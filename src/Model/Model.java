@@ -2,6 +2,7 @@ package Model;
 
 import java.util.ArrayList;
 
+import presenter.Presenter;
 import presenter.Reader;
 
 public class Model {
@@ -10,11 +11,14 @@ public class Model {
 		private boolean twoOpt = false;
 		private boolean threeOpt = false;
 	
-	public Model(String filename) throws Exception{
+	public Model(String filename, boolean twoOpt,boolean threeOpt) throws Exception{
+		this.twoOpt=twoOpt;
+		this.threeOpt=threeOpt;
 		Reader read=new Reader(filename);
 		ArrayList<Location> i=read.readFile();
 		this.setItinerary(i);
 		standard_trip();
+		System.out.println(twoOpt);
 		if(twoOpt)
 			twoOpt();
 		setLegDistance(itinerary);
@@ -239,7 +243,7 @@ public class Model {
 		return l.coord.dd_long;
 	}
 	public static void main(String[] args) throws Exception{
-		Model m=new Model("small_locations.txt");
+		//Model m=new Model("small_locations.txt");
 
 		
 	}
