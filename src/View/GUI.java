@@ -243,21 +243,23 @@ public class GUI extends javax.swing.JFrame {
     		view.showID=false;
     	else
     		view.showID=true;
-    	System.out.println("ID is now: "+view.showID);    }                                             
+    //	System.out.println("ID is now: "+view.showID);    
+    	}                                             
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                              
     	if(view.showName)
     		view.showName=false;
     	else
     		view.showName=true;
-    	System.out.println("names is now: "+view.showName);    }                                             
+    //	System.out.println("names is now: "+view.showName);    
+    	}                                             
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                              
     	if(view.showMileage)
     		view.showMileage=false;
     	else
     		view.showMileage=true;
-    	System.out.println("mileage is now: "+view.showMileage);
+    	//System.out.println("mileage is now: "+view.showMileage);
     }                                             
     
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
@@ -265,7 +267,7 @@ public class GUI extends javax.swing.JFrame {
 		view.createXML(itinerary,view.filename+".xml");
     	
 //    	System.out.println("pressing generate map button ");
-        JFrame frame = new JFrame("JSVGCanvas Demo");
+        JFrame frame = new JFrame("Trip");
         frame.setSize(500, 500);
 
         frame.addWindowListener(new WindowAdapter() {
@@ -273,7 +275,7 @@ public class GUI extends javax.swing.JFrame {
             System.exit(0);
           }
         });
-        System.out.println(view.filename+".svg");
+       // System.out.println(view.filename+".svg");
         new SVGCanvas(frame,view.filename+".svg");
     } 
     /**
