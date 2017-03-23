@@ -16,10 +16,12 @@ import java.util.Arrays;
 import javax.swing.JFileChooser;
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
+import javax.swing.JList;
 
 import org.apache.batik.swing.JSVGCanvas;
 
 import Model.Location;
+import Model.Model;
 
 /**
  *
@@ -42,12 +44,14 @@ public class GUI extends javax.swing.JFrame {
 
     /**
      * Creates new form GUIexampleUI
+     * @param model 
      */
    
 
 
-    public GUI(View v) {
+    public GUI(View v, Model model) {
     	this.view=v;
+    	this.model=model;
     	itinerary=view.itinerary;
     	setjLists();
     	initComponents();
@@ -113,6 +117,11 @@ public class GUI extends javax.swing.JFrame {
         });
 
         jRadioButton4.setText("2-Opt");
+        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton4ActionPerformed(evt);
+            }
+        });
         jRadioButton5.setText("3-Opt");
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
@@ -121,7 +130,7 @@ public class GUI extends javax.swing.JFrame {
             public String getElementAt(int i) { return strings[i]; }
         });
         jScrollPane1.setViewportView(jList1);
-
+        
         jList2.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -138,7 +147,12 @@ public class GUI extends javax.swing.JFrame {
         jButton3.setText("Generate Map");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                try {
+					jButton3ActionPerformed(evt);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
         });
 
@@ -224,6 +238,11 @@ public class GUI extends javax.swing.JFrame {
     int returnVal = fileChooser.showOpenDialog(this);
     if (returnVal == JFileChooser.APPROVE_OPTION) {
         File file = fileChooser.getSelectedFile();
+        //
+        
+        System.out.println(file.getAbsolutePath());
+        model.filename=file.getName();
+        updatejLists(jList1);
        // try {
           // What to do with the file, e.g. display it in a TextArea
           //textarea.read( new FileReader( file.getAbsolutePath() ), null );
@@ -238,6 +257,13 @@ public class GUI extends javax.swing.JFrame {
         System.exit(0);
     }                                    
 
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                              
+    	if(view.showMileage)
+    		view.showMileage=false;
+    	else
+    		view.showMileage=true;
+    	//System.out.println("mileage is now: "+view.showMileage);
+    } 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {   
     	if(view.showID)
     		view.showID=false;
@@ -251,20 +277,23 @@ public class GUI extends javax.swing.JFrame {
     		view.showName=false;
     	else
     		view.showName=true;
-    //	System.out.println("names is now: "+view.showName);    
+    	//System.out.println("names is now: "+view.showName);    
     	}                                             
+    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                              
+    		if(model.twoOpt)
+    			model.twoOpt=false;
+    		else
+    			model.twoOpt=true;
+//    		System.out.println("twoOpt is now "+model.twoOpt);
+    	}
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) throws Exception {
+    	//activateModel();
+    	model.initializeModel();
+    	if(model.twoOpt)
+    		model.twoOpt();
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                              
-    	if(view.showMileage)
-    		view.showMileage=false;
-    	else
-    		view.showMileage=true;
-    	//System.out.println("mileage is now: "+view.showMileage);
-    }                                             
-    
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-		view.createSvg(itinerary,view.filename+".svg",view.SVG);
-		view.createXML(itinerary,view.filename+".xml");
+		view.createSvg(model.getItinerary(),view.filename+".svg",view.SVG);
+		view.createXML(model.getItinerary(),view.filename+".xml");
     	
 //    	System.out.println("pressing generate map button ");
         JFrame frame = new JFrame("Trip");
@@ -308,7 +337,7 @@ public class GUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GUI(view).setVisible(true);
+                new GUI(view,model).setVisible(true);
             }
         });
     }
@@ -334,6 +363,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration  
 	private static View view;
+	private static Model model;
 	private String[] list=new String[1];
 	protected ArrayList<Location> itinerary;
 
@@ -347,6 +377,8 @@ public class GUI extends javax.swing.JFrame {
     	if(view.showName){
     		jRadioButton3.setSelected(true);
     	}
+    	if(model.twoOpt)
+    		jRadioButton4.setSelected(true);
     }
    private void setjLists(){
     	for(int i=0;i<view.itinerary.size();i++){
@@ -357,11 +389,18 @@ public class GUI extends javax.swing.JFrame {
     	}
 
     }
-    private void toggleButton(Boolean b){
-    	if(b)
-    		b=false;
-    	else
-    		b=true;
-    }
+   private String[] createArray(){
+	   String names[]=new String[1];
+		for(int i=0;i<model.getItinerary().size();i++){
+    		names[i]=model.getItinerary().get(i).getBrewery();
+    		//System.out.println(view.itinerary.get(i).getBrewery());
+    		//System.out.println(list[i]);
+    		names=Arrays.copyOf(names, names.length+1);
+    	}
+		return names;
+   }
+   private void updatejLists(JList<String> list){
+	   list.removeAll();
+   }
     
 }
