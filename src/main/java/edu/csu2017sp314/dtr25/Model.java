@@ -1,9 +1,9 @@
-package Model;
+package main.java.edu.csu2017sp314.dtr25;
 
 import java.util.ArrayList;
 
-import presenter.Presenter;
-import presenter.Reader;
+import main.java.edu.csu2017sp314.dtr25.Presenter;
+import main.java.edu.csu2017sp314.dtr25.Reader;
 
 public class Model {
 		private ArrayList<Location>itinerary;

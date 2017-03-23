@@ -27,6 +27,8 @@ public class Model {
 		this.setItinerary(i);
 		standard_trip();
 		setLegDistance(itinerary);
+		//FIXME
+		threeOpt();
 		
 	}
 	
@@ -199,37 +201,48 @@ public class Model {
 	}
 	
 	public void threeOpt() {
-		for (int firstThingy = 0; firstThingy < edges.size(); ++firstThingy) {
-			Edge i = edges.get(firstThingy);
-			
-			for (int secondThingy = 0; secondThingy < edges.size(); ++secondThingy) {
-				Edge j;
-				if (!(firstThingy == secondThingy)) {
-					j = edges.get(secondThingy);
-				}
-				else 
-					continue;
-				
-				for (int thirdThingy = 0; thirdThingy < edges.size(); ++thirdThingy) {
-					Edge k;
-					if (!(firstThingy == thirdThingy || thirdThingy == secondThingy)) {
-						k = edges.get(thirdThingy);
+		twoOpt();
+		double bestDistance=getTotalDistance(itinerary);
+	    double newDistance=bestDistance;
+	    int c=0;
+	    	while(c!=10){
+	    	ArrayList<Location> old_route=itinerary;
+			ArrayList<Location> new_route;
+			for(int i=0;i<old_route.size()-2;i++){
+				for(int j=i+1;j<old_route.size()-1;j++){
+					for (int k = j+1; k<old_route.size();++k) {
+						new_route=threeOptSwap(old_route,i,j,k);
+						newDistance=getTotalDistance(new_route);
+						if(newDistance<bestDistance){
+							itinerary=new_route;
+							bestDistance=newDistance;
+							c=0;
+						}
 					}
-					else
-						continue;
-					//swapping i & j
-					evaluateEdges2Opt(i, j);
-					
-					//swapping j & k
-					evaluateEdges2Opt(j, k);
-					
-					//swapping k & i
-					evaluateEdges2Opt(k, i);
-					
-					
 				}
 			}
+			c++;
 		}
+	}
+	
+	private ArrayList<Location> threeOptSwap(ArrayList<Location> oldRoute, int a, int b, int c) {
+		
+		ArrayList<Location> newRoute = new ArrayList<>();
+		for(int i = 0; i < a ; ++i){
+			newRoute.add(oldRoute.get(i));
+		}
+		for(int i = b; i >= a; --i){
+			newRoute.add(oldRoute.get(i));
+		}
+		//index out of bounds occuring here when c = 53, and then 54.
+		for(int i = b + 1; i < c; ++i){
+			newRoute.add(oldRoute.get(i));
+		}
+		for (int i = oldRoute.size()-1; i >= c; --i) {
+			newRoute.add(oldRoute.get(i));
+		}
+		
+		return newRoute;
 	}
 	
 	private String getLocationName(double lat, double lon){

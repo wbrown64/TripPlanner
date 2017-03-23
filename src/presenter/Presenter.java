@@ -42,6 +42,9 @@ public class Presenter {
 				m = new Model(filename,TwoOpt,ThreeOpt);
 				if(TwoOpt)
 					m.twoOpt();
+				//FIXME
+				/*if (true)
+					m.threeOpt();*/
 			} 
 			catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -54,6 +57,7 @@ public class Presenter {
 			}
 			else{
 				try {
+					//FIXME
 					m = new Model(filename,TwoOpt,ThreeOpt);
 				} 
 				catch (Exception e) {
