@@ -37,7 +37,7 @@ public class TestPresenter {
 		testList.add(new Location("1", "Brewery", "City", "2", "3", "4", new Coordinates("2", "3")));
 		Presenter p = new Presenter();
 		View v = new View(testList, "placeholder.txt");
-		p.checkFlags("-m");
+		p.checkViewFlags("-m");
 		assertTrue("failure - should be true",v.isShowMileage());
 	}
 
