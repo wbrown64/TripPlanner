@@ -8,21 +8,22 @@ import presenter.Reader;
 public class Model {
 		private ArrayList<Location>itinerary;
 		private ArrayList<Edge> edges = new ArrayList<Edge>(500);
-		private boolean twoOpt = false;
-		private boolean threeOpt = false;
+		public boolean twoOpt = false;
+		public boolean threeOpt = false;
+		public String filename;
 	
 	public Model(String filename, boolean twoOpt,boolean threeOpt) throws Exception{
 		this.twoOpt=twoOpt;
 		this.threeOpt=threeOpt;
+		this.filename=filename;
+		initializeModel();
+	}
+	 public void initializeModel() throws Exception{
 		Reader read=new Reader(filename);
 		ArrayList<Location> i=read.readFile();
 		this.setItinerary(i);
 		standard_trip();
-		System.out.println(twoOpt);
-		if(twoOpt)
-			twoOpt();
 		setLegDistance(itinerary);
-//		edges = new ArrayList<Edge>(500);
 		
 	}
 	
@@ -105,6 +106,7 @@ public class Model {
 		
 	}
 	private double getTotalDistance(ArrayList<Location> list){
+		setLegDistance(list);
 		double totalDistance = 0;
 		double distance = 0;
 		for(int i = 0; i < list.size()-1; i++){
@@ -117,19 +119,24 @@ public class Model {
 	}
 	
 	public void twoOpt() {// you guys suck <--wtf bro.. 
-		for(int z=0;z<itinerary.size()*3;z++){
 	    double bestDistance=getTotalDistance(itinerary);
-		ArrayList<Location> old_route=itinerary;
-		ArrayList<Location> new_route;
-		for(int i=0;i<old_route.size()-1;i++){
-			for(int j=i+1;j<old_route.size();j++){
-				new_route=twoOptSwap(old_route,i,j);
-				double new_distance=getTotalDistance(new_route);
-				if(new_distance<bestDistance){
-					itinerary=new_route;
+	    double newDistance=bestDistance;
+	    int c=0;
+	    	while(c!=10){
+	    	ArrayList<Location> old_route=itinerary;
+			ArrayList<Location> new_route;
+			for(int i=0;i<old_route.size()-1;i++){
+				for(int j=i+1;j<old_route.size();j++){
+					new_route=twoOptSwap(old_route,i,j);
+					newDistance=getTotalDistance(new_route);
+					if(newDistance<bestDistance){
+						itinerary=new_route;
+						bestDistance=newDistance;
+						c=0;
 					}
 				}
 			}
+			c++;
 		}
 	}
 
@@ -141,7 +148,7 @@ public class Model {
 		for(int i=b;i>=a;i--){
 			new_route.add(old_route.get(i));
 		}
-		for(int i=b+1;b<old_route.size();i++){
+		for(int i=b+1;i<old_route.size();i++){
 			new_route.add(old_route.get(i));
 		}
 		return new_route;
