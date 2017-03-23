@@ -8,21 +8,25 @@ import presenter.Reader;
 public class Model {
 		private ArrayList<Location>itinerary;
 		private ArrayList<Edge> edges = new ArrayList<Edge>(500);
-		boolean twoOpt;
-		boolean threeOpt;
+
+		public boolean twoOpt = false;
+		public boolean threeOpt = false;
+		public String filename;
 	
 	public Model(String filename, boolean twoOpt,boolean threeOpt) throws Exception{
 		this.twoOpt=twoOpt;
 		this.threeOpt=threeOpt;
+
+
+		this.filename=filename;
+		initializeModel();
+	}
+	 public void initializeModel() throws Exception{
 		Reader read=new Reader(filename);
 		ArrayList<Location> i=read.readFile();
 		this.setItinerary(i);
 		standard_trip();
-		System.out.println(twoOpt);
-		if(twoOpt)
-			twoOpt();
 		setLegDistance(itinerary);
-//		edges = new ArrayList<Edge>(500);
 		
 	}
 	
@@ -106,54 +110,43 @@ public class Model {
 		
 	}
 	private double getTotalDistance(ArrayList<Location> list){
+		setLegDistance(list);
 		double totalDistance = 0;
 		double distance = 0;
 		for(int i = 0; i < list.size()-1; i++){
-			distance += getLegDistance(list.get(i),list.get(i+1));
-			//System.out.println(list.get(i).legDistance);
+			distance += list.get(i).legDistance;
 		}
-		distance += getLegDistance(list.get(list.size()-1),list.get(0));
+		distance += list.get(list.size()-1).legDistance;
 		distance = Math.round(distance);
 		totalDistance = distance;
 		return totalDistance;
 	}
 	
-	public void twoOpt() {
-		double bestDistance;
-		boolean improvement = true;
-		while (improvement) {
-			bestDistance=getTotalDistance(itinerary);
-			System.out.println("bestDistance: " + bestDistance);
-			ArrayList<Location> old_route=itinerary;
+
+	public void twoOpt() {// you guys suck <--wtf bro.. 
+	    double bestDistance=getTotalDistance(itinerary);
+	    double newDistance=bestDistance;
+	    int c=0;
+	    	while(c!=10){
+	    	ArrayList<Location> old_route=itinerary;
 			ArrayList<Location> new_route;
 			for(int i=0;i<old_route.size()-1;i++){
 				for(int j=i+1;j<old_route.size();j++){
-					//System.out.println("Times iterated: " + i);
 					new_route=twoOptSwap(old_route,i,j);
-					//System.out.println("getTotalDistance(new_route): " + getTotalDistance(new_route));
-					double new_distance=getTotalDistance(new_route);
-					if(new_distance<bestDistance){
-						itinerary.clear();
-						itinerary.addAll(new_route);
-						//System.out.println("itinerary distance: " + getTotalDistance(itinerary));
-						System.out.println("new_route distance: " + getTotalDistance(new_route));
-						improvement = true;
-						//System.out.println("Best Distance: " + bestDistance);
-						//System.out.println("new Distance to replace with: " + new_distance);
-					}
-					else {
-						improvement = false;
-						//System.out.println("No improvement");
+					newDistance=getTotalDistance(new_route);
+					if(newDistance<bestDistance){
+						itinerary=new_route;
+						bestDistance=newDistance;
+						c=0;
 					}
 				}
 			}
-		} 
-		System.out.println("System has exitted");
+			c++;
+		}
 	}
 
 	ArrayList<Location> twoOptSwap(ArrayList<Location> old_route,int a, int b){
-		ArrayList<Location>new_route=new ArrayList<Location>(1000);
-		//System.out.println(old_route.size() + " b's value: " + b);
+		ArrayList<Location>new_route=new ArrayList<Location>();
 		for(int i=0;i<a;i++){
 			new_route.add(old_route.get(i));
 		}
@@ -162,7 +155,6 @@ public class Model {
 		}
 		for(int i=b+1;i<old_route.size();i++){
 			new_route.add(old_route.get(i));
-			//System.out.println("b's value: " + i);
 		}
 		return new_route;
 	}

@@ -36,7 +36,7 @@ public class Presenter {
 				}
 			}
 			try {
-				m = new Model(filename);
+				m = new Model(filename,TwoOpt,ThreeOpt);
 			} 
 			catch (Exception e) {
 				// TODO Auto-generated catch block

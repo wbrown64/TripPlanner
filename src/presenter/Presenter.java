@@ -8,6 +8,8 @@ public class Presenter {
 	protected Model m;
 	protected View v;
 	public boolean GUI = false;
+	public boolean TwoOpt = false;
+	public boolean ThreeOpt = false;
 	public String filename = "";
 	public String XML = "";
 	public String SVG = "";
@@ -31,8 +33,15 @@ public class Presenter {
 					SVG = args[i];
 				}
 			}
+			
+			for(int i = 0; i < args.length;i++){
+				checkFlags(args[i]);
+			}
+			if(!GUI){
 			try {
-				m = new Model(filename,true,false);
+				m = new Model(filename,TwoOpt,ThreeOpt);
+				if(TwoOpt)
+					m.twoOpt();
 			} 
 			catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -40,11 +49,24 @@ public class Presenter {
 			}
 			v = new View(m.getItinerary(),filename);			
 
-			for(int i = 0; i < args.length;i++){
-				checkFlags(args[i]);
+			
+			v.initializeTrip(this,m);
 			}
-			v.initializeTrip(this);
-	}
+			else{
+				try {
+					m = new Model(filename,TwoOpt,ThreeOpt);
+				} 
+				catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				v = new View(m.getItinerary(),filename);			
+
+				
+				v.initializeTrip(this,m);
+				}
+			}
+	
 	
 	public void checkFlags(String arg) {
 		if(arg.equals("-m")){
@@ -57,9 +79,10 @@ public class Presenter {
 			v.setShowName(true);
 		}
 		else if(arg.equals("-2")){
+			TwoOpt = true;
 		}
 		else if(arg.equals("-3")){
-			m.threeOpt();
+			ThreeOpt = true;
 		}
 		else if(arg.equals("-g")){
 			GUI = true;
