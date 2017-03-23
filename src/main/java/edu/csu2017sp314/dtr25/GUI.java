@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
+package main.java.edu.csu2017sp314.dtr25;
 //This is for testing purposes
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -19,7 +19,7 @@ import javax.swing.JFrame;
 
 import org.apache.batik.swing.JSVGCanvas;
 
-import Model.Location;
+import main.java.edu.csu2017sp314.dtr25.Location;
 
 /**
  *

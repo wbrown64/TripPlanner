@@ -2,25 +2,31 @@ package Model;
 
 import java.util.ArrayList;
 
+import presenter.Presenter;
 import presenter.Reader;
 
 public class Model {
 		private ArrayList<Location>itinerary;
 		private ArrayList<Edge> edges = new ArrayList<Edge>(500);
-		private boolean twoOpt = false;
-		private boolean threeOpt = false;
+		boolean twoOpt;
+		boolean threeOpt;
 	
-	public Model(String filename) throws Exception{
+	public Model(String filename, boolean twoOpt,boolean threeOpt) throws Exception{
+		this.twoOpt=twoOpt;
+		this.threeOpt=threeOpt;
 		Reader read=new Reader(filename);
 		ArrayList<Location> i=read.readFile();
 		this.setItinerary(i);
-		planTrip();
+		standard_trip();
+		System.out.println(twoOpt);
+		if(twoOpt)
+			twoOpt();
 		setLegDistance(itinerary);
 //		edges = new ArrayList<Edge>(500);
 		
 	}
 	
-	private void planTrip(){ // should this be private?
+	private void standard_trip(){ // should this be private?
 		ArrayList<Location> itinerary_copy=new ArrayList<Location>();
 		Location current=getItinerary().get(0);
 		double min_distance=getLegDistance(current,getItinerary().get(1));
@@ -30,6 +36,7 @@ public class Model {
 		while(getItinerary().size()!=0){
 			for(int i=0;i<getItinerary().size();i++){
 				double distance=getLegDistance(current,getItinerary().get(i));
+				//System.out.println("getLegDistance(): " + getLegDistance(current,getItinerary().get(i)));
 				if(distance<=min_distance){
 					min_distance=distance;
 					index=i;
@@ -98,45 +105,82 @@ public class Model {
 		return 6372.8*c;
 		
 	}
+	private double getTotalDistance(ArrayList<Location> list){
+		double totalDistance = 0;
+		double distance = 0;
+		for(int i = 0; i < list.size()-1; i++){
+			distance += getLegDistance(list.get(i),list.get(i+1));
+			//System.out.println(list.get(i).legDistance);
+		}
+		distance += getLegDistance(list.get(list.size()-1),list.get(0));
+		distance = Math.round(distance);
+		totalDistance = distance;
+		return totalDistance;
+	}
 	
-	public void twoOpt() {// you guys suck
-		for (int firstThingy = 0; firstThingy < edges.size(); ++firstThingy) {
-			Edge i = edges.get(firstThingy);
-			
-			for (int secondThingy = 0; secondThingy < edges.size(); ++secondThingy) {
-				Edge j;
-				
-				if (!(firstThingy == secondThingy)) {
-					j = edges.get(secondThingy);
-				}
-				else 
-					continue;
-				
-				for (int thirdThingy = 0; thirdThingy < edges.size(); ++thirdThingy) {
-					
-					Edge k;
-					
-					if (!(firstThingy == thirdThingy || thirdThingy == secondThingy)) {
-						k = edges.get(thirdThingy);
+	public void twoOpt() {
+		double bestDistance;
+		boolean improvement = true;
+		while (improvement) {
+			bestDistance=getTotalDistance(itinerary);
+			System.out.println("bestDistance: " + bestDistance);
+			ArrayList<Location> old_route=itinerary;
+			ArrayList<Location> new_route;
+			for(int i=0;i<old_route.size()-1;i++){
+				for(int j=i+1;j<old_route.size();j++){
+					//System.out.println("Times iterated: " + i);
+					new_route=twoOptSwap(old_route,i,j);
+					//System.out.println("getTotalDistance(new_route): " + getTotalDistance(new_route));
+					double new_distance=getTotalDistance(new_route);
+					if(new_distance<bestDistance){
+						itinerary.clear();
+						itinerary.addAll(new_route);
+						//System.out.println("itinerary distance: " + getTotalDistance(itinerary));
+						System.out.println("new_route distance: " + getTotalDistance(new_route));
+						improvement = true;
+						//System.out.println("Best Distance: " + bestDistance);
+						//System.out.println("new Distance to replace with: " + new_distance);
 					}
-					else
-						continue;
-					
-					//swapping i & j
-					evaluateEdges2Opt(i, j);
-					
-					//swapping j & k
-					evaluateEdges2Opt(j, k);
-					
-					//swapping k & i
-					evaluateEdges2Opt(k, i);
-					
-					
+					else {
+						improvement = false;
+						//System.out.println("No improvement");
+					}
 				}
 			}
-		}
-		
+		} 
+		System.out.println("System has exitted");
 	}
+
+	ArrayList<Location> twoOptSwap(ArrayList<Location> old_route,int a, int b){
+		ArrayList<Location>new_route=new ArrayList<Location>(1000);
+		//System.out.println(old_route.size() + " b's value: " + b);
+		for(int i=0;i<a;i++){
+			new_route.add(old_route.get(i));
+		}
+		for(int i=b;i>=a;i--){
+			new_route.add(old_route.get(i));
+		}
+		for(int i=b+1;i<old_route.size();i++){
+			new_route.add(old_route.get(i));
+			//System.out.println("b's value: " + i);
+		}
+		return new_route;
+	}
+	
+	private double[] toCartesian(double x,double y){
+		double[] vals=new double[2];
+		//System.out.println("x is: "+x);
+		vals[0]= (Math.abs(x-(-109)) / Math.abs((-102) - (-109)))*(1063.0085-50);
+		//vals[0] = ((1180/7) * (x-109))+50;
+		//System.out.println(t);
+		vals[1]= (Math.abs(y-41) / (Math.abs(37-41))*(779.5144-50));
+		//vals[1] = ((1180/7)*(41-y)) + ((1024-(4 * 1180/7))/2);
+//		for(double i:vals){
+//			System.out.println(i);
+//		}
+		return vals;
+	}
+	
 	//creates new nodes for 2Opt Evaluation, calls Swap Edge if distance is better
 	private void evaluateEdges2Opt(Edge e1, Edge e2) {
 		Edge newE1 = new Edge(e1.getfrom(),e2.getfrom());
@@ -219,7 +263,7 @@ public class Model {
 		return l.coord.dd_long;
 	}
 	public static void main(String[] args) throws Exception{
-		Model m=new Model("small_locations.txt");
+		//Model m=new Model("small_locations.txt");
 
 		
 	}

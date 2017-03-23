@@ -7,8 +7,6 @@ import View.View;
 public class Presenter {
 	protected Model m;
 	protected View v;
-	public boolean TwoOpt = false;
-	public boolean ThreeOpt = false;
 	public boolean GUI = false;
 	public String filename = "";
 	public String XML = "";
@@ -34,7 +32,7 @@ public class Presenter {
 				}
 			}
 			try {
-				m = new Model(filename);
+				m = new Model(filename,true,false);
 			} 
 			catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -59,10 +57,9 @@ public class Presenter {
 			v.setShowName(true);
 		}
 		else if(arg.equals("-2")){
-			TwoOpt = true;
 		}
 		else if(arg.equals("-3")){
-			ThreeOpt = true;
+			m.threeOpt();
 		}
 		else if(arg.equals("-g")){
 			GUI = true;
