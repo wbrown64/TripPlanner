@@ -8,8 +8,10 @@ package View;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -75,6 +77,7 @@ public class GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         fileChooser = new javax.swing.JFileChooser();
+        fileChooser2= new javax.swing.JFileChooser();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
@@ -89,16 +92,19 @@ public class GUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
+        jMenuBar2 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        Open = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        OpenCSV = new javax.swing.JMenuItem();
+        OpenXML = new javax.swing.JMenuItem();
         Exit = new javax.swing.JMenuItem();
 
         checkFlags();
         
-        fileChooser.setDialogTitle("Choose a .csv file");
-        fileChooser.setFileFilter(new MyCustomFilter());
+        fileChooser.setDialogTitle("Choose a file");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jRadioButton1.setText("Mileage");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -128,6 +134,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         jRadioButton5.setText("3-Opt");
+        
         jScrollPane1.setViewportView(jList1);
 
         jScrollPane2.setViewportView(jList2);
@@ -140,7 +147,9 @@ public class GUI extends javax.swing.JFrame {
         		ArrayList<Location>new_itinerary=new ArrayList<Location>();
         		for(int i=0;i<indicies.length;i++){
         			String name=jList1.getModel().getElementAt(indicies[i]);
-        			for(Location L:itinerary){
+        			for(Location L:model.getItinerary()){
+//    					System.out.println("comparing to this from itinerary "+L.getBrewery());
+//    					System.out.println("name from jList "+name);
         				if(L.getBrewery().equals(name)){
         					new_itinerary.add(L);
         				}
@@ -165,27 +174,39 @@ public class GUI extends javax.swing.JFrame {
                 try {
 					jButton3ActionPerformed(evt);
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
             }
         });
 
-        jMenu1.setText("File");
+        jMenu1.setText("Choose a File");
+        
+        
 
-        Open.setText("Open");
-        Open.addActionListener(new java.awt.event.ActionListener() {
+        OpenCSV.setText("Select an input CSV file");
+        OpenCSV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 try {
 					OpenActionPerformed(evt);
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
             }
         });
-        jMenu1.add(Open);
-
+        jMenu1.add(OpenCSV);
+        
+        OpenXML.setText("Select a subset XML file");
+        OpenXML.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                try {
+					OpenActionPerformed(evt);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+            }
+        });
+        jMenu1.add(OpenXML);
+        
         Exit.setText("Exit");
         Exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -197,8 +218,22 @@ public class GUI extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
-        
-        btnChooseSubsetFile = new JButton("Choose Subset File");
+        btnChooseSubsetFile = new JButton("Save Subset to XML");
+        btnChooseSubsetFile.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		//System.out.println("clicking add .xml file button");
+        		try {
+					view.writeSubsetXML();
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (UnsupportedEncodingException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+        		
+        	}
+        });
        
         
         setJList(jList1);
@@ -268,20 +303,28 @@ public class GUI extends javax.swing.JFrame {
         File file = fileChooser.getSelectedFile();
         //
         
-        System.out.println(file.getAbsolutePath());
+       // System.out.println(file.getAbsolutePath());
+        String prefix=file.getName().substring(file.getName().length()-4,file.getName().length());
+        if(prefix.equalsIgnoreCase(".csv")){
         model.filename=file.getName();
         model.newItinerary();
-       // try {
-          // What to do with the file, e.g. display it in a TextArea
-          //textarea.read( new FileReader( file.getAbsolutePath() ), null );
-//        } catch (IOException ex) {
-//          System.out.println("problem accessing file"+file.getAbsolutePath());
-//        }
+        setJList(jList1);
+        }
+        else if(prefix.equalsIgnoreCase(".xml")){
+        	view.XML=file.getName();
+        	System.out.println(file.getName());
+        	generateSubset();
+        }
+        
     } else {
         System.out.println("File access cancelled by user.");
     }    }                                    
 
-    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {                                     
+
+	
+
+
+	private void ExitActionPerformed(java.awt.event.ActionEvent evt) {                                     
         System.exit(0);
     }                                    
 
@@ -334,7 +377,7 @@ public class GUI extends javax.swing.JFrame {
         });
        // System.out.println(view.filename+".svg");
         new SVGCanvas(frame,view.filename+".svg");
-
+        
     } 
     /**
      */
@@ -373,8 +416,10 @@ public class GUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify                     
     private javax.swing.JMenuItem Exit;
-    private javax.swing.JMenuItem Open;
+    private javax.swing.JMenuItem OpenCSV;
+    private javax.swing.JMenuItem OpenXML;
     private javax.swing.JFileChooser fileChooser;
+    private javax.swing.JFileChooser fileChooser2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -382,7 +427,9 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList2;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
@@ -397,6 +444,7 @@ public class GUI extends javax.swing.JFrame {
 	private String[] list=new String[1];
 	protected ArrayList<Location> itinerary;
 	private JButton btnChooseSubsetFile;
+	private String subsetFilename="";
 
     private void checkFlags(){
     	if(view.showID){
@@ -445,5 +493,15 @@ public class GUI extends javax.swing.JFrame {
 		     public String getElementAt(int i) { return strings[i]; }
 		     });
    }
+   
+   private void generateSubset() {
+	   view.readSubsetXML();
+	   setJList(jList1);
+	}
+//   private void saveSubset(){
+//	  for(Location L:model.getItinerary()){
+//		  System.out.println(L.getId());
+//	  }
+//   }
     
 }
