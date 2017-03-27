@@ -6,3 +6,4 @@ engines:
 ratings:
   paths:
   - "**.java"
+  -"src/**/*"
