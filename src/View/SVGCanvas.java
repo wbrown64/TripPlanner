@@ -13,7 +13,7 @@ import java.io.File;
 public class SVGCanvas {
 
   JSVGCanvas svgCanvas = new JSVGCanvas();
-
+  
   public static void main(String args[]) {
     JFrame frame = new JFrame("Your Trip of Colorado");
     frame.setSize(900, 900);
