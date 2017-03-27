@@ -6,7 +6,7 @@ import presenter.Presenter;
 import presenter.Reader;
 
 public class Model {
-		private ArrayList<Location>itinerary;
+		protected ArrayList<Location>itinerary;
 		private ArrayList<Edge> edges = new ArrayList<Edge>(500);
 		public boolean twoOpt = false;
 		public boolean threeOpt = false;
@@ -16,16 +16,21 @@ public class Model {
 		this.twoOpt=twoOpt;
 		this.threeOpt=threeOpt;
 		this.filename=filename;
-		initializeModel();
-	}
-	 public void initializeModel() throws Exception{
 		Reader read=new Reader(filename);
 		ArrayList<Location> i=read.readFile();
 		this.setItinerary(i);
+		initializeModel();
+	}
+	 public void initializeModel() throws Exception{
 		standard_trip();
 		setLegDistance(itinerary);
 		
 	}
+	 public void newItinerary() throws Exception{
+		 Reader read=new Reader(filename);
+		ArrayList<Location> i=read.readFile();
+		this.setItinerary(i);
+	 }
 	
 	private void standard_trip(){ // should this be private?
 		ArrayList<Location> itinerary_copy=new ArrayList<Location>();
@@ -267,7 +272,7 @@ public class Model {
 		return itinerary;
 	}
 
-	private void setItinerary(ArrayList<Location> itinerary) {
+	public void setItinerary(ArrayList<Location> itinerary) {
 		this.itinerary = itinerary;
 	}
 }

@@ -22,6 +22,12 @@ import org.apache.batik.swing.JSVGCanvas;
 
 import Model.Location;
 import Model.Model;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JButton;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 /**
  *
@@ -53,7 +59,6 @@ public class GUI extends javax.swing.JFrame {
     	this.view=v;
     	this.model=model;
     	itinerary=view.itinerary;
-    	setjLists();
     	initComponents();
         
 
@@ -75,9 +80,9 @@ public class GUI extends javax.swing.JFrame {
         jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
         jRadioButton5 = new javax.swing.JRadioButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        jScrollPane1 = new javax.swing.JScrollPane();        
         jScrollPane2 = new javax.swing.JScrollPane();
+        jList1 = new JList(itinerary.toArray());
         jList2 = new javax.swing.JList<>();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -93,7 +98,7 @@ public class GUI extends javax.swing.JFrame {
         fileChooser.setDialogTitle("Choose a .csv file");
         fileChooser.setFileFilter(new MyCustomFilter());
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jRadioButton1.setText("Mileage");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -123,25 +128,35 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         jRadioButton5.setText("3-Opt");
-
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = list;
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(jList1);
-        
-        jList2.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+
         jScrollPane2.setViewportView(jList2);
 
-        jButton1.setText("Add All");
+
+        jButton1.setText("Add Selected");
+        jButton1.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		int[] indicies=jList1.getSelectedIndices();
+        		ArrayList<Location>new_itinerary=new ArrayList<Location>();
+        		for(int i=0;i<indicies.length;i++){
+        			String name=jList1.getModel().getElementAt(indicies[i]);
+        			for(Location L:itinerary){
+        				if(L.getBrewery().equals(name)){
+        					new_itinerary.add(L);
+        				}
+        			}
+        		}
+        		model.setItinerary(new_itinerary);
+        		setJList(jList2);
+        	}
+        });
 
         jButton2.setText("Remove All");
-
+        jButton2.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		clearJList(jList2);
+        	}
+        });
         jLabel1.setText("Options");
 
         jButton3.setText("Generate Map");
@@ -161,7 +176,12 @@ public class GUI extends javax.swing.JFrame {
         Open.setText("Open");
         Open.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OpenActionPerformed(evt);
+                try {
+					OpenActionPerformed(evt);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
         });
         jMenu1.add(Open);
@@ -177,64 +197,72 @@ public class GUI extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
+        
+        btnChooseSubsetFile = new JButton("Choose Subset File");
+       
+        
+        setJList(jList1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(176, 176, 176)
-                        .addComponent(jButton3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2))
-                    .addComponent(jLabel1)
-                    .addComponent(jRadioButton5)
-                    .addComponent(jRadioButton4)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton1))
-                .addContainerGap(295, Short.MAX_VALUE))
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(layout.createSequentialGroup()
+        						.addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(176, 176, 176)
+        					.addComponent(jButton3))
+        				.addGroup(layout.createSequentialGroup()
+        					.addComponent(jButton1)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(jButton2)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(btnChooseSubsetFile))
+        				.addComponent(jLabel1)
+        				.addComponent(jRadioButton5)
+        				.addComponent(jRadioButton4)
+        				.addComponent(jRadioButton3)
+        				.addComponent(jRadioButton2)
+        				.addComponent(jRadioButton1))
+        			.addContainerGap(295, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addGap(16)
+        			.addGroup(layout.createParallelGroup(Alignment.TRAILING, false)
+        				.addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
                         .addComponent(jScrollPane1))
-                    .addComponent(jButton3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton5)
-                .addContainerGap(149, Short.MAX_VALUE))
+        				.addComponent(jButton3)
+        				//.addComponent(jList1, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(jButton1)
+        				.addComponent(jButton2)
+        				.addComponent(btnChooseSubsetFile))
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
+        			.addComponent(jLabel1)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(jRadioButton1)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(jRadioButton2)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(jRadioButton3)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(jRadioButton4)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(jRadioButton5)
+        			.addContainerGap(149, Short.MAX_VALUE))
         );
+        getContentPane().setLayout(layout);
 
         pack();
     }// </editor-fold>                        
 
-    private void OpenActionPerformed(java.awt.event.ActionEvent evt) {                                     
+    private void OpenActionPerformed(java.awt.event.ActionEvent evt) throws Exception {                                     
     int returnVal = fileChooser.showOpenDialog(this);
     if (returnVal == JFileChooser.APPROVE_OPTION) {
         File file = fileChooser.getSelectedFile();
@@ -242,7 +270,7 @@ public class GUI extends javax.swing.JFrame {
         
         System.out.println(file.getAbsolutePath());
         model.filename=file.getName();
-        updatejLists(jList1);
+        model.newItinerary();
        // try {
           // What to do with the file, e.g. display it in a TextArea
           //textarea.read( new FileReader( file.getAbsolutePath() ), null );
@@ -287,7 +315,6 @@ public class GUI extends javax.swing.JFrame {
 //    		System.out.println("twoOpt is now "+model.twoOpt);
     	}
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) throws Exception {
-    	//activateModel();
     	model.initializeModel();
     	if(model.twoOpt)
     		model.twoOpt();
@@ -297,15 +324,17 @@ public class GUI extends javax.swing.JFrame {
     	
 //    	System.out.println("pressing generate map button ");
         JFrame frame = new JFrame("Trip");
-        frame.setSize(500, 500);
+        frame.setSize(1200, 700);
 
         frame.addWindowListener(new WindowAdapter() {
+        	
           public void windowClosing(WindowEvent ev) {
             System.exit(0);
           }
         });
        // System.out.println(view.filename+".svg");
         new SVGCanvas(frame,view.filename+".svg");
+
     } 
     /**
      */
@@ -361,11 +390,13 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+
     // End of variables declaration  
 	private static View view;
 	private static Model model;
 	private String[] list=new String[1];
 	protected ArrayList<Location> itinerary;
+	private JButton btnChooseSubsetFile;
 
     private void checkFlags(){
     	if(view.showID){
@@ -380,9 +411,9 @@ public class GUI extends javax.swing.JFrame {
     	if(model.twoOpt)
     		jRadioButton4.setSelected(true);
     }
-   private void setjLists(){
-    	for(int i=0;i<view.itinerary.size();i++){
-    		list[i]=view.itinerary.get(i).getBrewery();
+   private void initjLists(){
+    	for(int i=0;i<model.getItinerary().size();i++){
+    		list[i]=model.getItinerary().get(i).getBrewery();
     		//System.out.println(view.itinerary.get(i).getBrewery());
     		//System.out.println(list[i]);
     		list=Arrays.copyOf(list, list.length+1);
@@ -399,8 +430,20 @@ public class GUI extends javax.swing.JFrame {
     	}
 		return names;
    }
-   private void updatejLists(JList<String> list){
-	   list.removeAll();
+   private void setJList(JList<String> list){
+	   String[] names=createArray();
+     list.setModel(new javax.swing.AbstractListModel<String>() {
+     String[] strings = names;
+     public int getSize() { return strings.length; }
+     public String getElementAt(int i) { return strings[i]; }
+     });
+   }
+   private void clearJList(JList<String> list){
+	   list.setModel(new javax.swing.AbstractListModel<String>() {
+		     String[] strings ={""};
+		     public int getSize() { return strings.length; }
+		     public String getElementAt(int i) { return strings[i]; }
+		     });
    }
     
 }
