@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 import presenter.Presenter;
 import Model.Location;
+import Model.Model;
 
 public class View {
 	protected ArrayList<Location> itinerary;
@@ -26,12 +27,12 @@ public class View {
 	}
 	
 	
-	public void initializeTrip(Presenter presenter){
+	public void initializeTrip(Presenter presenter,Model model){
 		filename=filename.substring(0,filename.length()-4);
 		this.SVG=presenter.SVG;
 		this.XML=presenter.XML;
 		if(presenter.GUI){
-			GUI gui=new GUI(this);
+			GUI gui=new GUI(this,model);
 			GUI.main(null);
 		}
 		else{

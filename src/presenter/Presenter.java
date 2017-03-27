@@ -33,32 +33,48 @@ public class Presenter {
 					SVG = args[i];
 				}
 			}
+			
+			for(int i = 0; i < args.length;i++){
+				checkModelFlags(args[i]);
+			}
+			if(!GUI){
 			try {
-				m = new Model(filename);
+				m = new Model(filename,TwoOpt,ThreeOpt);
+				if(TwoOpt)
+					m.twoOpt();
 			} 
 			catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			v = new View(m.getItinerary(),filename);			
-
 			for(int i = 0; i < args.length;i++){
-				checkFlags(args[i]);
+				checkViewFlags(args[i]);
 			}
-			v.initializeTrip(this);
-	}
+			
+			v.initializeTrip(this,m);
+			}
+			else{
+				try {
+					m = new Model(filename,TwoOpt,ThreeOpt);
+				} 
+				catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				v = new View(m.getItinerary(),filename);			
+				for(int i = 0; i < args.length;i++){
+					checkViewFlags(args[i]);
+				}
+				
+				v.initializeTrip(this,m);
+				}
+			}
 	
-	public void checkFlags(String arg) {
-		if(arg.equals("-m")){
-			v.setShowMileage(true);
-		}
-		else if(arg.equals("-i")){
-			v.setShowID(true);
-		}
-		else if(arg.equals("-n")){
-			v.setShowName(true);
-		}
-		else if(arg.equals("-2")){
+	
+	public void checkModelFlags(String arg) {
+	
+		if(arg.equals("-2")){
 			TwoOpt = true;
 		}
 		else if(arg.equals("-3")){
@@ -68,6 +84,17 @@ public class Presenter {
 			GUI = true;
 		}
 			
+	}
+	public void checkViewFlags(String arg){
+		if(arg.equals("-m")){
+			v.setShowMileage(true);
+		}
+		else if(arg.equals("-i")){
+			v.setShowID(true);
+		}
+		else if(arg.equals("-n")){
+			v.setShowName(true);
+		}
 	}
 
 }
