@@ -1,104 +1,42 @@
-package Model;
+package main.java.edu.csu2017sp314.dtr25;
 
 import java.util.ArrayList;
 
-import presenter.Presenter;
-import presenter.Reader;
+import main.java.edu.csu2017sp314.dtr25.Presenter;
+import main.java.edu.csu2017sp314.dtr25.Reader;
 
 public class Model {
-		protected ArrayList<Location>itinerary;
+		private ArrayList<Location>itinerary;
 		private ArrayList<Edge> edges = new ArrayList<Edge>(500);
-
-		public boolean twoOpt = false;
-		public boolean threeOpt = false;
-		public String filename;
+		private boolean twoOpt = false;
+		private boolean threeOpt = false;
 	
 	public Model(String filename, boolean twoOpt,boolean threeOpt) throws Exception{
 		this.twoOpt=twoOpt;
 		this.threeOpt=threeOpt;
-
-
-		this.filename=filename;
 		Reader read=new Reader(filename);
 		ArrayList<Location> i=read.readFile();
 		this.setItinerary(i);
-		initializeModel();
-	}
-	 public void initializeModel() throws Exception{
-		itinerary = bestStandardTrip();
+		standard_trip();
+		System.out.println(twoOpt);
+		if(twoOpt)
+			twoOpt();
 		setLegDistance(itinerary);
-		//threeOpt();
+//		edges = new ArrayList<Edge>(500);
 		
 	}
-	 
-	 private ArrayList<Location> bestStandardTrip() {
-		 double bestDistance = Double.MAX_VALUE;
-		 ArrayList<Location> newItinerary = new ArrayList<Location>(500);
-		 
-		 for (int i = 0; i < itinerary.size(); ++i) {
-			 ArrayList<Location> tempItinerary = standardTrip(itinerary.get(i));
-			 double tempDistance = getTotalDistance(tempItinerary);
-			 
-			 if (tempDistance < bestDistance) {
-				 bestDistance = tempDistance;
-				 newItinerary = tempItinerary;
-			 }
-		 }
-		 return newItinerary;
-	 }
-	 
-	 private ArrayList<Location> standardTrip(Location start) {
-		 Location currentLoc = start;
-		 ArrayList<Location> itineraryCopy= new ArrayList<Location>(itinerary);
-		 ArrayList<Location> newItinerary = new ArrayList<Location>(500);
-		 
-		 itineraryCopy.remove(start);
-		 newItinerary.add(start);
-		 
-		 double minDistance = Double.MAX_VALUE;
-		 int index = 0;
-		 
-		 while (itineraryCopy.size()>0) {
-			 for (int i = 0; i < itineraryCopy.size(); ++i) {
-				 double dist = getLegDistance(currentLoc,itineraryCopy.get(i));
-				 
-				 if (dist < minDistance) {
-					 minDistance = dist;
-					 index = i;
-				 }
-			 }
-			 Location oldCurrent = currentLoc;
-				currentLoc=itineraryCopy.get(index);
-				newItinerary.add(currentLoc);
-				itineraryCopy.remove(currentLoc);
-				if(itineraryCopy.size() > 0)
-				//min_distance=getLegDistance(current,getItinerary().get(0));
-				minDistance = Double.MAX_VALUE;
-		 }
-		 return newItinerary;
-	 }
-
-	 public void newItinerary() throws Exception{
-		 Reader read=new Reader(filename);
-		ArrayList<Location> i=read.readFile();
-		this.setItinerary(i);
-	 }
-
 	
-	/*private ArrayList<Location> standard_trip(){ // should this be private?
+	private void standard_trip(){ // should this be private?
 		ArrayList<Location> itinerary_copy=new ArrayList<Location>();
 		Location current=getItinerary().get(0);
-		//double min_distance=getLegDistance(current,getItinerary().get(1));
-		double min_distance=Double.MAX_VALUE;
+		double min_distance=getLegDistance(current,getItinerary().get(1));
 		itinerary_copy.add(current);
 		getItinerary().remove(current);
-		int index = 0;
-		//int index=1;
+		int index=1;
 		while(getItinerary().size()!=0){
 			for(int i=0;i<getItinerary().size();i++){
 				double distance=getLegDistance(current,getItinerary().get(i));
-				//System.out.println("getLegDistance(): " + getLegDistance(current,getItinerary().get(i)));
-				if(distance<min_distance){
+				if(distance<=min_distance){
 					min_distance=distance;
 					index=i;
 				}
@@ -107,20 +45,18 @@ public class Model {
 			Location oldCurrent = current;
 			current=getItinerary().get(index);
 			itinerary_copy.add(current);
-			//Edge addingEdge = new Edge(oldCurrent,current);
-			//addingEdge.setDistance(min_distance);
-			//edges.add(addingEdge);
+			Edge addingEdge = new Edge(oldCurrent,current);
+			addingEdge.setDistance(min_distance);
+			edges.add(addingEdge);
 			getItinerary().remove(current);
 			if(getItinerary().size()!=0)
-			//min_distance=getLegDistance(current,getItinerary().get(0));
-			min_distance = Double.MAX_VALUE;
+			min_distance=getLegDistance(current,getItinerary().get(0));
 		}
 //		for(Location L:itinerary_copy){
 //			System.out.println(L.city);
 //		}
-		return itinerary_copy;
-		//setItinerary(itinerary_copy);
-	}*/
+		setItinerary(itinerary_copy);
+	}
 	
 	private void setLegDistance(ArrayList<Location> itinerary){
 		for(int i = 0; i < itinerary.size()-1; i++){
@@ -169,7 +105,6 @@ public class Model {
 		
 	}
 	private double getTotalDistance(ArrayList<Location> list){
-		setLegDistance(list);
 		double totalDistance = 0;
 		double distance = 0;
 		for(int i = 0; i < list.size()-1; i++){
@@ -181,26 +116,20 @@ public class Model {
 		return totalDistance;
 	}
 	
-
 	public void twoOpt() {// you guys suck <--wtf bro.. 
+		for(int z=0;z<itinerary.size()*3;z++){
 	    double bestDistance=getTotalDistance(itinerary);
-	    double newDistance=bestDistance;
-	    int c=0;
-	    	while(c!=10){
-	    	ArrayList<Location> old_route=itinerary;
-			ArrayList<Location> new_route;
-			for(int i=0;i<old_route.size()-1;i++){
-				for(int j=i+1;j<old_route.size();j++){
-					new_route=twoOptSwap(old_route,i,j);
-					newDistance=getTotalDistance(new_route);
-					if(newDistance<bestDistance){
-						itinerary=new_route;
-						bestDistance=newDistance;
-						c=0;
+		ArrayList<Location> old_route=itinerary;
+		ArrayList<Location> new_route;
+		for(int i=0;i<old_route.size()-1;i++){
+			for(int j=i+1;j<old_route.size();j++){
+				new_route=twoOptSwap(old_route,i,j);
+				double new_distance=getTotalDistance(new_route);
+				if(new_distance<bestDistance){
+					itinerary=new_route;
 					}
 				}
 			}
-			c++;
 		}
 	}
 
@@ -212,7 +141,7 @@ public class Model {
 		for(int i=b;i>=a;i--){
 			new_route.add(old_route.get(i));
 		}
-		for(int i=b+1;i<old_route.size();i++){
+		for(int i=b+1;b<old_route.size();i++){
 			new_route.add(old_route.get(i));
 		}
 		return new_route;
@@ -258,47 +187,37 @@ public class Model {
 	}
 	
 	public void threeOpt() {
-		twoOpt();
-		double bestDistance=getTotalDistance(itinerary);
-	    double newDistance=bestDistance;
-	    int c=0;
-	    	while(c!=10){
-	    	ArrayList<Location> old_route=itinerary;
-			ArrayList<Location> new_route;
-			for(int i=0;i<old_route.size()-2;i++){
-				for(int j=i+1;j<old_route.size()-1;j++){
-					for (int k = j+1; k<old_route.size();++k) {
-						new_route=threeOptSwap(old_route,i,j,k);
-						newDistance=getTotalDistance(new_route);
-						if(newDistance<bestDistance){
-							itinerary=new_route;
-							bestDistance=newDistance;
-							c=0;
-						}
+		for (int firstThingy = 0; firstThingy < edges.size(); ++firstThingy) {
+			Edge i = edges.get(firstThingy);
+			
+			for (int secondThingy = 0; secondThingy < edges.size(); ++secondThingy) {
+				Edge j;
+				if (!(firstThingy == secondThingy)) {
+					j = edges.get(secondThingy);
+				}
+				else 
+					continue;
+				
+				for (int thirdThingy = 0; thirdThingy < edges.size(); ++thirdThingy) {
+					Edge k;
+					if (!(firstThingy == thirdThingy || thirdThingy == secondThingy)) {
+						k = edges.get(thirdThingy);
 					}
+					else
+						continue;
+					//swapping i & j
+					evaluateEdges2Opt(i, j);
+					
+					//swapping j & k
+					evaluateEdges2Opt(j, k);
+					
+					//swapping k & i
+					evaluateEdges2Opt(k, i);
+					
+					
 				}
 			}
-			c++;
 		}
-	}
-	
-	private ArrayList<Location> threeOptSwap(ArrayList<Location> oldRoute, int a, int b, int c) {
-		
-		ArrayList<Location> newRoute = new ArrayList<>();
-		for(int i = 0; i < a ; ++i){
-			newRoute.add(oldRoute.get(i));
-		}
-		for(int i = b; i >= a; --i){
-			newRoute.add(oldRoute.get(i));
-		}
-		for(int i = b + 1; i < c; ++i){
-			newRoute.add(oldRoute.get(i));
-		}
-		for (int i = oldRoute.size()-1; i >= c; --i) {
-			newRoute.add(oldRoute.get(i));
-		}
-		
-		return newRoute;
 	}
 	
 	private String getLocationName(double lat, double lon){
@@ -341,7 +260,7 @@ public class Model {
 		return itinerary;
 	}
 
-	public void setItinerary(ArrayList<Location> itinerary) {
+	private void setItinerary(ArrayList<Location> itinerary) {
 		this.itinerary = itinerary;
 	}
 }

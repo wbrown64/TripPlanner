@@ -1,6 +1,6 @@
 TripCo Team 25
 
-Usage: Run TripCo.java <inputfilename.csv> <mapbackground.svg> [-m -n -i or -g for GUI] to produce <inputfilename.xml> and <inputfilename.svg> and optional GUI
+Usage: Run TripCo.java <inputfilename.csv> <mapbackground.svg> [-m -n -i or -g] to produce <inputfilename.xml> and <inputfilename.svg> and optional GUI
 
 Purpose: The program is intended for mapping trips across Colorado. When given a csv file containing a list of locations to visit,
 the program will generate an svg image displaying the route for the trip, as well as an xml file with details about the journey. A GUI display is another
@@ -11,6 +11,6 @@ The -n flag adds the names of locations to the map
 The -i flag displays the indices of each location on the map
 The -g flag displays the GUI where the user can pick and choose what to display
 
-Issue summary: Save/loading destinations along with subset and 3opt.
+Issue summary: Save/loading destinations along with subset and 2 opt and 3 opt were not completed.
 
 Notes: This program was made while using Git and Eclipse

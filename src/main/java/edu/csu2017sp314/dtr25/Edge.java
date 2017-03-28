@@ -1,4 +1,4 @@
-package Model;
+package main.java.edu.csu2017sp314.dtr25;
 
 public class Edge {
 	private Location from;
@@ -47,11 +47,6 @@ public class Edge {
 	
 	public boolean equals(Edge e) {
 		return (this.getfrom().equals(e.getfrom()) && this.getTo().equals(e.getTo()));
-	}
-	
-	public boolean compareAnyLocations(Edge e) {
-		return (this.getfrom().equals(e.getfrom()) || this.getfrom().equals(e.getTo()) || this.getTo().equals(e.getfrom())
-				|| this.getTo().equals(e.getTo())); 
 	}
 	
 	public static void main(String[] args) {

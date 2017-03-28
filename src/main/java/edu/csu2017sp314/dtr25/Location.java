@@ -1,4 +1,4 @@
-package Model;
+package main.java.edu.csu2017sp314.dtr25;
 
 public class Location {
 	protected String id;
@@ -81,7 +81,10 @@ public class Location {
 		this.altitude = altitude;
 	}
 	
-
+	public String toString() {
+		return "id: " + id + ", " + "name: " + brewery + ", City: " + city + ", latitude: " + latitude
+				+ ", longitude: " + longitude + ", altitude " + altitude; 
+	}
 	
 	public boolean equals(Location l) {
 		return (this.id.equals(l.id) && this.brewery.equals(l.brewery) && this.city.equals(l.city) && this.latitude.equals(l.latitude)
@@ -90,10 +93,7 @@ public class Location {
 	
 	public static void main(String[] args) {
 		Location loc1 = new Location("1","2","3","4","5","6", new Coordinates("1","1"));
-		Location loc2 = new Location("1","2","3","4","5","6", new Coordinates("1","1"));
+		Location loc2 = new Location("1","2","3","4","5","7", new Coordinates("1","1"));
 		System.out.println(loc1.equals(loc2));
-	}
-	public String toString(){
-		return this.brewery;
 	}
 }

@@ -1,15 +1,17 @@
-package presenter;
+package main.java.edu.csu2017sp314.dtr25;
 import java.util.ArrayList;
-import Model.Model;
-import View.View;
+//import Model.Model;
+//import View.View;
+import main.java.edu.csu2017sp314.dtr25.Model;
+import main.java.edu.csu2017sp314.dtr25.View;
 
 
 public class Presenter {
 	protected Model m;
 	protected View v;
-	public boolean GUI = false;
 	public boolean TwoOpt = false;
 	public boolean ThreeOpt = false;
+	public boolean GUI = false;
 	public String filename = "";
 	public String XML = "";
 	public String SVG = "";
@@ -33,63 +35,22 @@ public class Presenter {
 					SVG = args[i];
 				}
 			}
-			
-			for(int i = 0; i < args.length;i++){
-				checkModelFlags(args[i]);
-			}
-			if(!GUI){
 			try {
 				m = new Model(filename,TwoOpt,ThreeOpt);
-				if(TwoOpt)
-					m.twoOpt();
-				//FIXME
-				/*if (true)
-					m.threeOpt();*/
 			} 
 			catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			v = new View(m.getItinerary(),filename);			
+
 			for(int i = 0; i < args.length;i++){
-				checkViewFlags(args[i]);
+				checkFlags(args[i]);
 			}
-			
-			v.initializeTrip(this,m);
-			}
-			else{
-				try {
-					//FIXME
-					m = new Model(filename,TwoOpt,ThreeOpt);
-				} 
-				catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				v = new View(m.getItinerary(),filename);			
-				for(int i = 0; i < args.length;i++){
-					checkViewFlags(args[i]);
-				}
-				
-				v.initializeTrip(this,m);
-				}
-			}
-	
-	
-	public void checkModelFlags(String arg) {
-	
-		if(arg.equals("-2")){
-			TwoOpt = true;
-		}
-		else if(arg.equals("-3")){
-			ThreeOpt = true;
-		}
-		else if(arg.equals("-g")){
-			GUI = true;
-		}
-			
+			v.initializeTrip(this);
 	}
-	public void checkViewFlags(String arg){
+	
+	public void checkFlags(String arg) {
 		if(arg.equals("-m")){
 			v.setShowMileage(true);
 		}
@@ -99,6 +60,16 @@ public class Presenter {
 		else if(arg.equals("-n")){
 			v.setShowName(true);
 		}
+		else if(arg.equals("-2")){
+			TwoOpt = true;
+		}
+		else if(arg.equals("-3")){
+			ThreeOpt = true;
+		}
+		else if(arg.equals("-g")){
+			GUI = true;
+		}
+			
 	}
 
 }
