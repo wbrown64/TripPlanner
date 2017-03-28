@@ -8,7 +8,7 @@ public class ModelTest {
 	//@Test
 	public void testGetItinerary(){ // just tests creation of model (and planTrip atm)
 		try {
-			Model myModel = new Model("small_locations.txt",true,true); 
+			Model myModel = new Model("small_locations.txt",true,true, true); 
 			ArrayList<Location> i=myModel.getItinerary();
 			assertEquals(i,myModel.getItinerary());
 		} catch (Exception e) {
