@@ -10,11 +10,13 @@ public class Model {
 		private ArrayList<Edge> edges = new ArrayList<Edge>(500);
 		public boolean twoOpt = false;
 		public boolean threeOpt = false;
+		public boolean Miles = false;
 		public String filename;
 	
-	public Model(String filename, boolean twoOpt,boolean threeOpt) throws Exception{
+	public Model(String filename, boolean twoOpt,boolean threeOpt,boolean Miles) throws Exception{
 		this.twoOpt=twoOpt;
 		this.threeOpt=threeOpt;
+		this.Miles=Miles;
 		this.filename=filename;
 		Reader read=new Reader(filename);
 		ArrayList<Location> i=read.readFile();
@@ -65,6 +67,7 @@ public class Model {
 	}
 	
 	private void setLegDistance(ArrayList<Location> itinerary){
+		if(Miles){
 		for(int i = 0; i < itinerary.size()-1; i++){
 			double temp = getLegDistance(itinerary.get(i),itinerary.get(i+1));
 			temp = temp * 0.621371;
@@ -77,7 +80,21 @@ public class Model {
 		temp = Math.round(temp);
 		int d = (int) temp;
 		itinerary.get(itinerary.size()-1).legDistance = d;
-		
+		}
+		else{
+			for(int i = 0; i < itinerary.size()-1; i++){
+				double temp = getLegDistance(itinerary.get(i),itinerary.get(i+1));
+				//temp = temp * 0.621371;
+				temp = Math.round(temp);
+				int d = (int) temp;
+				itinerary.get(i).legDistance = d;
+			}
+			double temp = getLegDistance(itinerary.get(itinerary.size()-1),itinerary.get(0));
+			//temp = temp * 0.621371;
+			temp = Math.round(temp);
+			int d = (int) temp;
+			itinerary.get(itinerary.size()-1).legDistance = d;	
+		}
 	}
 	
 	private Location getlegStartLocation(ArrayList<Location> itinerary){
@@ -274,5 +291,8 @@ public class Model {
 
 	public void setItinerary(ArrayList<Location> itinerary) {
 		this.itinerary = itinerary;
+	}
+	public void setMiles(boolean t){
+		Miles = t;
 	}
 }

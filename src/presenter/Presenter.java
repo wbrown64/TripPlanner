@@ -10,6 +10,7 @@ public class Presenter {
 	public boolean TwoOpt = false;
 	public boolean ThreeOpt = false;
 	public boolean GUI = false;
+	public boolean Miles = false;
 	public String filename = "";
 	public String XML = "";
 	public String SVG = "";
@@ -39,7 +40,7 @@ public class Presenter {
 			}
 			if(!GUI){
 			try {
-				m = new Model(filename,TwoOpt,ThreeOpt);
+				m = new Model(filename,TwoOpt,ThreeOpt,Miles);
 				if(TwoOpt)
 					m.twoOpt();
 			} 
@@ -56,7 +57,7 @@ public class Presenter {
 			}
 			else{
 				try {
-					m = new Model(filename,TwoOpt,ThreeOpt);
+					m = new Model(filename,TwoOpt,ThreeOpt,Miles);
 				} 
 				catch (Exception e) {
 					// TODO Auto-generated catch block
@@ -83,6 +84,10 @@ public class Presenter {
 		else if(arg.equals("-g")){
 			GUI = true;
 		}
+		else if(arg.equals("-mi")){
+			Miles = true;
+		}
+		
 			
 	}
 	public void checkViewFlags(String arg){
@@ -94,6 +99,9 @@ public class Presenter {
 		}
 		else if(arg.equals("-n")){
 			v.setShowName(true);
+		}
+		else if(arg.equals("-mi")){
+			v.setMiles(true);
 		}
 	}
 
