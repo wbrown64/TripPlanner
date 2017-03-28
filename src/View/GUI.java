@@ -60,7 +60,7 @@ public class GUI extends javax.swing.JFrame {
     public GUI(View v, Model model) {
     	this.view=v;
     	this.model=model;
-    	itinerary=view.itinerary;
+    	backupItinerary=model.getItinerary();
     	initComponents();
         
 
@@ -85,7 +85,7 @@ public class GUI extends javax.swing.JFrame {
         jRadioButton5 = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();        
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new JList(itinerary.toArray());
+        jList1 = new JList(model.getItinerary().toArray());
         jList2 = new javax.swing.JList<>();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -148,14 +148,19 @@ public class GUI extends javax.swing.JFrame {
         		for(int i=0;i<indicies.length;i++){
         			String name=jList1.getModel().getElementAt(indicies[i]);
         			for(Location L:model.getItinerary()){
-//    					System.out.println("comparing to this from itinerary "+L.getBrewery());
 //    					System.out.println("name from jList "+name);
+//        				System.out.println("comparing to this from itinerary "+L.getBrewery());
         				if(L.getBrewery().equals(name)){
+//        					System.out.println("success");
         					new_itinerary.add(L);
         				}
         			}
         		}
         		model.setItinerary(new_itinerary);
+        		for(Location L:model.getItinerary()){
+        			System.out.println(L.getBrewery());
+        		}
+        		System.out.println("");
         		setJList(jList2);
         	}
         });
@@ -164,6 +169,8 @@ public class GUI extends javax.swing.JFrame {
         jButton2.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		clearJList(jList2);
+        		model.setItinerary(backupItinerary);
+        		
         	}
         });
         jLabel1.setText("Options");
@@ -442,7 +449,8 @@ public class GUI extends javax.swing.JFrame {
 	private static View view;
 	private static Model model;
 	private String[] list=new String[1];
-	protected ArrayList<Location> itinerary;
+	protected ArrayList<Location> backupItinerary;
+
 	private JButton btnChooseSubsetFile;
 	private String subsetFilename="";
 
@@ -496,7 +504,7 @@ public class GUI extends javax.swing.JFrame {
    
    private void generateSubset() {
 	   view.readSubsetXML();
-	   setJList(jList1);
+	   setJList(jList2);
 	}
 //   private void saveSubset(){
 //	  for(Location L:model.getItinerary()){
