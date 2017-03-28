@@ -5,5 +5,4 @@ engines:
 
 ratings:
   paths:
-  - "**.java"
-  - "src/**/*"
+  - "src\Model\*.java"
