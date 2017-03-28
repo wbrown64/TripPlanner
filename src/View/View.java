@@ -4,7 +4,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 import presenter.Presenter;
@@ -16,9 +18,11 @@ public class View {
 	protected boolean showMileage = false;
 	protected boolean showID = false;
 	protected boolean showName = false;
+	protected String xmlFilename;
 	protected String filename;
 	protected String SVG;
 	protected String XML;
+	Model model;
 	
 	public View(ArrayList<Location> itinerary, String filename){
 		this.itinerary = itinerary;
@@ -31,6 +35,10 @@ public class View {
 		filename=filename.substring(0,filename.length()-4);
 		this.SVG=presenter.SVG;
 		this.XML=presenter.XML;
+		this.model=model;
+		if(!XML.equals("")){
+			readSubsetXML();
+		}
 		if(presenter.GUI){
 			GUI gui=new GUI(this,model);
 			GUI.main(null);
@@ -87,7 +95,62 @@ public class View {
 		    }
 		
 	}
+	void writeSubsetXML() throws FileNotFoundException, UnsupportedEncodingException{
+		String newName=filename+"_subset.xml";
+		PrintWriter writer = new PrintWriter(newName, "UTF-8");
+		writer.println("<xml>");
+		writer.println(" <selection>");
+		writer.println("	<title>"+filename+"</title> ");
+		writer.println("		<filename>"+filename+".csv"+"</filename> ");
+		writer.println("		<destinations>");
+		for(Location L:model.getItinerary()){
+			String id=L.getId();
+			writer.println("			<id>"+id+"</id>");
+		}
+		writer.println("		</destinations>");
+		writer.println(" </selection>");
+		writer.println("</xml>");
+		writer.close();
 
+	}
+	void readSubsetXML() {
+		String[] ids=new String[1];
+		try {
+		        File input = new File(XML);
+		        Scanner sc = new Scanner(input);
+		        int count=0;
+		        while(sc.hasNextLine()) {
+		            String s = sc.nextLine();
+		       //     System.out.println(s);
+		            if(s.contains("id")){
+		            	s=s.replaceAll("<id>","");
+		            	s=s.replaceAll("</id>","");	
+		            	s=s.replaceAll("\\s","");
+		       //     	System.out.println(s);
+		            	ids[count]=s;
+		            	count++;
+		            	ids=Arrays.copyOf(ids, ids.length+1);
+		            }
+		        }
+//		        for(int i=0;i<ids.length-1;i++){
+//		        	System.out.println(ids[i]);
+//		        }
+		    }
+		    catch(FileNotFoundException e) {
+		        System.err.println("File not found. Please scan in new file.");
+		    }
+		ArrayList<Location>newLocations=new ArrayList<Location>();
+		  for(int i=0;i<ids.length-1;i++){
+	        //	System.out.println(ids[i]);
+			  for(Location L:model.getItinerary()){
+				  if(L.getId().equals(ids[i])){
+					  newLocations.add(L);
+				  }
+			  }
+	        }
+		  model.setItinerary(newLocations);
+	}
+	
 
 	void createXML(ArrayList<Location> itinerary,String filename){
 		try{
