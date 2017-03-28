@@ -1,4 +1,4 @@
-package View;
+package main.java.edu.csu2017sp314.dtr25;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -7,8 +7,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import presenter.Presenter;
-import Model.Location;
+import main.java.edu.csu2017sp314.dtr25.Presenter;
+import main.java.edu.csu2017sp314.dtr25.Location;
 
 public class View {
 	protected ArrayList<Location> itinerary;

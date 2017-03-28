@@ -1,7 +1,9 @@
-package presenter;
+package main.java.edu.csu2017sp314.dtr25;
 import java.util.ArrayList;
-import Model.Model;
-import View.View;
+//import Model.Model;
+//import View.View;
+import main.java.edu.csu2017sp314.dtr25.Model;
+import main.java.edu.csu2017sp314.dtr25.View;
 
 
 public class Presenter {
@@ -34,7 +36,7 @@ public class Presenter {
 				}
 			}
 			try {
-				m = new Model(filename);
+				m = new Model(filename,TwoOpt,ThreeOpt);
 			} 
 			catch (Exception e) {
 				// TODO Auto-generated catch block

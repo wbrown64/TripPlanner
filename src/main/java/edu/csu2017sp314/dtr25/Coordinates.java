@@ -1,4 +1,4 @@
-package Model;
+package main.java.edu.csu2017sp314.dtr25;
 
 import java.util.ArrayList;
 
