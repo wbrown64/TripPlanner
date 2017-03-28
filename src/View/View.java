@@ -19,6 +19,7 @@ public class View {
 	protected boolean showID = false;
 	protected boolean showName = false;
 	protected boolean Miles = false;
+	protected boolean Kilometers = false;
 	protected String xmlFilename;
 	protected String filename;
 	protected String SVG;
@@ -165,7 +166,7 @@ public class View {
 			if(Miles){
 			writer.println("mileage - the number of miles (to the nearest whole mile) between the starting and finishing locations");
 			}
-			else{
+			else if(Kilometers){
 				writer.println("kilometers - the number of kilometers (to the nearest whole kilometer) between the starting and finishing locations");
 			}
 			writer.println("-->");
@@ -204,6 +205,9 @@ public class View {
 	public void setMiles(boolean Miles){
 		this.Miles = Miles;
 	}
+	public void setKilometers(boolean Kilometers){
+		this.Kilometers = Kilometers;
+	}
 	
 	private void createLegForXML(PrintWriter writer,ArrayList<Location> itinerary){
 		for(int i = 0; i < itinerary.size()-1; i++){
@@ -214,7 +218,7 @@ public class View {
 			if(Miles){
 			writer.println("<mileage>" + itinerary.get(i).legDistance + "</mileage>");
 			}
-			else{
+			else if(Kilometers){
 				writer.println("<kilometers>" + itinerary.get(i).legDistance + "</kilometers>");
 			}
 			writer.println("</leg>");
@@ -226,10 +230,57 @@ public class View {
 		if(Miles){
 		writer.println("<mileage>" + itinerary.get(itinerary.size()-1).legDistance + "</mileage>");
 		}
-		else{
+		else if(Kilometers){
 			writer.println("<kilometers>" + itinerary.get(itinerary.size()-1).legDistance + "</kilometers>");
 		}
 		writer.println("</leg>");
+	}
+	private void createLegForXML2(PrintWriter writer,ArrayList<Location> itinerary){
+		for(int i = 0; i < itinerary.size()-1; i++){
+			writer.println("<leg>");
+			writer.println("<sequence>" + (i+1) +"</sequence>");
+			writer.println("<start>");
+			writer.println("<!-- information from the airport table -->");
+			writer.println("<id>" + itinerary.get(i).getId() + "</id>");
+			writer.println("<name>" + itinerary.get(i).getBrewery() + "</name>");
+			writer.println("<latitude>" + itinerary.get(i).getLat_dd() + "</latitude>");
+			writer.println("<longitude>" + itinerary.get(i).getLon_dd() + "</longitude>");
+			writer.println("<elevation>" + itinerary.get(i).getAltitude() + "</elevation");
+			writer.println("<municipality>" + itinerary.get(i).getCity() + "</municipality>");
+			writer.println("<!-- names from the other tables, not the codes -->");
+			writer.println("<region>" + "INSERT REGION HERE" + "</region>");
+			writer.println("<country>" + "INSERT COUNTRY HERE" + "</country>");
+			writer.println("<continent>" + "INSERT CONTINENT HERE" + "</continent>");
+			writer.println("<!-- wikipedia links from the tables -->");
+			writer.println("<airportURL>" + "INSERT AIRPORTURL HERE" + "</airportURL>");
+			writer.println("<regionURL>" + "INSERT REGIONURL HERE" + "</regionURL>");
+			writer.println("<countryURL>" + "INSERT COUNTRYURL HERE" + "</countryURL>");
+			writer.println("</start>");
+			writer.println("<finish>");
+			writer.println("<!-- information from the airport table -->");
+			writer.println("<id>" + itinerary.get(i+1).getId() + "</id>");
+			writer.println("<name>" + itinerary.get(i+1).getBrewery() + "</name>");
+			writer.println("<latitude>" + itinerary.get(i+1).getLat_dd() + "</latitude>");
+			writer.println("<longitude>" + itinerary.get(i+1).getLon_dd() + "</longitude>");
+			writer.println("<elevation>" + itinerary.get(i+1).getAltitude() + "</elevation");
+			writer.println("<municipality>" + itinerary.get(i+1).getCity() + "</municipality>");
+			writer.println("<!-- names from the other tables, not the codes -->");
+			writer.println("<region>" + "INSERT REGION HERE" + "</region>");
+			writer.println("<country>" + "INSERT COUNTRY HERE" + "</country>");
+			writer.println("<continent>" + "INSERT CONTINENT HERE" + "</continent>");
+			writer.println("<!-- wikipedia links from the tables -->");
+			writer.println("<airportURL>" + "INSERT AIRPORTURL HERE" + "</airportURL>");
+			writer.println("<regionURL>" + "INSERT REGIONURL HERE" + "</regionURL>");
+			writer.println("<countryURL>" + "INSERT COUNTRYURL HERE" + "</countryURL>");
+			writer.println("</finish>");
+			writer.println("<distance>" + itinerary.get(i).legDistance + "</distance>");
+			if(Miles){
+				writer.println("<units>miles</units>");
+			}
+			else if(Kilometers){
+				writer.println("<units>kilometers</units>");
+			}
+		}
 	}
 	
 	private double[] toCartesian(double x,double y){
@@ -271,7 +322,7 @@ public class View {
 		if(Miles){
 		writer.println("<text text-anchor=\"middle\" font-family=\"Sans-serif\" font-size=\"24\" id=\"distance\" y=\"775\" x=\"531\">" + totalDistance + " miles</text>");
 		}
-		else{
+		else if(Kilometers){
 			writer.println("<text text-anchor=\"middle\" font-family=\"Sans-serif\" font-size=\"24\" id=\"distance\" y=\"775\" x=\"531\">" + totalDistance + " kilometers</text>");	
 		}
 		writer.println("</g>");
