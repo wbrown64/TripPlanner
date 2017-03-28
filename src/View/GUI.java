@@ -229,15 +229,10 @@ public class GUI extends javax.swing.JFrame {
         btnChooseSubsetFile.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		//System.out.println("clicking add .xml file button");
-        		try {
-					view.writeSubsetXML();
-				} catch (FileNotFoundException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				} catch (UnsupportedEncodingException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+        			FilenameSelector fs=new FilenameSelector(view);
+        			fs.main(null);
+        			
+		
         		
         	}
         });

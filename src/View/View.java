@@ -96,11 +96,12 @@ public class View {
 		
 	}
 	void writeSubsetXML() throws FileNotFoundException, UnsupportedEncodingException{
+		System.out.println(xmlFilename);
 		String newName=filename+"_subset.xml";
 		PrintWriter writer = new PrintWriter(newName, "UTF-8");
 		writer.println("<xml>");
 		writer.println(" <selection>");
-		writer.println("	<title>"+filename+"</title> ");
+		writer.println("	<title>"+xmlFilename+"</title> ");
 		writer.println("		<filename>"+filename+".csv"+"</filename> ");
 		writer.println("		<destinations>");
 		for(Location L:model.getItinerary()){
