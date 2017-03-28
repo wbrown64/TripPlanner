@@ -1,4 +1,4 @@
-package View;
+package main.java.edu.csu2017sp314.dtr25;
 
 import org.apache.batik.swing.*;
 import org.apache.batik.swing.svg.*;

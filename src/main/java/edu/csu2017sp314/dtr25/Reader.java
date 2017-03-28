@@ -1,10 +1,10 @@
-package presenter;
+package main.java.edu.csu2017sp314.dtr25;
 import java.util.ArrayList;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import Model.Coordinates;
+import main.java.edu.csu2017sp314.dtr25.Coordinates;
 public class Reader {
 	
 	protected String filename;
@@ -15,8 +15,8 @@ public class Reader {
 		isCart = new ArrayList<Boolean>();
 	}
 	
-	public ArrayList<Model.Location> readFile() throws Exception {
-		ArrayList<Model.Location> locations = new ArrayList<>(500);
+	public ArrayList<main.java.edu.csu2017sp314.dtr25.Location> readFile() throws Exception {
+		ArrayList<main.java.edu.csu2017sp314.dtr25.Location> locations = new ArrayList<>(500);
 		String[] fields;
 		int idIndex = 0;
 		int breweryIndex = 0;
@@ -72,7 +72,7 @@ public class Reader {
 				}
 				Coordinates c=new Coordinates(fields[latitudeIndex],fields[longitudeIndex]);
 				//System.out.println(fields[breweryIndex]);
-				locations.add(new Model.Location(fields[idIndex],fields[breweryIndex],fields[cityIndex],fields[latitudeIndex],fields[longitudeIndex],fields[altitudeIndex],c));
+				locations.add(new main.java.edu.csu2017sp314.dtr25.Location(fields[idIndex],fields[breweryIndex],fields[cityIndex],fields[latitudeIndex],fields[longitudeIndex],fields[altitudeIndex],c));
 				//System.out.println(locations.get(index++));
 			}
 			scnr.close();

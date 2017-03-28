@@ -49,6 +49,11 @@ public class Edge {
 		return (this.getfrom().equals(e.getfrom()) && this.getTo().equals(e.getTo()));
 	}
 	
+	public boolean compareAnyLocations(Edge e) {
+		return (this.getfrom().equals(e.getfrom()) || this.getfrom().equals(e.getTo()) || this.getTo().equals(e.getfrom())
+				|| this.getTo().equals(e.getTo())); 
+	}
+	
 	public static void main(String[] args) {
 		Edge e1 = new Edge(new Location("1","2","3","4","5","6", new Coordinates("1","1")),new Location("1","2","3","4","5","7", new Coordinates("1","1")));
 		Edge e2 = new Edge(new Location("1","2","3","4","5","8", new Coordinates("1","1")),new Location("1","2","3","4","5","7", new Coordinates("1","1")));

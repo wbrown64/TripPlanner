@@ -7,9 +7,9 @@ import View.View;
 public class Presenter {
 	protected Model m;
 	protected View v;
+	public boolean GUI = false;
 	public boolean TwoOpt = false;
 	public boolean ThreeOpt = false;
-	public boolean GUI = false;
 	public String filename = "";
 	public String XML = "";
 	public String SVG = "";
@@ -42,6 +42,9 @@ public class Presenter {
 				m = new Model(filename,TwoOpt,ThreeOpt);
 				if(TwoOpt)
 					m.twoOpt();
+				//FIXME
+				/*if (true)
+					m.threeOpt();*/
 			} 
 			catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -56,6 +59,7 @@ public class Presenter {
 			}
 			else{
 				try {
+					//FIXME
 					m = new Model(filename,TwoOpt,ThreeOpt);
 				} 
 				catch (Exception e) {
