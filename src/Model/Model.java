@@ -25,25 +25,73 @@ public class Model {
 		Reader read=new Reader(filename);
 		ArrayList<Location> i=read.readFile();
 		this.setItinerary(i);
-		standard_trip();
+		itinerary = bestStandardTrip();
 		setLegDistance(itinerary);
-		//FIXME
-		threeOpt();
+		//threeOpt();
 		
 	}
+	 
+	 private ArrayList<Location> bestStandardTrip() {
+		 double bestDistance = Double.MAX_VALUE;
+		 ArrayList<Location> newItinerary = new ArrayList<Location>(500);
+		 
+		 for (int i = 0; i < itinerary.size(); ++i) {
+			 ArrayList<Location> tempItinerary = standardTrip(itinerary.get(i));
+			 double tempDistance = getTotalDistance(tempItinerary);
+			 
+			 if (tempDistance < bestDistance) {
+				 bestDistance = tempDistance;
+				 newItinerary = tempItinerary;
+			 }
+		 }
+		 return newItinerary;
+	 }
+	 
+	 private ArrayList<Location> standardTrip(Location start) {
+		 Location currentLoc = start;
+		 ArrayList<Location> itineraryCopy= new ArrayList<Location>(itinerary);
+		 ArrayList<Location> newItinerary = new ArrayList<Location>(500);
+		 
+		 itineraryCopy.remove(start);
+		 newItinerary.add(start);
+		 
+		 double minDistance = Double.MAX_VALUE;
+		 int index = 0;
+		 
+		 while (itineraryCopy.size()>0) {
+			 for (int i = 0; i < itineraryCopy.size(); ++i) {
+				 double dist = getLegDistance(currentLoc,itineraryCopy.get(i));
+				 
+				 if (dist < minDistance) {
+					 minDistance = dist;
+					 index = i;
+				 }
+			 }
+			 Location oldCurrent = currentLoc;
+				currentLoc=itineraryCopy.get(index);
+				newItinerary.add(currentLoc);
+				itineraryCopy.remove(currentLoc);
+				if(itineraryCopy.size() > 0)
+				//min_distance=getLegDistance(current,getItinerary().get(0));
+				minDistance = Double.MAX_VALUE;
+		 }
+		 return newItinerary;
+	 }
 	
-	private void standard_trip(){ // should this be private?
+	/*private ArrayList<Location> standard_trip(){ // should this be private?
 		ArrayList<Location> itinerary_copy=new ArrayList<Location>();
 		Location current=getItinerary().get(0);
-		double min_distance=getLegDistance(current,getItinerary().get(1));
+		//double min_distance=getLegDistance(current,getItinerary().get(1));
+		double min_distance=Double.MAX_VALUE;
 		itinerary_copy.add(current);
 		getItinerary().remove(current);
-		int index=1;
+		int index = 0;
+		//int index=1;
 		while(getItinerary().size()!=0){
 			for(int i=0;i<getItinerary().size();i++){
 				double distance=getLegDistance(current,getItinerary().get(i));
 				//System.out.println("getLegDistance(): " + getLegDistance(current,getItinerary().get(i)));
-				if(distance<=min_distance){
+				if(distance<min_distance){
 					min_distance=distance;
 					index=i;
 				}
@@ -52,18 +100,20 @@ public class Model {
 			Location oldCurrent = current;
 			current=getItinerary().get(index);
 			itinerary_copy.add(current);
-			Edge addingEdge = new Edge(oldCurrent,current);
-			addingEdge.setDistance(min_distance);
-			edges.add(addingEdge);
+			//Edge addingEdge = new Edge(oldCurrent,current);
+			//addingEdge.setDistance(min_distance);
+			//edges.add(addingEdge);
 			getItinerary().remove(current);
 			if(getItinerary().size()!=0)
-			min_distance=getLegDistance(current,getItinerary().get(0));
+			//min_distance=getLegDistance(current,getItinerary().get(0));
+			min_distance = Double.MAX_VALUE;
 		}
 //		for(Location L:itinerary_copy){
 //			System.out.println(L.city);
 //		}
-		setItinerary(itinerary_copy);
-	}
+		return itinerary_copy;
+		//setItinerary(itinerary_copy);
+	}*/
 	
 	private void setLegDistance(ArrayList<Location> itinerary){
 		for(int i = 0; i < itinerary.size()-1; i++){
@@ -234,7 +284,6 @@ public class Model {
 		for(int i = b; i >= a; --i){
 			newRoute.add(oldRoute.get(i));
 		}
-		//index out of bounds occuring here when c = 53, and then 54.
 		for(int i = b + 1; i < c; ++i){
 			newRoute.add(oldRoute.get(i));
 		}
