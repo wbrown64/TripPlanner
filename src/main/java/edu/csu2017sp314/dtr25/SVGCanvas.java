@@ -1,7 +1,7 @@
 package main.java.edu.csu2017sp314.dtr25;
 
-import org.apache.batik.swing.*;
-import org.apache.batik.swing.svg.*;
+import org.apache.batik-1.8.swing.*;
+import org.apache.batik-1.8.swing.svg.*;
 
 import javax.swing.*;
 
