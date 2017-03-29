@@ -18,6 +18,7 @@ public class View {
 	protected boolean showMileage = false;
 	protected boolean showID = false;
 	protected boolean showName = false;
+	protected boolean Miles = false;
 	protected String xmlFilename;
 	protected String filename;
 	protected String SVG;
@@ -162,7 +163,12 @@ public class View {
 			writer.println("sequence - the order of the legs");
 			writer.println("start - the name of the starting location for a leg");
 			writer.println("finish - the name of the finishing location for a leg");
+			if(Miles){
 			writer.println("mileage - the number of miles (to the nearest whole mile) between the starting and finishing locations");
+			}
+			else{
+				writer.println("kilometers - the number of kilometers (to the nearest whole kilometer) between the starting and finishing locations");
+			}
 			writer.println("-->");
 			createLegForXML(writer,itinerary);
 			writer.println("</trip>");
@@ -196,6 +202,9 @@ public class View {
 	public void setShowName(boolean showName) {
 		this.showName = showName;
 	}
+	public void setMiles(boolean Miles){
+		this.Miles = Miles;
+	}
 	
 	private void createLegForXML(PrintWriter writer,ArrayList<Location> itinerary){
 		for(int i = 0; i < itinerary.size()-1; i++){
@@ -203,14 +212,24 @@ public class View {
 			writer.println("<sequence>" + (i+1) +"</sequence>");
 			writer.println("<start>" + itinerary.get(i).getCity() +"</start>");
 			writer.println("<finish>" + itinerary.get(i+1).getCity() + "</finish>");
+			if(Miles){
 			writer.println("<mileage>" + itinerary.get(i).legDistance + "</mileage>");
+			}
+			else{
+				writer.println("<kilometers>" + itinerary.get(i).legDistance + "</kilometers>");
+			}
 			writer.println("</leg>");
 		}
 		writer.println("<leg>");
 		writer.println("<sequence>" + (itinerary.size()-1) + "</sequence>");
 		writer.println("<start>" + itinerary.get(itinerary.size()-1).getCity() + "</start>");
 		writer.println("<finish>" + itinerary.get(0).getCity() + "</finish>");
+		if(Miles){
 		writer.println("<mileage>" + itinerary.get(itinerary.size()-1).legDistance + "</mileage>");
+		}
+		else{
+			writer.println("<kilometers>" + itinerary.get(itinerary.size()-1).legDistance + "</kilometers>");
+		}
 		writer.println("</leg>");
 	}
 	
@@ -250,7 +269,12 @@ public class View {
 		writer.println("<g>");
 		writer.println("<title>Titles</title>");
 		writer.println("<text text-anchor=\"middle\" font-family=\"Sans-serif\" font-size=\"24\" id=\"state\" y=\"30\" x=\"531\">Colorado</text>");
+		if(Miles){
 		writer.println("<text text-anchor=\"middle\" font-family=\"Sans-serif\" font-size=\"24\" id=\"distance\" y=\"775\" x=\"531\">" + totalDistance + " miles</text>");
+		}
+		else{
+			writer.println("<text text-anchor=\"middle\" font-family=\"Sans-serif\" font-size=\"24\" id=\"distance\" y=\"775\" x=\"531\">" + totalDistance + " kilometers</text>");	
+		}
 		writer.println("</g>");
 	}
 	

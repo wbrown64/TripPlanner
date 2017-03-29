@@ -18,7 +18,7 @@ public class TestPresenter {
 		testList.add(new Location("1", "Brewery", "City", "2", "3", "4", new Coordinates("2", "3")));
 		View myView = new View(testList, "placeholder.txt");
 		try {
-			Model myModel = new Model("test.csv",true,true);
+			Model myModel = new Model("test.csv",true,true,true);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
