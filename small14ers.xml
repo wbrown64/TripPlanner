@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trip>
+<!--
+sequence - the order of the legs
+start - the name of the starting location for a leg
+finish - the name of the finishing location for a leg
+mileage - the number of miles (to the nearest whole mile) between the starting and finishing locations
+-->
+<leg>
+<sequence>1</sequence>
+<start>Mount Elbert</start>
+<finish>Mount Massive</finish>
+<mileage>5</mileage>
+</leg>
+<leg>
+<sequence>1</sequence>
+<start>Mount Massive</start>
+<finish>Mount Elbert</finish>
+<mileage>5</mileage>
+</leg>
+</trip>

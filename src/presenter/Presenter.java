@@ -18,8 +18,8 @@ public class Presenter {
 	}
 
 	public void planTrip(String[] args){
-		
-		
+			SQLinterpreter sqli=new SQLinterpreter("wbrown64","830285807");
+			
 			for(int i = 0;i < args.length;i++){
 				//System.out.println(args[i].substring(args[i].length()-4, args[i].length()));
 				

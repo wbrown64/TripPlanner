@@ -91,7 +91,7 @@ public class View {
 		        }
 		    }
 		    catch(FileNotFoundException e) {
-		        System.err.println("File not found. Please scan in new file.");
+		        System.err.println("File not found. Please choose a new .SVG file.");
 		    }
 		
 	}
