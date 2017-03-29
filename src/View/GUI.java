@@ -244,7 +244,6 @@ public class GUI extends javax.swing.JFrame {
         
         setJList(jList1);
         
-        String[] continents={"Europe","Asia","North American","Africa","Antartica","South America","Oceania"};
         
         JScrollPane scrollPane = new JScrollPane();
         
@@ -347,16 +346,24 @@ public class GUI extends javax.swing.JFrame {
         					.addComponent(jButton3)))
         			.addContainerGap())
         );
-        
+        String[] continents={"Europe","Asia","North American","Africa","Antartica","South America","Oceania"};
+
         list_3 = new JList();
         scrollPane_2.setColumnHeaderView(list_3);
+        scrollPane_2.setViewportView(list_3);
         
         list_2 = new JList();
         scrollPane_1.setColumnHeaderView(list_2);
+        scrollPane_1.setViewportView(list_2);
         
         list_1 = new JList();
         scrollPane.setColumnHeaderView(list_1);
+        scrollPane.setViewportView(list_1);
+        setJList(list_1,continents);
+        
+        
         getContentPane().setLayout(layout);
+
 
         pack();
     }// </editor-fold>                        
@@ -551,6 +558,13 @@ public class GUI extends javax.swing.JFrame {
 	   String[] names=createArray();
      list.setModel(new javax.swing.AbstractListModel<String>() {
      String[] strings = names;
+     public int getSize() { return strings.length; }
+     public String getElementAt(int i) { return strings[i]; }
+     });
+   }
+   private void setJList(JList<String> list,String[] array){
+     list.setModel(new javax.swing.AbstractListModel<String>() {
+     String[] strings = array;
      public int getSize() { return strings.length; }
      public String getElementAt(int i) { return strings[i]; }
      });
