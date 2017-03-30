@@ -3,11 +3,11 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import Model.Coordinates;
-import Model.Location;
-import Model.Model;
-import View.View;
-import presenter.Presenter;
+import main.java.edu.csu2017sp314.dtr25.Coordinates;
+import main.java.edu.csu2017sp314.dtr25.Location;
+import main.java.edu.csu2017sp314.dtr25.Model;
+import main.java.edu.csu2017sp314.dtr25.Presenter;
+import main.java.edu.csu2017sp314.dtr25.View;
 
 import java.util.ArrayList;
 
@@ -19,7 +19,7 @@ public class TestPresenter {
 		testList.add(new Location("1", "Brewery", "City", "2", "3", "4", new Coordinates("2", "3")));
 		View myView = new View(testList, "placeholder.txt");
 		try {
-			Model myModel = new Model("test.csv",true,true, false);
+			Model myModel = new Model("test.csv",true,true);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -38,7 +38,7 @@ public class TestPresenter {
 		testList.add(new Location("1", "Brewery", "City", "2", "3", "4", new Coordinates("2", "3")));
 		Presenter p = new Presenter();
 		View v = new View(testList, "placeholder.txt");
-		p.checkViewFlags("-m");
+		p.checkFlags("-m");
 		assertTrue("failure - should be true",v.isShowMileage());
 	}
 

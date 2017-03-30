@@ -3,9 +3,9 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import Model.Coordinates;
-import Model.Location;
-import View.View;
+import main.java.edu.csu2017sp314.dtr25.Coordinates;
+import main.java.edu.csu2017sp314.dtr25.Location;
+import main.java.edu.csu2017sp314.dtr25.View;
 
 import static org.junit.Assert.assertEquals;
 

@@ -3,15 +3,15 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import Model.Location;
-import Model.Model;
+import main.java.edu.csu2017sp314.dtr25.Location;
+import main.java.edu.csu2017sp314.dtr25.Model;
 
 import static org.junit.Assert.assertEquals;
 public class ModelTest {
 	//@Test
 	public void testGetItinerary(){ // just tests creation of model (and planTrip atm)
 		try {
-			Model myModel = new Model("small_locations.txt",true,true, false); 
+			Model myModel = new Model("small_locations.txt",true,true); 
 			ArrayList<Location> i=myModel.getItinerary();
 			assertEquals(i,myModel.getItinerary());
 		} catch (Exception e) {
