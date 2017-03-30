@@ -58,7 +58,8 @@ public class View {
 			writer.println("<?xml version=\"1.0\"?>");
 			writer.println("<svg width=\"1280\" height=\"1024\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\">");
 			writeBackgroundSVG(filename,SVG,writer);		//this write's the given svg before appending our code 
-			createBorders(writer);
+			//createBorders(writer);
+			createBorders2(writer);
 			createTitles(writer,itinerary);
 			createLegs(writer,itinerary);
 			if(showName == true){
@@ -85,7 +86,7 @@ public class View {
 		        File output = new File(filename);
 		        Scanner sc = new Scanner(input);
 		        sc.nextLine();					//skip the already in place xml tags 
-		        sc.nextLine();					//skip the already in place xml tags 
+		      //  sc.nextLine();					//skip the already in place xml tags 
 		        while(sc.hasNextLine()) {
 		            String s = sc.nextLine();
 		           // System.out.println(s);
@@ -170,7 +171,7 @@ public class View {
 				writer.println("kilometers - the number of kilometers (to the nearest whole kilometer) between the starting and finishing locations");
 			}
 			writer.println("-->");
-			createLegForXML(writer,itinerary);
+			createLegForXML2(writer,itinerary);
 			writer.println("</trip>");
 			writer.close();
 		}
@@ -280,7 +281,52 @@ public class View {
 			else if(Kilometers){
 				writer.println("<units>kilometers</units>");
 			}
+			writer.println("</leg>");
 		}
+		writer.println("<leg>");
+		writer.println("<sequence>" + (itinerary.size()-1) +"</sequence>");
+		writer.println("<start>");
+		writer.println("<!-- information from the airport table -->");
+		writer.println("<id>" + itinerary.get(itinerary.size()-1).getId() + "</id>");
+		writer.println("<name>" + itinerary.get(itinerary.size()-1).getBrewery() + "</name>");
+		writer.println("<latitude>" + itinerary.get(itinerary.size()-1).getLat_dd() + "</latitude>");
+		writer.println("<longitude>" + itinerary.get(itinerary.size()-1).getLon_dd() + "</longitude>");
+		writer.println("<elevation>" + itinerary.get(itinerary.size()-1).getAltitude() + "</elevation");
+		writer.println("<municipality>" + itinerary.get(itinerary.size()-1).getCity() + "</municipality>");
+		writer.println("<!-- names from the other tables, not the codes -->");
+		writer.println("<region>" + "INSERT REGION HERE" + "</region>");
+		writer.println("<country>" + "INSERT COUNTRY HERE" + "</country>");
+		writer.println("<continent>" + "INSERT CONTINENT HERE" + "</continent>");
+		writer.println("<!-- wikipedia links from the tables -->");
+		writer.println("<airportURL>" + "INSERT AIRPORTURL HERE" + "</airportURL>");
+		writer.println("<regionURL>" + "INSERT REGIONURL HERE" + "</regionURL>");
+		writer.println("<countryURL>" + "INSERT COUNTRYURL HERE" + "</countryURL>");
+		writer.println("</start>");
+		writer.println("<finish>");
+		writer.println("<!-- information from the airport table -->");
+		writer.println("<id>" + itinerary.get(0).getId() + "</id>");
+		writer.println("<name>" + itinerary.get(0).getBrewery() + "</name>");
+		writer.println("<latitude>" + itinerary.get(0).getLat_dd() + "</latitude>");
+		writer.println("<longitude>" + itinerary.get(0).getLon_dd() + "</longitude>");
+		writer.println("<elevation>" + itinerary.get(0).getAltitude() + "</elevation");
+		writer.println("<municipality>" + itinerary.get(0).getCity() + "</municipality>");
+		writer.println("<!-- names from the other tables, not the codes -->");
+		writer.println("<region>" + "INSERT REGION HERE" + "</region>");
+		writer.println("<country>" + "INSERT COUNTRY HERE" + "</country>");
+		writer.println("<continent>" + "INSERT CONTINENT HERE" + "</continent>");
+		writer.println("<!-- wikipedia links from the tables -->");
+		writer.println("<airportURL>" + "INSERT AIRPORTURL HERE" + "</airportURL>");
+		writer.println("<regionURL>" + "INSERT REGIONURL HERE" + "</regionURL>");
+		writer.println("<countryURL>" + "INSERT COUNTRYURL HERE" + "</countryURL>");
+		writer.println("</finish>");
+		writer.println("<distance>" + itinerary.get(itinerary.size()-1).legDistance + "</distance>");
+		if(Miles){
+			writer.println("<units>miles</units>");
+		}
+		else if(Kilometers){
+			writer.println("<units>kilometers</units>");
+		}
+		writer.println("</leg>");
 	}
 	
 	private double[] toCartesian(double x,double y){
@@ -296,6 +342,13 @@ public class View {
 //		}
 		return vals;
 	}
+	private double[] toCartesian2(double x,double y){
+		double[] vals=new double[2];
+		vals[0]= (Math.abs(x-(-109)) / Math.abs((-102) - (-109)))*(1024);
+		vals[1]= (Math.abs(y-41) / (Math.abs(37-41))*(512));
+		return vals;
+	}
+	
 	private void createBorders(PrintWriter writer){
 		writer.println("<g>");
 		writer.println("<title>Borders</title>");
@@ -306,6 +359,17 @@ public class View {
 		writer.println("</g>");
 		
 	}
+	private void createBorders2(PrintWriter writer){
+		writer.println("<g>");
+		writer.println("<title>Borders</title>");
+		writer.println("<line id=\"north\" y2=\"0\" x2=\"1024\" y1=\"0\" x1=\"0\" stroke-width=\"5\" stroke=\"#666666\"/>");
+		writer.println("<line id=\"east\" y2=\"512\" x2=\"1024\" y1=\"0\" x1=\"1024\" stroke-width=\"5\" stroke=\"#666666\"/>");
+		writer.println("<line id=\"south\" y2=\"512\" x2=\"0\" y1=\"512\" x1=\"1024\" stroke-width=\"5\" stroke=\"#666666\"/>");
+		writer.println("<line id=\"west\" y2=\"0\" x2=\"0\" y1=\"512\" x1=\"0\" stroke-width=\"5\" stroke=\"#666666\"/>");
+		writer.println("</g>");
+		
+	}
+	
 	private void createTitles(PrintWriter writer, ArrayList<Location> itinerary){
 		int totalDistance = 0;
 		double distance = 0;
@@ -340,8 +404,8 @@ public class View {
 			y1 = itinerary.get(i).getLat_dd();
 			x2 = itinerary.get(i+1).getLon_dd();
 			y2 = itinerary.get(i+1).getLat_dd();
-			double[] vals=toCartesian(x1,y1);
-			double[] vals2=toCartesian(x2,y2);
+			double[] vals=toCartesian2(x1,y1);
+			double[] vals2=toCartesian2(x2,y2);
 			x1=vals[0];
 			y1=vals[1];
 			x2=vals2[0];
@@ -353,8 +417,8 @@ public class View {
 		x2=itinerary.get(0).getLon_dd();
 		y2=itinerary.get(0).getLat_dd();
 		int size=itinerary.size()-1;
-		double[]vals=toCartesian(x1,y1);
-		double[] vals2=toCartesian(x2,y2);
+		double[]vals=toCartesian2(x1,y1);
+		double[] vals2=toCartesian2(x2,y2);
 		x1=vals[0];
 		y1=vals[1];
 		x2=vals2[0];
@@ -376,7 +440,7 @@ public class View {
 			else{
 				var = itinerary.get(i).getId();
 			}
-			double[] vals=toCartesian(x1,y1);
+			double[] vals=toCartesian2(x1,y1);
 			x1 = vals[0];
 			y1 = vals[1];
 		
@@ -395,8 +459,8 @@ public class View {
 			double y2 = itinerary.get(i+1).getLat_dd();
 			int distance = itinerary.get(i).legDistance;
 			
-			double[] vals=toCartesian(x1,y1);
-			double[] vals2=toCartesian(x2,y2);
+			double[] vals=toCartesian2(x1,y1);
+			double[] vals2=toCartesian2(x2,y2);
 			double mid = Math.abs((vals[0]-vals2[0]) / 2);
 			double mid2 = Math.abs((vals[1]-vals2[1]) / 2);
 			double x = 0;
@@ -423,8 +487,8 @@ public class View {
 		double y2=itinerary.get(0).getLat_dd();
 		int distance = itinerary.get(itinerary.size()-1).legDistance;
 		
-		double[]vals=toCartesian(x1,y1);
-		double[] vals2=toCartesian(x2,y2);
+		double[]vals=toCartesian2(x1,y1);
+		double[] vals2=toCartesian2(x2,y2);
 		x1=vals[0];
 		y1=vals[1];
 		x2=vals2[0];
