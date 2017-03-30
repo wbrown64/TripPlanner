@@ -3,6 +3,12 @@
   xsi:schemaLocation='http://maven.apache.org/POM/4.0.0
   http://maven.apache.org/xsd/maven-4.0.0.xsd'>
   <modelVersion>4.0.0</modelVersion>
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
   <url>https://github.com/csu2017sp314/DTR-25</url>
   <groupId>com.csu2017sp314.DTR25</groupId>
   <artifactId>tripco</artifactId>
