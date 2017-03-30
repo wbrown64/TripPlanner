@@ -56,7 +56,7 @@ public class View {
 		try{
 			PrintWriter writer = new PrintWriter(filename, "UTF-8");
 			writer.println("<?xml version=\"1.0\"?>");
-			writer.println("<svg width=\"1280\" height=\"1024\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\">");
+			writer.println("<svg width=\"1024\" height=\"512\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\">");
 			writeBackgroundSVG(filename,SVG,writer);		//this write's the given svg before appending our code 
 			//createBorders(writer);
 			createBorders2(writer);
@@ -94,17 +94,16 @@ public class View {
 		        }
 		    }
 		    catch(FileNotFoundException e) {
-		        System.err.println("File not found. Please choose a new .SVG file.");
+		        System.err.println("File not found. Please scan in new file.");
 		    }
 		
 	}
 	void writeSubsetXML() throws FileNotFoundException, UnsupportedEncodingException{
-		System.out.println(xmlFilename);
 		String newName=filename+"_subset.xml";
 		PrintWriter writer = new PrintWriter(newName, "UTF-8");
 		writer.println("<xml>");
 		writer.println(" <selection>");
-		writer.println("	<title>"+xmlFilename+"</title> ");
+		writer.println("	<title>"+filename+"</title> ");
 		writer.println("		<filename>"+filename+".csv"+"</filename> ");
 		writer.println("		<destinations>");
 		for(Location L:model.getItinerary()){
@@ -211,124 +210,6 @@ public class View {
 		this.Kilometers = Kilometers;
 	}
 	
-	private void createLegForXML(PrintWriter writer,ArrayList<Location> itinerary){
-		for(int i = 0; i < itinerary.size()-1; i++){
-			writer.println("<leg>");
-			writer.println("<sequence>" + (i+1) +"</sequence>");
-			writer.println("<start>" + itinerary.get(i).getCity() +"</start>");
-			writer.println("<finish>" + itinerary.get(i+1).getCity() + "</finish>");
-			if(Miles){
-			writer.println("<mileage>" + itinerary.get(i).legDistance + "</mileage>");
-			}
-			else if(Kilometers){
-				writer.println("<kilometers>" + itinerary.get(i).legDistance + "</kilometers>");
-			}
-			writer.println("</leg>");
-		}
-		writer.println("<leg>");
-		writer.println("<sequence>" + (itinerary.size()-1) + "</sequence>");
-		writer.println("<start>" + itinerary.get(itinerary.size()-1).getCity() + "</start>");
-		writer.println("<finish>" + itinerary.get(0).getCity() + "</finish>");
-		if(Miles){
-		writer.println("<mileage>" + itinerary.get(itinerary.size()-1).legDistance + "</mileage>");
-		}
-		else if(Kilometers){
-			writer.println("<kilometers>" + itinerary.get(itinerary.size()-1).legDistance + "</kilometers>");
-		}
-		writer.println("</leg>");
-	}
-	private void createLegForXML2(PrintWriter writer,ArrayList<Location> itinerary){
-		for(int i = 0; i < itinerary.size()-1; i++){
-			writer.println("<leg>");
-			writer.println("<sequence>" + (i+1) +"</sequence>");
-			writer.println("<start>");
-			writer.println("<!-- information from the airport table -->");
-			writer.println("<id>" + itinerary.get(i).getId() + "</id>");
-			writer.println("<name>" + itinerary.get(i).getBrewery() + "</name>");
-			writer.println("<latitude>" + itinerary.get(i).getLat_dd() + "</latitude>");
-			writer.println("<longitude>" + itinerary.get(i).getLon_dd() + "</longitude>");
-			writer.println("<elevation>" + itinerary.get(i).getAltitude() + "</elevation");
-			writer.println("<municipality>" + itinerary.get(i).getCity() + "</municipality>");
-			writer.println("<!-- names from the other tables, not the codes -->");
-			writer.println("<region>" + "INSERT REGION HERE" + "</region>");
-			writer.println("<country>" + "INSERT COUNTRY HERE" + "</country>");
-			writer.println("<continent>" + "INSERT CONTINENT HERE" + "</continent>");
-			writer.println("<!-- wikipedia links from the tables -->");
-			writer.println("<airportURL>" + "INSERT AIRPORTURL HERE" + "</airportURL>");
-			writer.println("<regionURL>" + "INSERT REGIONURL HERE" + "</regionURL>");
-			writer.println("<countryURL>" + "INSERT COUNTRYURL HERE" + "</countryURL>");
-			writer.println("</start>");
-			writer.println("<finish>");
-			writer.println("<!-- information from the airport table -->");
-			writer.println("<id>" + itinerary.get(i+1).getId() + "</id>");
-			writer.println("<name>" + itinerary.get(i+1).getBrewery() + "</name>");
-			writer.println("<latitude>" + itinerary.get(i+1).getLat_dd() + "</latitude>");
-			writer.println("<longitude>" + itinerary.get(i+1).getLon_dd() + "</longitude>");
-			writer.println("<elevation>" + itinerary.get(i+1).getAltitude() + "</elevation");
-			writer.println("<municipality>" + itinerary.get(i+1).getCity() + "</municipality>");
-			writer.println("<!-- names from the other tables, not the codes -->");
-			writer.println("<region>" + "INSERT REGION HERE" + "</region>");
-			writer.println("<country>" + "INSERT COUNTRY HERE" + "</country>");
-			writer.println("<continent>" + "INSERT CONTINENT HERE" + "</continent>");
-			writer.println("<!-- wikipedia links from the tables -->");
-			writer.println("<airportURL>" + "INSERT AIRPORTURL HERE" + "</airportURL>");
-			writer.println("<regionURL>" + "INSERT REGIONURL HERE" + "</regionURL>");
-			writer.println("<countryURL>" + "INSERT COUNTRYURL HERE" + "</countryURL>");
-			writer.println("</finish>");
-			writer.println("<distance>" + itinerary.get(i).legDistance + "</distance>");
-			if(Miles){
-				writer.println("<units>miles</units>");
-			}
-			else if(Kilometers){
-				writer.println("<units>kilometers</units>");
-			}
-			writer.println("</leg>");
-		}
-		writer.println("<leg>");
-		writer.println("<sequence>" + (itinerary.size()-1) +"</sequence>");
-		writer.println("<start>");
-		writer.println("<!-- information from the airport table -->");
-		writer.println("<id>" + itinerary.get(itinerary.size()-1).getId() + "</id>");
-		writer.println("<name>" + itinerary.get(itinerary.size()-1).getBrewery() + "</name>");
-		writer.println("<latitude>" + itinerary.get(itinerary.size()-1).getLat_dd() + "</latitude>");
-		writer.println("<longitude>" + itinerary.get(itinerary.size()-1).getLon_dd() + "</longitude>");
-		writer.println("<elevation>" + itinerary.get(itinerary.size()-1).getAltitude() + "</elevation");
-		writer.println("<municipality>" + itinerary.get(itinerary.size()-1).getCity() + "</municipality>");
-		writer.println("<!-- names from the other tables, not the codes -->");
-		writer.println("<region>" + "INSERT REGION HERE" + "</region>");
-		writer.println("<country>" + "INSERT COUNTRY HERE" + "</country>");
-		writer.println("<continent>" + "INSERT CONTINENT HERE" + "</continent>");
-		writer.println("<!-- wikipedia links from the tables -->");
-		writer.println("<airportURL>" + "INSERT AIRPORTURL HERE" + "</airportURL>");
-		writer.println("<regionURL>" + "INSERT REGIONURL HERE" + "</regionURL>");
-		writer.println("<countryURL>" + "INSERT COUNTRYURL HERE" + "</countryURL>");
-		writer.println("</start>");
-		writer.println("<finish>");
-		writer.println("<!-- information from the airport table -->");
-		writer.println("<id>" + itinerary.get(0).getId() + "</id>");
-		writer.println("<name>" + itinerary.get(0).getBrewery() + "</name>");
-		writer.println("<latitude>" + itinerary.get(0).getLat_dd() + "</latitude>");
-		writer.println("<longitude>" + itinerary.get(0).getLon_dd() + "</longitude>");
-		writer.println("<elevation>" + itinerary.get(0).getAltitude() + "</elevation");
-		writer.println("<municipality>" + itinerary.get(0).getCity() + "</municipality>");
-		writer.println("<!-- names from the other tables, not the codes -->");
-		writer.println("<region>" + "INSERT REGION HERE" + "</region>");
-		writer.println("<country>" + "INSERT COUNTRY HERE" + "</country>");
-		writer.println("<continent>" + "INSERT CONTINENT HERE" + "</continent>");
-		writer.println("<!-- wikipedia links from the tables -->");
-		writer.println("<airportURL>" + "INSERT AIRPORTURL HERE" + "</airportURL>");
-		writer.println("<regionURL>" + "INSERT REGIONURL HERE" + "</regionURL>");
-		writer.println("<countryURL>" + "INSERT COUNTRYURL HERE" + "</countryURL>");
-		writer.println("</finish>");
-		writer.println("<distance>" + itinerary.get(itinerary.size()-1).legDistance + "</distance>");
-		if(Miles){
-			writer.println("<units>miles</units>");
-		}
-		else if(Kilometers){
-			writer.println("<units>kilometers</units>");
-		}
-		writer.println("</leg>");
-	}
 	
 	private double[] toCartesian(double x,double y){
 		double[] vals=new double[2];
@@ -383,7 +264,7 @@ public class View {
 		
 		writer.println("<g>");
 		writer.println("<title>Titles</title>");
-		writer.println("<text text-anchor=\"middle\" font-family=\"Sans-serif\" font-size=\"24\" id=\"state\" y=\"30\" x=\"531\">Colorado</text>");
+		//writer.println("<text text-anchor=\"middle\" font-family=\"Sans-serif\" font-size=\"24\" id=\"state\" y=\"30\" x=\"531\">Colorado</text>");
 		if(Miles){
 		writer.println("<text text-anchor=\"middle\" font-family=\"Sans-serif\" font-size=\"24\" id=\"distance\" y=\"775\" x=\"531\">" + totalDistance + " miles</text>");
 		}
@@ -514,5 +395,124 @@ public class View {
 		}
 		writer.println("<text font-family=\"Sans-serif\" font-size=\"16\" id=\"leg" + (itinerary.size()-1) + "\" y=\"" + y +"\" x=\"" + x +"\">" + distance + "</text>");
 		writer.println("</g>");
+	}
+	
+	private void createLegForXML(PrintWriter writer,ArrayList<Location> itinerary){
+		for(int i = 0; i < itinerary.size()-1; i++){
+			writer.println("<leg>");
+			writer.println("<sequence>" + (i+1) +"</sequence>");
+			writer.println("<start>" + itinerary.get(i).getCity() +"</start>");
+			writer.println("<finish>" + itinerary.get(i+1).getCity() + "</finish>");
+			if(Miles){
+			writer.println("<mileage>" + itinerary.get(i).legDistance + "</mileage>");
+			}
+			else if(Kilometers){
+				writer.println("<kilometers>" + itinerary.get(i).legDistance + "</kilometers>");
+			}
+			writer.println("</leg>");
+		}
+		writer.println("<leg>");
+		writer.println("<sequence>" + (itinerary.size()-1) + "</sequence>");
+		writer.println("<start>" + itinerary.get(itinerary.size()-1).getCity() + "</start>");
+		writer.println("<finish>" + itinerary.get(0).getCity() + "</finish>");
+		if(Miles){
+		writer.println("<mileage>" + itinerary.get(itinerary.size()-1).legDistance + "</mileage>");
+		}
+		else if(Kilometers){
+			writer.println("<kilometers>" + itinerary.get(itinerary.size()-1).legDistance + "</kilometers>");
+		}
+		writer.println("</leg>");
+	}
+	private void createLegForXML2(PrintWriter writer,ArrayList<Location> itinerary){
+		for(int i = 0; i < itinerary.size()-1; i++){
+			writer.println("<leg>");
+			writer.println("<sequence>" + (i+1) +"</sequence>");
+			writer.println("<start>");
+			writer.println("<!-- information from the airport table -->");
+			writer.println("<id>" + itinerary.get(i).getId() + "</id>");
+			writer.println("<name>" + itinerary.get(i).getBrewery() + "</name>");
+			writer.println("<latitude>" + itinerary.get(i).getLat_dd() + "</latitude>");
+			writer.println("<longitude>" + itinerary.get(i).getLon_dd() + "</longitude>");
+			writer.println("<elevation>" + itinerary.get(i).getAltitude() + "</elevation");
+			writer.println("<municipality>" + itinerary.get(i).getCity() + "</municipality>");
+			writer.println("<!-- names from the other tables, not the codes -->");
+			writer.println("<region>" + "INSERT REGION HERE" + "</region>");
+			writer.println("<country>" + "INSERT COUNTRY HERE" + "</country>");
+			writer.println("<continent>" + "INSERT CONTINENT HERE" + "</continent>");
+			writer.println("<!-- wikipedia links from the tables -->");
+			writer.println("<airportURL>" + "INSERT AIRPORTURL HERE" + "</airportURL>");
+			writer.println("<regionURL>" + "INSERT REGIONURL HERE" + "</regionURL>");
+			writer.println("<countryURL>" + "INSERT COUNTRYURL HERE" + "</countryURL>");
+			writer.println("</start>");
+			writer.println("<finish>");
+			writer.println("<!-- information from the airport table -->");
+			writer.println("<id>" + itinerary.get(i+1).getId() + "</id>");
+			writer.println("<name>" + itinerary.get(i+1).getBrewery() + "</name>");
+			writer.println("<latitude>" + itinerary.get(i+1).getLat_dd() + "</latitude>");
+			writer.println("<longitude>" + itinerary.get(i+1).getLon_dd() + "</longitude>");
+			writer.println("<elevation>" + itinerary.get(i+1).getAltitude() + "</elevation");
+			writer.println("<municipality>" + itinerary.get(i+1).getCity() + "</municipality>");
+			writer.println("<!-- names from the other tables, not the codes -->");
+			writer.println("<region>" + "INSERT REGION HERE" + "</region>");
+			writer.println("<country>" + "INSERT COUNTRY HERE" + "</country>");
+			writer.println("<continent>" + "INSERT CONTINENT HERE" + "</continent>");
+			writer.println("<!-- wikipedia links from the tables -->");
+			writer.println("<airportURL>" + "INSERT AIRPORTURL HERE" + "</airportURL>");
+			writer.println("<regionURL>" + "INSERT REGIONURL HERE" + "</regionURL>");
+			writer.println("<countryURL>" + "INSERT COUNTRYURL HERE" + "</countryURL>");
+			writer.println("</finish>");
+			writer.println("<distance>" + itinerary.get(i).legDistance + "</distance>");
+			if(Miles){
+				writer.println("<units>miles</units>");
+			}
+			else if(Kilometers){
+				writer.println("<units>kilometers</units>");
+			}
+			writer.println("</leg>");
+		}
+		writer.println("<leg>");
+		writer.println("<sequence>" + (itinerary.size()-1) +"</sequence>");
+		writer.println("<start>");
+		writer.println("<!-- information from the airport table -->");
+		writer.println("<id>" + itinerary.get(itinerary.size()-1).getId() + "</id>");
+		writer.println("<name>" + itinerary.get(itinerary.size()-1).getBrewery() + "</name>");
+		writer.println("<latitude>" + itinerary.get(itinerary.size()-1).getLat_dd() + "</latitude>");
+		writer.println("<longitude>" + itinerary.get(itinerary.size()-1).getLon_dd() + "</longitude>");
+		writer.println("<elevation>" + itinerary.get(itinerary.size()-1).getAltitude() + "</elevation");
+		writer.println("<municipality>" + itinerary.get(itinerary.size()-1).getCity() + "</municipality>");
+		writer.println("<!-- names from the other tables, not the codes -->");
+		writer.println("<region>" + "INSERT REGION HERE" + "</region>");
+		writer.println("<country>" + "INSERT COUNTRY HERE" + "</country>");
+		writer.println("<continent>" + "INSERT CONTINENT HERE" + "</continent>");
+		writer.println("<!-- wikipedia links from the tables -->");
+		writer.println("<airportURL>" + "INSERT AIRPORTURL HERE" + "</airportURL>");
+		writer.println("<regionURL>" + "INSERT REGIONURL HERE" + "</regionURL>");
+		writer.println("<countryURL>" + "INSERT COUNTRYURL HERE" + "</countryURL>");
+		writer.println("</start>");
+		writer.println("<finish>");
+		writer.println("<!-- information from the airport table -->");
+		writer.println("<id>" + itinerary.get(0).getId() + "</id>");
+		writer.println("<name>" + itinerary.get(0).getBrewery() + "</name>");
+		writer.println("<latitude>" + itinerary.get(0).getLat_dd() + "</latitude>");
+		writer.println("<longitude>" + itinerary.get(0).getLon_dd() + "</longitude>");
+		writer.println("<elevation>" + itinerary.get(0).getAltitude() + "</elevation");
+		writer.println("<municipality>" + itinerary.get(0).getCity() + "</municipality>");
+		writer.println("<!-- names from the other tables, not the codes -->");
+		writer.println("<region>" + "INSERT REGION HERE" + "</region>");
+		writer.println("<country>" + "INSERT COUNTRY HERE" + "</country>");
+		writer.println("<continent>" + "INSERT CONTINENT HERE" + "</continent>");
+		writer.println("<!-- wikipedia links from the tables -->");
+		writer.println("<airportURL>" + "INSERT AIRPORTURL HERE" + "</airportURL>");
+		writer.println("<regionURL>" + "INSERT REGIONURL HERE" + "</regionURL>");
+		writer.println("<countryURL>" + "INSERT COUNTRYURL HERE" + "</countryURL>");
+		writer.println("</finish>");
+		writer.println("<distance>" + itinerary.get(itinerary.size()-1).legDistance + "</distance>");
+		if(Miles){
+			writer.println("<units>miles</units>");
+		}
+		else if(Kilometers){
+			writer.println("<units>kilometers</units>");
+		}
+		writer.println("</leg>");
 	}
 }
