@@ -1,4 +1,4 @@
-package presenter;
+package test.java.edu.csu2017sp314.dtr25.tripco;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -7,6 +7,7 @@ import Model.Coordinates;
 import Model.Location;
 import Model.Model;
 import View.View;
+import presenter.Presenter;
 
 import java.util.ArrayList;
 
@@ -18,7 +19,7 @@ public class TestPresenter {
 		testList.add(new Location("1", "Brewery", "City", "2", "3", "4", new Coordinates("2", "3")));
 		View myView = new View(testList, "placeholder.txt");
 		try {
-			Model myModel = new Model("test.csv",true,true);
+			Model myModel = new Model("test.csv",true,true, false);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

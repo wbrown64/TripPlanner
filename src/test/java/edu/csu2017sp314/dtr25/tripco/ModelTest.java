@@ -1,14 +1,17 @@
-package Model;
+package test.java.edu.csu2017sp314.dtr25.tripco;
 import java.util.ArrayList;
 
 import org.junit.Test;
+
+import Model.Location;
+import Model.Model;
 
 import static org.junit.Assert.assertEquals;
 public class ModelTest {
 	//@Test
 	public void testGetItinerary(){ // just tests creation of model (and planTrip atm)
 		try {
-			Model myModel = new Model("small_locations.txt",true,true); 
+			Model myModel = new Model("small_locations.txt",true,true, false); 
 			ArrayList<Location> i=myModel.getItinerary();
 			assertEquals(i,myModel.getItinerary());
 		} catch (Exception e) {
