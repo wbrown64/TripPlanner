@@ -30,6 +30,10 @@ import javax.swing.JButton;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JComboBox;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JLabel;
 
 /**
  *
@@ -229,77 +233,137 @@ public class GUI extends javax.swing.JFrame {
         btnChooseSubsetFile.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		//System.out.println("clicking add .xml file button");
-        		try {
-					view.writeSubsetXML();
-				} catch (FileNotFoundException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				} catch (UnsupportedEncodingException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+        			FilenameSelector fs=new FilenameSelector(view);
+        			fs.main(null);
+        			
+		
         		
         	}
         });
        
         
         setJList(jList1);
+        
+        
+        JScrollPane scrollPane = new JScrollPane();
+        
+        JScrollPane scrollPane_1 = new JScrollPane();
+        
+        JScrollPane scrollPane_2 = new JScrollPane();
+        
+        JLabel lblContinents = new JLabel(" Continents");
+        
+        JLabel lblCountries = new JLabel("Countries");
+        
+        lblRegions = new JLabel("Regions");
+       
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
         		.addGroup(layout.createSequentialGroup()
-        			.addContainerGap()
         			.addGroup(layout.createParallelGroup(Alignment.LEADING)
         				.addGroup(layout.createSequentialGroup()
-        						.addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(176, 176, 176)
-        					.addComponent(jButton3))
+        					.addGap(76)
+        					.addComponent(lblContinents))
         				.addGroup(layout.createSequentialGroup()
-        					.addComponent(jButton1)
-        					.addPreferredGap(ComponentPlacement.RELATED)
-        					.addComponent(jButton2)
-        					.addPreferredGap(ComponentPlacement.RELATED)
-        					.addComponent(btnChooseSubsetFile))
-        				.addComponent(jLabel1)
-        				.addComponent(jRadioButton5)
-        				.addComponent(jRadioButton4)
-        				.addComponent(jRadioButton3)
-        				.addComponent(jRadioButton2)
-        				.addComponent(jRadioButton1))
-        			.addContainerGap(295, Short.MAX_VALUE))
+        					.addGap(79)
+        					.addComponent(lblCountries))
+        				.addGroup(layout.createSequentialGroup()
+        					.addContainerGap()
+        					.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        						.addComponent(scrollPane_1, GroupLayout.PREFERRED_SIZE, 206, GroupLayout.PREFERRED_SIZE)
+        						.addGroup(layout.createSequentialGroup()
+        							.addComponent(jButton1)
+        							.addPreferredGap(ComponentPlacement.RELATED)
+        							.addComponent(jButton2))
+        						.addGroup(layout.createSequentialGroup()
+        							.addGroup(layout.createParallelGroup(Alignment.LEADING, false)
+        								.addComponent(scrollPane)
+        								.addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE))
+        							.addGap(6)
+        							.addGroup(layout.createParallelGroup(Alignment.TRAILING)
+        								.addComponent(jScrollPane2, GroupLayout.PREFERRED_SIZE, 206, GroupLayout.PREFERRED_SIZE)
+        								.addComponent(btnChooseSubsetFile)
+        								.addComponent(jButton3))
+        							.addGap(18)
+        							.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        								.addComponent(jLabel1)
+        								.addComponent(jRadioButton5)
+        								.addComponent(jRadioButton4)
+        								.addComponent(jRadioButton3)
+        								.addComponent(jRadioButton2)
+        								.addComponent(jRadioButton1)))))
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(84)
+        					.addComponent(lblRegions))
+        				.addGroup(layout.createSequentialGroup()
+        					.addContainerGap()
+        					.addComponent(scrollPane_2, GroupLayout.PREFERRED_SIZE, 206, GroupLayout.PREFERRED_SIZE)))
+        			.addContainerGap(394, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
         		.addGroup(layout.createSequentialGroup()
         			.addGap(16)
-        			.addGroup(layout.createParallelGroup(Alignment.TRAILING, false)
-        				.addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1))
-        				.addComponent(jButton3)
-        				//.addComponent(jList1, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
-        				.addComponent(jButton1)
-        				.addComponent(jButton2)
-        				.addComponent(btnChooseSubsetFile))
-        			.addPreferredGap(ComponentPlacement.UNRELATED)
-        			.addComponent(jLabel1)
-        			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(jRadioButton1)
-        			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(jRadioButton2)
-        			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(jRadioButton3)
-        			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(jRadioButton4)
-        			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(jRadioButton5)
-        			.addContainerGap(149, Short.MAX_VALUE))
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(layout.createSequentialGroup()
+        					.addComponent(jLabel1)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(jRadioButton1)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(jRadioButton2)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(jRadioButton3)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(jRadioButton4)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(jRadioButton5))
+        				.addComponent(jScrollPane2, GroupLayout.PREFERRED_SIZE, 245, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 243, GroupLayout.PREFERRED_SIZE))
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(3)
+        					.addComponent(lblContinents)
+        					.addGap(1)
+        					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE)
+        					.addGap(2)
+        					.addComponent(lblCountries)
+        					.addGap(2)
+        					.addComponent(scrollPane_1, GroupLayout.PREFERRED_SIZE, 88, GroupLayout.PREFERRED_SIZE)
+        					.addGap(2)
+        					.addComponent(lblRegions)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(scrollPane_2, GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        						.addComponent(jButton1)
+        						.addComponent(jButton2)))
+        				.addGroup(layout.createSequentialGroup()
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(btnChooseSubsetFile)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(jButton3)))
+        			.addContainerGap())
         );
+        String[] continents={"Europe","Asia","North American","Africa","Antartica","South America","Oceania"};
+
+        list_3 = new JList();
+        scrollPane_2.setColumnHeaderView(list_3);
+        scrollPane_2.setViewportView(list_3);
+        
+        list_2 = new JList();
+        scrollPane_1.setColumnHeaderView(list_2);
+        scrollPane_1.setViewportView(list_2);
+        
+        list_1 = new JList();
+        scrollPane.setColumnHeaderView(list_1);
+        scrollPane.setViewportView(list_1);
+        setJList(list_1,continents);
+        
+        
         getContentPane().setLayout(layout);
+
 
         pack();
     }// </editor-fold>                        
@@ -453,6 +517,10 @@ public class GUI extends javax.swing.JFrame {
 
 	private JButton btnChooseSubsetFile;
 	private String subsetFilename="";
+	private JLabel lblRegions;
+	private JList<String> list_1;
+	private JList<String> list_2;
+	private JList<String> list_3;
 
     private void checkFlags(){
     	if(view.showID){
@@ -490,6 +558,13 @@ public class GUI extends javax.swing.JFrame {
 	   String[] names=createArray();
      list.setModel(new javax.swing.AbstractListModel<String>() {
      String[] strings = names;
+     public int getSize() { return strings.length; }
+     public String getElementAt(int i) { return strings[i]; }
+     });
+   }
+   private void setJList(JList<String> list,String[] array){
+     list.setModel(new javax.swing.AbstractListModel<String>() {
+     String[] strings = array;
      public int getSize() { return strings.length; }
      public String getElementAt(int i) { return strings[i]; }
      });
