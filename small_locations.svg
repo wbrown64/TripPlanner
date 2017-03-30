@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<svg width="1280" height="1024" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+<g>
+<title>Borders</title>
+<line id="north" y2="34.76269" x2="1027.66" y1="34.76269" x1="34.72952" stroke-width="5" stroke="#666666"/>
+<line id="east" y2="744.70214" x2="1027.6634" y1="34.76269" x1="1027" stroke-width="5" stroke="#666666"/>
+<line id="south" y2="744.70214" x2="34" y1="744.70214" x1="1027.6634" stroke-width="5" stroke="#666666"/>
+<line id="west" y2="34.76269" x2="34.72952" y1="744.70214" x1="34" stroke-width="5" stroke="#666666"/>
+</g>
+<g>
+<title>Titles</title>
+<text text-anchor="middle" font-family="Sans-serif" font-size="24" id="state" y="30" x="531">Colorado</text>
+<text text-anchor="middle" font-family="Sans-serif" font-size="24" id="distance" y="775" x="531">130 miles</text>
+</g>
+<g>
+<title>Legs</title>
+<line id="leg0" y2="228.8417368931999" x2="578.023373677499" y1="178.70164478111172" x1="547.2890977750001" stroke-width="3" stroke="#999999"/>
+<line id="leg1" y2="105.41483080000054" x2="613.9989234000003" y1="228.8417368931999" x1="578.023373677499" stroke-width="3" stroke="#999999"/>
+<line id="leg2" y2="77.54028821888848" x2="566.6142448500005" y1="105.41483080000054" x1="613.9989234000003" stroke-width="3" stroke="#999999"/>
+<line id="leg3" y2="178.70164478111172" x2="547.2890977750001" y1="77.54028821888848" x1="566.6142448500005" stroke-width="3" stroke="#999999"/>
+</g>
+</svg>

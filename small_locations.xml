@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trip>
+<!--
+sequence - the order of the legs
+start - the name of the starting location for a leg
+finish - the name of the finishing location for a leg
+mileage - the number of miles (to the nearest whole mile) between the starting and finishing locations
+-->
+<leg>
+<sequence>1</sequence>
+<start>Boulder</start>
+<finish>Denver</finish>
+<mileage>22</mileage>
+</leg>
+<leg>
+<sequence>2</sequence>
+<start>Denver</start>
+<finish>Greely</finish>
+<mileage>49</mileage>
+</leg>
+<leg>
+<sequence>3</sequence>
+<start>Greely</start>
+<finish>Fort Collins</finish>
+<mileage>20</mileage>
+</leg>
+<leg>
+<sequence>3</sequence>
+<start>Fort Collins</start>
+<finish>Boulder</finish>
+<mileage>39</mileage>
+</leg>
+</trip>

@@ -94,16 +94,17 @@ public class View {
 		        }
 		    }
 		    catch(FileNotFoundException e) {
-		        System.err.println("File not found. Please scan in new file.");
+		        System.err.println("File not found. Please choose a new .SVG file.");
 		    }
 		
 	}
 	void writeSubsetXML() throws FileNotFoundException, UnsupportedEncodingException{
+		System.out.println(xmlFilename);
 		String newName=filename+"_subset.xml";
 		PrintWriter writer = new PrintWriter(newName, "UTF-8");
 		writer.println("<xml>");
 		writer.println(" <selection>");
-		writer.println("	<title>"+filename+"</title> ");
+		writer.println("	<title>"+xmlFilename+"</title> ");
 		writer.println("		<filename>"+filename+".csv"+"</filename> ");
 		writer.println("		<destinations>");
 		for(Location L:model.getItinerary()){

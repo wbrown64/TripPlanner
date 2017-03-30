@@ -1,0 +1,10 @@
+<xml>
+ <selection>
+	<title>subset4mafk</title> 
+		<filename>small_locations.csv</filename> 
+		<destinations>
+			<id>gtjohnso</id>
+			<id>edebanva</id>
+		</destinations>
+ </selection>
+</xml>

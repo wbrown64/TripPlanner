@@ -1,0 +1,14 @@
+<xml>
+ <selection>
+	<title>Small14ers</title> 
+		<filename>Small14ers.csv</filename> 
+		<destinations>
+			<id>3</id>
+			<id>20</id>
+			<id>10</id>
+			<id>17</id>
+			<id>12</id>
+			<id>8</id>
+		</destinations>
+ </selection>
+</xml>
