@@ -6,5 +6,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 	
 public class TestTripCo {
-
+	@Test
+	public void testBasic(){
+		assertTrue("TripCo",true);
+	}
 }
