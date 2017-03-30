@@ -11,6 +11,7 @@ public class Presenter {
 	public boolean TwoOpt = false;
 	public boolean ThreeOpt = false;
 	public boolean Miles = false;
+	public boolean Kilometers = false;
 	public String filename = "";
 	public String XML = "";
 	public String SVG = "";
@@ -40,7 +41,7 @@ public class Presenter {
 			}
 			if(!GUI){
 			try {
-				m = new Model(filename,TwoOpt,ThreeOpt,Miles);
+				m = new Model(filename,TwoOpt,ThreeOpt,Miles,Kilometers);
 				if(TwoOpt)
 					m.twoOpt();
 				//FIXME
@@ -60,7 +61,7 @@ public class Presenter {
 			}
 			else{
 				try {
-					m = new Model(filename,TwoOpt,ThreeOpt,Miles);
+					m = new Model(filename,TwoOpt,ThreeOpt,Miles,Kilometers);
 				} 
 				catch (Exception e) {
 					// TODO Auto-generated catch block
@@ -87,14 +88,17 @@ public class Presenter {
 		else if(arg.equals("-g")){
 			GUI = true;
 		}
-		else if(arg.equals("-mi")){
+		else if(arg.equals("-m")){
 			Miles = true;
+		}
+		else if(arg.equals("-k")){
+			Kilometers = true;
 		}
 		
 			
 	}
 	public void checkViewFlags(String arg){
-		if(arg.equals("-m")){
+		if(arg.equals("-d")){
 			v.setShowMileage(true);
 		}
 		else if(arg.equals("-i")){
@@ -103,8 +107,11 @@ public class Presenter {
 		else if(arg.equals("-n")){
 			v.setShowName(true);
 		}
-		else if(arg.equals("-mi")){
+		else if(arg.equals("-m")){
 			v.setMiles(true);
+		}
+		else if(arg.equals("-k")){
+			v.setKilometers(true);
 		}
 	}
 

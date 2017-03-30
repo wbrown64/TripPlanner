@@ -12,12 +12,14 @@ public class Model {
 		public boolean twoOpt = false;
 		public boolean threeOpt = false;
 		public boolean Miles = false;
+		public boolean Kilometers = false;
 		public String filename;
 	
-	public Model(String filename, boolean twoOpt,boolean threeOpt,boolean Miles) throws Exception{
+	public Model(String filename, boolean twoOpt,boolean threeOpt,boolean Miles,boolean Kilometers) throws Exception{
 		this.twoOpt=twoOpt;
 		this.threeOpt=threeOpt;
 		this.Miles=Miles;
+		this.Kilometers=Kilometers;
 		this.filename=filename;
 		Reader read=new Reader(filename);
 		ArrayList<Location> i=read.readFile();
@@ -137,7 +139,7 @@ public class Model {
 		int d = (int) temp;
 		itinerary.get(itinerary.size()-1).legDistance = d;
 		}
-		else{
+		else if(Kilometers){
 			for(int i = 0; i < itinerary.size()-1; i++){
 				double temp = getLegDistance(itinerary.get(i),itinerary.get(i+1));
 				//temp = temp * 0.621371;
@@ -361,5 +363,8 @@ public class Model {
 	}
 	public void setMiles(boolean t){
 		Miles = t;
+	}
+	public void setKilometers(boolean t){
+		Kilometers = t;
 	}
 }
