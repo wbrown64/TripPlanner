@@ -42,13 +42,13 @@ public class View {
 			readSubsetXML();
 		}
 		if(presenter.GUI){
-			GUI gui=new GUI(this,model);
-			GUI.main(null);
+			GUI2 gui=new GUI2(model,this);
+			GUI2.main(null);
 		}
-		else{
-			createSvg(itinerary,filename+".svg",presenter.SVG);
-			createXML(itinerary,filename+".xml");
-		}
+//		else{
+//			createSvg(itinerary,filename+".svg",presenter.SVG);
+//			createXML(itinerary,filename+".xml");
+//		}
 
 	}
 	

@@ -21,10 +21,10 @@ public class Model {
 		this.Miles=Miles;
 		this.Kilometers=Kilometers;
 		this.filename=filename;
-		Reader read=new Reader(filename);
-		ArrayList<Location> i=read.readFile();
-		this.setItinerary(i);
-		initializeModel();
+		//Reader read=new Reader(filename);
+		//ArrayList<Location> i=read.readFile();
+		//this.setItinerary(i);
+		//initializeModel();
 	}
 	 public void initializeModel() throws Exception{
 		itinerary = bestStandardTrip();

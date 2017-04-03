@@ -12,6 +12,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -24,6 +25,9 @@ import org.apache.batik.swing.JSVGCanvas;
 
 import Model.Location;
 import Model.Model;
+import presenter.SQLinterpreter;
+import presenter.Writer;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JButton;
@@ -89,7 +93,7 @@ public class GUI extends javax.swing.JFrame {
         jRadioButton5 = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();        
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new JList(model.getItinerary().toArray());
+        jList1 = new JList();
         jList2 = new javax.swing.JList<>();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -242,7 +246,7 @@ public class GUI extends javax.swing.JFrame {
         });
        
         
-        setJList(jList1);
+       // setJList(jList1);
         
         
         JScrollPane scrollPane = new JScrollPane();
@@ -256,6 +260,21 @@ public class GUI extends javax.swing.JFrame {
         JLabel lblCountries = new JLabel("Countries");
         
         lblRegions = new JLabel("Regions");
+        
+        JButton btnNewButton = new JButton("Search ");
+        btnNewButton.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		try {
+					search();
+				} catch (ClassNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+        	}
+        });
        
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -264,28 +283,31 @@ public class GUI extends javax.swing.JFrame {
         		.addGroup(layout.createSequentialGroup()
         			.addGroup(layout.createParallelGroup(Alignment.LEADING)
         				.addGroup(layout.createSequentialGroup()
+        					.addContainerGap()
+        					.addGroup(layout.createParallelGroup(Alignment.TRAILING, false)
+        						.addComponent(scrollPane_2, Alignment.LEADING)
+        						.addComponent(scrollPane, Alignment.LEADING)
+        						.addComponent(jScrollPane1, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+        						.addGroup(Alignment.LEADING, layout.createSequentialGroup()
+        							.addComponent(jButton1)
+        							.addPreferredGap(ComponentPlacement.RELATED)
+        							.addComponent(jButton2))
+        						.addComponent(scrollPane_1, Alignment.LEADING)))
+        				.addGroup(layout.createSequentialGroup()
         					.addGap(76)
         					.addComponent(lblContinents))
         				.addGroup(layout.createSequentialGroup()
         					.addGap(79)
         					.addComponent(lblCountries))
         				.addGroup(layout.createSequentialGroup()
-        					.addContainerGap()
+        					.addGap(84)
+        					.addComponent(lblRegions)))
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(6)
+        					.addComponent(jScrollPane2, GroupLayout.PREFERRED_SIZE, 206, GroupLayout.PREFERRED_SIZE)
         					.addGroup(layout.createParallelGroup(Alignment.LEADING)
-        						.addComponent(scrollPane_1, GroupLayout.PREFERRED_SIZE, 206, GroupLayout.PREFERRED_SIZE)
         						.addGroup(layout.createSequentialGroup()
-        							.addComponent(jButton1)
-        							.addPreferredGap(ComponentPlacement.RELATED)
-        							.addComponent(jButton2))
-        						.addGroup(layout.createSequentialGroup()
-        							.addGroup(layout.createParallelGroup(Alignment.LEADING, false)
-        								.addComponent(scrollPane)
-        								.addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE))
-        							.addGap(6)
-        							.addGroup(layout.createParallelGroup(Alignment.TRAILING)
-        								.addComponent(jScrollPane2, GroupLayout.PREFERRED_SIZE, 206, GroupLayout.PREFERRED_SIZE)
-        								.addComponent(btnChooseSubsetFile)
-        								.addComponent(jButton3))
         							.addGap(18)
         							.addGroup(layout.createParallelGroup(Alignment.LEADING)
         								.addComponent(jLabel1)
@@ -293,14 +315,16 @@ public class GUI extends javax.swing.JFrame {
         								.addComponent(jRadioButton4)
         								.addComponent(jRadioButton3)
         								.addComponent(jRadioButton2)
-        								.addComponent(jRadioButton1)))))
+        								.addComponent(jRadioButton1)))
+        						.addGroup(layout.createSequentialGroup()
+        							.addPreferredGap(ComponentPlacement.RELATED)
+        							.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        								.addComponent(jButton3)
+        								.addComponent(btnChooseSubsetFile)))))
         				.addGroup(layout.createSequentialGroup()
-        					.addGap(84)
-        					.addComponent(lblRegions))
-        				.addGroup(layout.createSequentialGroup()
-        					.addContainerGap()
-        					.addComponent(scrollPane_2, GroupLayout.PREFERRED_SIZE, 206, GroupLayout.PREFERRED_SIZE)))
-        			.addContainerGap(394, Short.MAX_VALUE))
+        					.addGap(37)
+        					.addComponent(btnNewButton)))
+        			.addContainerGap(321, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
@@ -318,10 +342,14 @@ public class GUI extends javax.swing.JFrame {
         					.addPreferredGap(ComponentPlacement.RELATED)
         					.addComponent(jRadioButton4)
         					.addPreferredGap(ComponentPlacement.RELATED)
-        					.addComponent(jRadioButton5))
+        					.addComponent(jRadioButton5)
+        					.addPreferredGap(ComponentPlacement.UNRELATED)
+        					.addComponent(btnChooseSubsetFile)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(jButton3))
         				.addComponent(jScrollPane2, GroupLayout.PREFERRED_SIZE, 245, GroupLayout.PREFERRED_SIZE)
         				.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 243, GroupLayout.PREFERRED_SIZE))
-        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        			.addGroup(layout.createParallelGroup(Alignment.TRAILING)
         				.addGroup(layout.createSequentialGroup()
         					.addGap(3)
         					.addComponent(lblContinents)
@@ -341,13 +369,11 @@ public class GUI extends javax.swing.JFrame {
         						.addComponent(jButton2)))
         				.addGroup(layout.createSequentialGroup()
         					.addPreferredGap(ComponentPlacement.RELATED)
-        					.addComponent(btnChooseSubsetFile)
-        					.addPreferredGap(ComponentPlacement.RELATED)
-        					.addComponent(jButton3)))
+        					.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)))
         			.addContainerGap())
         );
-        String[] continents={"Europe","Asia","North American","Africa","Antartica","South America","Oceania"};
-
+        String[] continents={"Europe","Asia","North America","Africa","Antarctica","South America","Oceania"};
+        String[] empty={""};
         list_3 = new JList();
         scrollPane_2.setColumnHeaderView(list_3);
         scrollPane_2.setViewportView(list_3);
@@ -355,7 +381,7 @@ public class GUI extends javax.swing.JFrame {
         list_2 = new JList();
         scrollPane_1.setColumnHeaderView(list_2);
         scrollPane_1.setViewportView(list_2);
-        
+        setJList(list_2,empty);
         list_1 = new JList();
         scrollPane.setColumnHeaderView(list_1);
         scrollPane.setViewportView(list_1);
@@ -521,7 +547,10 @@ public class GUI extends javax.swing.JFrame {
 	private JList<String> list_1;
 	private JList<String> list_2;
 	private JList<String> list_3;
-
+	public boolean list1selected=false;
+	public boolean list2selected=false;
+	public boolean list3selected=false;
+	
     private void checkFlags(){
     	if(view.showID){
     		jRadioButton2.setSelected(true);
@@ -581,6 +610,40 @@ public class GUI extends javax.swing.JFrame {
 	   view.readSubsetXML();
 	   setJList(jList2);
 	}
+   private void search() throws ClassNotFoundException, SQLException{
+	   list1selected=!list_1.getSelectedValuesList().isEmpty();
+	   list2selected=!list_2.getSelectedValuesList().isEmpty();
+	   list3selected=!list_3.getSelectedValuesList().isEmpty();
+	   System.out.println(list1selected+" "+list2selected+" "+list3selected);
+	   SQLinterpreter sqli=new SQLinterpreter("wbrown64","830285807");
+	   if(list1selected&&!list2selected&&!list3selected){
+		   String[] selected=list_1.getSelectedValuesList().toArray(new String[0]);
+		  selected=sqli.selectContinents(selected);	
+		  selected=sqli.selectCountries(selected);
+		  setJList(list_2,selected);
+	   }
+	   else if(list1selected&&list2selected&&!list3selected){
+		   String[] selected=list_2.getSelectedValuesList().toArray(new String[0]);
+		   selected=sqli.selectCountryCodes(selected);
+		   selected=sqli.selectReigons(selected);
+		   setJList(list_3,selected);
+	   }
+	   else if(list1selected&&list2selected&&list3selected){
+		   String[]selected=list_3.getSelectedValuesList().toArray(new String[0]);
+		   selected=sqli.selectRegionCode(selected);
+		   selected=sqli.selectAirports(selected);
+		   setJList(jList1,selected);
+		   Writer w=new Writer(selected,model,sqli);
+	   }
+	   
+//		  for(String S:selected){
+//		  System.out.println(S);
+//	  }
+		  
+   }
+//   private String[] returnSelected(JList<String> list){
+//	   String []selected=new String[list.getselected]
+//   }
 //   private void saveSubset(){
 //	  for(Location L:model.getItinerary()){
 //		  System.out.println(L.getId());
