@@ -39,6 +39,9 @@ public class Model {
 		 
 		 for (int i = 0; i < itinerary.size(); ++i) {
 			 ArrayList<Location> tempItinerary = standardTrip(itinerary.get(i));
+			 if (twoOpt) {
+				 twoOpt();
+			 }
 			 double tempDistance = getTotalDistance(tempItinerary);
 			 
 			 if (tempDistance < bestDistance) {
@@ -275,7 +278,7 @@ public class Model {
 	}
 	
 	public void threeOpt() {
-		twoOpt();
+		//twoOpt();
 		double bestDistance=getTotalDistance(itinerary);
 	    double newDistance=bestDistance;
 	    int c=0;

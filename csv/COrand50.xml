@@ -4,306 +4,1905 @@
 sequence - the order of the legs
 start - the name of the starting location for a leg
 finish - the name of the finishing location for a leg
-mileage - the number of miles (to the nearest whole mile) between the starting and finishing locations
 -->
 <leg>
 <sequence>1</sequence>
-<start>49</start>
-<finish>28</finish>
-<mileage>11</mileage>
+<start>
+<!-- information from the airport table -->
+<id>1</id>
+<name>1</name>
+<latitude>38.371</latitude>
+<longitude>-107.86</longitude>
+<elevation>1</elevation
+<municipality>1</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>14</id>
+<name>14</name>
+<latitude>38.364</latitude>
+<longitude>-107.788</longitude>
+<elevation>14</elevation
+<municipality>14</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>2</sequence>
-<start>28</start>
-<finish>38</finish>
-<mileage>14</mileage>
+<start>
+<!-- information from the airport table -->
+<id>14</id>
+<name>14</name>
+<latitude>38.364</latitude>
+<longitude>-107.788</longitude>
+<elevation>14</elevation
+<municipality>14</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>11</id>
+<name>11</name>
+<latitude>38.448</latitude>
+<longitude>-107.945</longitude>
+<elevation>11</elevation
+<municipality>11</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>3</sequence>
-<start>38</start>
-<finish>50</finish>
-<mileage>20</mileage>
+<start>
+<!-- information from the airport table -->
+<id>11</id>
+<name>11</name>
+<latitude>38.448</latitude>
+<longitude>-107.945</longitude>
+<elevation>11</elevation
+<municipality>11</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>7</id>
+<name>7</name>
+<latitude>38.828</latitude>
+<longitude>-107.708</longitude>
+<elevation>7</elevation
+<municipality>7</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>4</sequence>
-<start>50</start>
-<finish>7</finish>
-<mileage>31</mileage>
+<start>
+<!-- information from the airport table -->
+<id>7</id>
+<name>7</name>
+<latitude>38.828</latitude>
+<longitude>-107.708</longitude>
+<elevation>7</elevation
+<municipality>7</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>8</id>
+<name>8</name>
+<latitude>38.933</latitude>
+<longitude>-107.973</longitude>
+<elevation>8</elevation
+<municipality>8</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>5</sequence>
-<start>7</start>
-<finish>8</finish>
-<mileage>16</mileage>
+<start>
+<!-- information from the airport table -->
+<id>8</id>
+<name>8</name>
+<latitude>38.933</latitude>
+<longitude>-107.973</longitude>
+<elevation>8</elevation
+<municipality>8</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>13</id>
+<name>13</name>
+<latitude>39.327</latitude>
+<longitude>-107.743</longitude>
+<elevation>13</elevation
+<municipality>13</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>6</sequence>
-<start>8</start>
-<finish>13</finish>
-<mileage>30</mileage>
+<start>
+<!-- information from the airport table -->
+<id>13</id>
+<name>13</name>
+<latitude>39.327</latitude>
+<longitude>-107.743</longitude>
+<elevation>13</elevation
+<municipality>13</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>24</id>
+<name>24</name>
+<latitude>39.551</latitude>
+<longitude>-107.821</longitude>
+<elevation>24</elevation
+<municipality>24</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>7</sequence>
-<start>13</start>
-<finish>24</finish>
-<mileage>16</mileage>
+<start>
+<!-- information from the airport table -->
+<id>24</id>
+<name>24</name>
+<latitude>39.551</latitude>
+<longitude>-107.821</longitude>
+<elevation>24</elevation
+<municipality>24</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>36</id>
+<name>36</name>
+<latitude>39.535</latitude>
+<longitude>-107.554</longitude>
+<elevation>36</elevation
+<municipality>36</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>8</sequence>
-<start>24</start>
-<finish>36</finish>
-<mileage>14</mileage>
+<start>
+<!-- information from the airport table -->
+<id>36</id>
+<name>36</name>
+<latitude>39.535</latitude>
+<longitude>-107.554</longitude>
+<elevation>36</elevation
+<municipality>36</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>22</id>
+<name>22</name>
+<latitude>39.741</latitude>
+<longitude>-108.171</longitude>
+<elevation>22</elevation
+<municipality>22</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>9</sequence>
-<start>36</start>
-<finish>22</finish>
-<mileage>36</mileage>
+<start>
+<!-- information from the airport table -->
+<id>22</id>
+<name>22</name>
+<latitude>39.741</latitude>
+<longitude>-108.171</longitude>
+<elevation>22</elevation
+<municipality>22</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>35</id>
+<name>35</name>
+<latitude>39.946</latitude>
+<longitude>-108.068</longitude>
+<elevation>35</elevation
+<municipality>35</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>10</sequence>
-<start>22</start>
-<finish>35</finish>
-<mileage>15</mileage>
+<start>
+<!-- information from the airport table -->
+<id>35</id>
+<name>35</name>
+<latitude>39.946</latitude>
+<longitude>-108.068</longitude>
+<elevation>35</elevation
+<municipality>35</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>18</id>
+<name>18</name>
+<latitude>40.325</latitude>
+<longitude>-107.876</longitude>
+<elevation>18</elevation
+<municipality>18</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>11</sequence>
-<start>35</start>
-<finish>18</finish>
-<mileage>28</mileage>
+<start>
+<!-- information from the airport table -->
+<id>18</id>
+<name>18</name>
+<latitude>40.325</latitude>
+<longitude>-107.876</longitude>
+<elevation>18</elevation
+<municipality>18</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>4</id>
+<name>4</name>
+<latitude>40.814</latitude>
+<longitude>-107.751</longitude>
+<elevation>4</elevation
+<municipality>4</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>12</sequence>
-<start>18</start>
-<finish>4</finish>
-<mileage>34</mileage>
+<start>
+<!-- information from the airport table -->
+<id>4</id>
+<name>4</name>
+<latitude>40.814</latitude>
+<longitude>-107.751</longitude>
+<elevation>4</elevation
+<municipality>4</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>44</id>
+<name>44</name>
+<latitude>40.656</latitude>
+<longitude>-106.72</longitude>
+<elevation>44</elevation
+<municipality>44</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>13</sequence>
-<start>4</start>
-<finish>44</finish>
-<mileage>55</mileage>
+<start>
+<!-- information from the airport table -->
+<id>44</id>
+<name>44</name>
+<latitude>40.656</latitude>
+<longitude>-106.72</longitude>
+<elevation>44</elevation
+<municipality>44</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>27</id>
+<name>27</name>
+<latitude>40.678</latitude>
+<longitude>-106.618</longitude>
+<elevation>27</elevation
+<municipality>27</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>14</sequence>
-<start>44</start>
-<finish>27</finish>
-<mileage>6</mileage>
+<start>
+<!-- information from the airport table -->
+<id>27</id>
+<name>27</name>
+<latitude>40.678</latitude>
+<longitude>-106.618</longitude>
+<elevation>27</elevation
+<municipality>27</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>26</id>
+<name>26</name>
+<latitude>40.236</latitude>
+<longitude>-106.376</longitude>
+<elevation>26</elevation
+<municipality>26</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>15</sequence>
-<start>27</start>
-<finish>26</finish>
-<mileage>33</mileage>
+<start>
+<!-- information from the airport table -->
+<id>26</id>
+<name>26</name>
+<latitude>40.236</latitude>
+<longitude>-106.376</longitude>
+<elevation>26</elevation
+<municipality>26</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>33</id>
+<name>33</name>
+<latitude>40.177</latitude>
+<longitude>-107.1</longitude>
+<elevation>33</elevation
+<municipality>33</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>16</sequence>
-<start>26</start>
-<finish>33</finish>
-<mileage>38</mileage>
+<start>
+<!-- information from the airport table -->
+<id>33</id>
+<name>33</name>
+<latitude>40.177</latitude>
+<longitude>-107.1</longitude>
+<elevation>33</elevation
+<municipality>33</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>28</id>
+<name>28</name>
+<latitude>39.08</latitude>
+<longitude>-106.919</longitude>
+<elevation>28</elevation
+<municipality>28</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>17</sequence>
-<start>33</start>
-<finish>42</finish>
-<mileage>79</mileage>
+<start>
+<!-- information from the airport table -->
+<id>28</id>
+<name>28</name>
+<latitude>39.08</latitude>
+<longitude>-106.919</longitude>
+<elevation>28</elevation
+<municipality>28</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>49</id>
+<name>49</name>
+<latitude>39.083</latitude>
+<longitude>-106.706</longitude>
+<elevation>49</elevation
+<municipality>49</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>18</sequence>
-<start>42</start>
-<finish>47</finish>
-<mileage>77</mileage>
+<start>
+<!-- information from the airport table -->
+<id>49</id>
+<name>49</name>
+<latitude>39.083</latitude>
+<longitude>-106.706</longitude>
+<elevation>49</elevation
+<municipality>49</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>38</id>
+<name>38</name>
+<latitude>38.922</latitude>
+<longitude>-106.768</longitude>
+<elevation>38</elevation
+<municipality>38</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>19</sequence>
-<start>47</start>
-<finish>11</finish>
-<mileage>71</mileage>
+<start>
+<!-- information from the airport table -->
+<id>38</id>
+<name>38</name>
+<latitude>38.922</latitude>
+<longitude>-106.768</longitude>
+<elevation>38</elevation
+<municipality>38</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>50</id>
+<name>50</name>
+<latitude>38.843</latitude>
+<longitude>-107.127</longitude>
+<elevation>50</elevation
+<municipality>50</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>20</sequence>
-<start>11</start>
-<finish>1</finish>
-<mileage>7</mileage>
+<start>
+<!-- information from the airport table -->
+<id>50</id>
+<name>50</name>
+<latitude>38.843</latitude>
+<longitude>-107.127</longitude>
+<elevation>50</elevation
+<municipality>50</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>37</id>
+<name>37</name>
+<latitude>38.3</latitude>
+<longitude>-106.34</longitude>
+<elevation>37</elevation
+<municipality>37</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>21</sequence>
-<start>1</start>
-<finish>14</finish>
-<mileage>4</mileage>
+<start>
+<!-- information from the airport table -->
+<id>37</id>
+<name>37</name>
+<latitude>38.3</latitude>
+<longitude>-106.34</longitude>
+<elevation>37</elevation
+<municipality>37</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>43</id>
+<name>43</name>
+<latitude>38.417</latitude>
+<longitude>-106.111</longitude>
+<elevation>43</elevation
+<municipality>43</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>22</sequence>
-<start>14</start>
-<finish>40</finish>
-<mileage>33</mileage>
+<start>
+<!-- information from the airport table -->
+<id>43</id>
+<name>43</name>
+<latitude>38.417</latitude>
+<longitude>-106.111</longitude>
+<elevation>43</elevation
+<municipality>43</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>3</id>
+<name>3</name>
+<latitude>38.067</latitude>
+<longitude>-106.655</longitude>
+<elevation>3</elevation
+<municipality>3</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>23</sequence>
-<start>40</start>
-<finish>23</finish>
-<mileage>8</mileage>
+<start>
+<!-- information from the airport table -->
+<id>3</id>
+<name>3</name>
+<latitude>38.067</latitude>
+<longitude>-106.655</longitude>
+<elevation>3</elevation
+<municipality>3</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>15</id>
+<name>15</name>
+<latitude>37.614</latitude>
+<longitude>-105.607</longitude>
+<elevation>15</elevation
+<municipality>15</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>24</sequence>
-<start>23</start>
-<finish>3</finish>
-<mileage>89</mileage>
+<start>
+<!-- information from the airport table -->
+<id>15</id>
+<name>15</name>
+<latitude>37.614</latitude>
+<longitude>-105.607</longitude>
+<elevation>15</elevation
+<municipality>15</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>5</id>
+<name>5</name>
+<latitude>37.646</latitude>
+<longitude>-105.431</longitude>
+<elevation>5</elevation
+<municipality>5</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>25</sequence>
-<start>3</start>
-<finish>37</finish>
-<mileage>23</mileage>
+<start>
+<!-- information from the airport table -->
+<id>5</id>
+<name>5</name>
+<latitude>37.646</latitude>
+<longitude>-105.431</longitude>
+<elevation>5</elevation
+<municipality>5</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>48</id>
+<name>48</name>
+<latitude>38.134</latitude>
+<longitude>-105.017</longitude>
+<elevation>48</elevation
+<municipality>48</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>26</sequence>
-<start>37</start>
-<finish>43</finish>
-<mileage>15</mileage>
+<start>
+<!-- information from the airport table -->
+<id>48</id>
+<name>48</name>
+<latitude>38.134</latitude>
+<longitude>-105.017</longitude>
+<elevation>48</elevation
+<municipality>48</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>9</id>
+<name>9</name>
+<latitude>38.572</latitude>
+<longitude>-105.239</longitude>
+<elevation>9</elevation
+<municipality>9</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>27</sequence>
-<start>43</start>
-<finish>17</finish>
-<mileage>41</mileage>
+<start>
+<!-- information from the airport table -->
+<id>9</id>
+<name>9</name>
+<latitude>38.572</latitude>
+<longitude>-105.239</longitude>
+<elevation>9</elevation
+<municipality>9</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>17</id>
+<name>17</name>
+<latitude>38.784</latitude>
+<longitude>-105.525</longitude>
+<elevation>17</elevation
+<municipality>17</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>28</sequence>
-<start>17</start>
-<finish>29</finish>
-<mileage>7</mileage>
+<start>
+<!-- information from the airport table -->
+<id>17</id>
+<name>17</name>
+<latitude>38.784</latitude>
+<longitude>-105.525</longitude>
+<elevation>17</elevation
+<municipality>17</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>29</id>
+<name>29</name>
+<latitude>38.882</latitude>
+<longitude>-105.491</longitude>
+<elevation>29</elevation
+<municipality>29</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>29</sequence>
-<start>29</start>
-<finish>2</finish>
-<mileage>14</mileage>
+<start>
+<!-- information from the airport table -->
+<id>29</id>
+<name>29</name>
+<latitude>38.882</latitude>
+<longitude>-105.491</longitude>
+<elevation>29</elevation
+<municipality>29</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>2</id>
+<name>2</name>
+<latitude>39.052</latitude>
+<longitude>-105.631</longitude>
+<elevation>2</elevation
+<municipality>2</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>30</sequence>
-<start>2</start>
-<finish>41</finish>
-<mileage>8</mileage>
+<start>
+<!-- information from the airport table -->
+<id>2</id>
+<name>2</name>
+<latitude>39.052</latitude>
+<longitude>-105.631</longitude>
+<elevation>2</elevation
+<municipality>2</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>41</id>
+<name>41</name>
+<latitude>38.973</latitude>
+<longitude>-105.741</longitude>
+<elevation>41</elevation
+<municipality>41</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>31</sequence>
-<start>41</start>
-<finish>12</finish>
-<mileage>30</mileage>
+<start>
+<!-- information from the airport table -->
+<id>41</id>
+<name>41</name>
+<latitude>38.973</latitude>
+<longitude>-105.741</longitude>
+<elevation>41</elevation
+<municipality>41</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>12</id>
+<name>12</name>
+<latitude>38.953</latitude>
+<longitude>-105.187</longitude>
+<elevation>12</elevation
+<municipality>12</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>32</sequence>
-<start>12</start>
-<finish>39</finish>
-<mileage>17</mileage>
+<start>
+<!-- information from the airport table -->
+<id>12</id>
+<name>12</name>
+<latitude>38.953</latitude>
+<longitude>-105.187</longitude>
+<elevation>12</elevation
+<municipality>12</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>39</id>
+<name>39</name>
+<latitude>38.949</latitude>
+<longitude>-104.87</longitude>
+<elevation>39</elevation
+<municipality>39</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>33</sequence>
-<start>39</start>
-<finish>9</finish>
-<mileage>33</mileage>
+<start>
+<!-- information from the airport table -->
+<id>39</id>
+<name>39</name>
+<latitude>38.949</latitude>
+<longitude>-104.87</longitude>
+<elevation>39</elevation
+<municipality>39</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>21</id>
+<name>21</name>
+<latitude>39.575</latitude>
+<longitude>-105.496</longitude>
+<elevation>21</elevation
+<municipality>21</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>34</sequence>
-<start>9</start>
-<finish>48</finish>
-<mileage>33</mileage>
+<start>
+<!-- information from the airport table -->
+<id>21</id>
+<name>21</name>
+<latitude>39.575</latitude>
+<longitude>-105.496</longitude>
+<elevation>21</elevation
+<municipality>21</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>31</id>
+<name>31</name>
+<latitude>40.302</latitude>
+<longitude>-104.632</longitude>
+<elevation>31</elevation
+<municipality>31</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>35</sequence>
-<start>48</start>
-<finish>5</finish>
-<mileage>41</mileage>
+<start>
+<!-- information from the airport table -->
+<id>31</id>
+<name>31</name>
+<latitude>40.302</latitude>
+<longitude>-104.632</longitude>
+<elevation>31</elevation
+<municipality>31</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>25</id>
+<name>25</name>
+<latitude>40.913</latitude>
+<longitude>-104.393</longitude>
+<elevation>25</elevation
+<municipality>25</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>36</sequence>
-<start>5</start>
-<finish>15</finish>
-<mileage>10</mileage>
+<start>
+<!-- information from the airport table -->
+<id>25</id>
+<name>25</name>
+<latitude>40.913</latitude>
+<longitude>-104.393</longitude>
+<elevation>25</elevation
+<municipality>25</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>30</id>
+<name>30</name>
+<latitude>40.944</latitude>
+<longitude>-102.974</longitude>
+<elevation>30</elevation
+<municipality>30</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>37</sequence>
-<start>15</start>
-<finish>32</finish>
-<mileage>58</mileage>
+<start>
+<!-- information from the airport table -->
+<id>30</id>
+<name>30</name>
+<latitude>40.944</latitude>
+<longitude>-102.974</longitude>
+<elevation>30</elevation
+<municipality>30</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>6</id>
+<name>6</name>
+<latitude>40.583</latitude>
+<longitude>-102.988</longitude>
+<elevation>6</elevation
+<municipality>6</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>38</sequence>
-<start>32</start>
-<finish>20</finish>
-<mileage>64</mileage>
+<start>
+<!-- information from the airport table -->
+<id>6</id>
+<name>6</name>
+<latitude>40.583</latitude>
+<longitude>-102.988</longitude>
+<elevation>6</elevation
+<municipality>6</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>34</id>
+<name>34</name>
+<latitude>40.936</latitude>
+<longitude>-102.339</longitude>
+<elevation>34</elevation
+<municipality>34</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>39</sequence>
-<start>20</start>
-<finish>45</finish>
-<mileage>18</mileage>
+<start>
+<!-- information from the airport table -->
+<id>34</id>
+<name>34</name>
+<latitude>40.936</latitude>
+<longitude>-102.339</longitude>
+<elevation>34</elevation
+<municipality>34</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>10</id>
+<name>10</name>
+<latitude>39.948</latitude>
+<longitude>-103.331</longitude>
+<elevation>10</elevation
+<municipality>10</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>40</sequence>
-<start>45</start>
-<finish>19</finish>
-<mileage>60</mileage>
+<start>
+<!-- information from the airport table -->
+<id>10</id>
+<name>10</name>
+<latitude>39.948</latitude>
+<longitude>-103.331</longitude>
+<elevation>10</elevation
+<municipality>10</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>16</id>
+<name>16</name>
+<latitude>39.59</latitude>
+<longitude>-102.248</longitude>
+<elevation>16</elevation
+<municipality>16</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>41</sequence>
-<start>19</start>
-<finish>46</finish>
-<mileage>77</mileage>
+<start>
+<!-- information from the airport table -->
+<id>16</id>
+<name>16</name>
+<latitude>39.59</latitude>
+<longitude>-102.248</longitude>
+<elevation>16</elevation
+<municipality>16</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>46</id>
+<name>46</name>
+<latitude>38.795</latitude>
+<longitude>-102.7</longitude>
+<elevation>46</elevation
+<municipality>46</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>42</sequence>
-<start>46</start>
-<finish>16</finish>
-<mileage>60</mileage>
+<start>
+<!-- information from the airport table -->
+<id>46</id>
+<name>46</name>
+<latitude>38.795</latitude>
+<longitude>-102.7</longitude>
+<elevation>46</elevation
+<municipality>46</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>20</id>
+<name>20</name>
+<latitude>37.89</latitude>
+<longitude>-103.507</longitude>
+<elevation>20</elevation
+<municipality>20</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>43</sequence>
-<start>16</start>
-<finish>10</finish>
-<mileage>63</mileage>
+<start>
+<!-- information from the airport table -->
+<id>20</id>
+<name>20</name>
+<latitude>37.89</latitude>
+<longitude>-103.507</longitude>
+<elevation>20</elevation
+<municipality>20</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>45</id>
+<name>45</name>
+<latitude>37.746</latitude>
+<longitude>-103.227</longitude>
+<elevation>45</elevation
+<municipality>45</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>44</sequence>
-<start>10</start>
-<finish>6</finish>
-<mileage>47</mileage>
+<start>
+<!-- information from the airport table -->
+<id>45</id>
+<name>45</name>
+<latitude>37.746</latitude>
+<longitude>-103.227</longitude>
+<elevation>45</elevation
+<municipality>45</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>19</id>
+<name>19</name>
+<latitude>38.356</latitude>
+<longitude>-104.011</longitude>
+<elevation>19</elevation
+<municipality>19</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>45</sequence>
-<start>6</start>
-<finish>30</finish>
-<mileage>25</mileage>
+<start>
+<!-- information from the airport table -->
+<id>19</id>
+<name>19</name>
+<latitude>38.356</latitude>
+<longitude>-104.011</longitude>
+<elevation>19</elevation
+<municipality>19</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>32</id>
+<name>32</name>
+<latitude>37.481</latitude>
+<longitude>-104.565</longitude>
+<elevation>32</elevation
+<municipality>32</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>46</sequence>
-<start>30</start>
-<finish>34</finish>
-<mileage>33</mileage>
+<start>
+<!-- information from the airport table -->
+<id>32</id>
+<name>32</name>
+<latitude>37.481</latitude>
+<longitude>-104.565</longitude>
+<elevation>32</elevation
+<municipality>32</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>40</id>
+<name>40</name>
+<latitude>37.993</latitude>
+<longitude>-108.171</longitude>
+<elevation>40</elevation
+<municipality>40</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>47</sequence>
-<start>34</start>
-<finish>25</finish>
-<mileage>107</mileage>
+<start>
+<!-- information from the airport table -->
+<id>40</id>
+<name>40</name>
+<latitude>37.993</latitude>
+<longitude>-108.171</longitude>
+<elevation>40</elevation
+<municipality>40</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>23</id>
+<name>23</name>
+<latitude>38.06</latitude>
+<longitude>-108.296</longitude>
+<elevation>23</elevation
+<municipality>23</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>48</sequence>
-<start>25</start>
-<finish>31</finish>
-<mileage>44</mileage>
+<start>
+<!-- information from the airport table -->
+<id>23</id>
+<name>23</name>
+<latitude>38.06</latitude>
+<longitude>-108.296</longitude>
+<elevation>23</elevation
+<municipality>23</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>47</id>
+<name>47</name>
+<latitude>39.135</latitude>
+<longitude>-108.915</longitude>
+<elevation>47</elevation
+<municipality>47</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>49</sequence>
-<start>31</start>
-<finish>21</finish>
-<mileage>68</mileage>
+<start>
+<!-- information from the airport table -->
+<id>47</id>
+<name>47</name>
+<latitude>39.135</latitude>
+<longitude>-108.915</longitude>
+<elevation>47</elevation
+<municipality>47</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>42</id>
+<name>42</name>
+<latitude>40.223</latitude>
+<longitude>-108.6</longitude>
+<elevation>42</elevation
+<municipality>42</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 <leg>
 <sequence>49</sequence>
-<start>21</start>
-<finish>49</finish>
-<mileage>73</mileage>
+<start>
+<!-- information from the airport table -->
+<id>42</id>
+<name>42</name>
+<latitude>40.223</latitude>
+<longitude>-108.6</longitude>
+<elevation>42</elevation
+<municipality>42</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>1</id>
+<name>1</name>
+<latitude>38.371</latitude>
+<longitude>-107.86</longitude>
+<elevation>1</elevation
+<municipality>1</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
 </leg>
 </trip>

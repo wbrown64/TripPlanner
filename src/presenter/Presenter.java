@@ -42,8 +42,8 @@ public class Presenter {
 			if(!GUI){
 			try {
 				m = new Model(filename,TwoOpt,ThreeOpt,Miles,Kilometers);
-				if(TwoOpt)
-					m.twoOpt();
+				//if(TwoOpt)
+					//m.twoOpt();
 				//FIXME
 				/*if (true)
 					m.threeOpt();*/
