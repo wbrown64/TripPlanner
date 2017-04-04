@@ -28,6 +28,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JList;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
+import javax.swing.JTextField;
 
 public class GUI2 extends JFrame {
 	private static View view;
@@ -54,6 +55,8 @@ public class GUI2 extends JFrame {
 	JList<String> list6;
 	
 	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
@@ -115,7 +118,6 @@ public class GUI2 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String[] selected=list1.getSelectedValuesList().toArray(new String[0]);
 				SQLinterpreter sqli=new SQLinterpreter("wbrown64","830285807");
-				System.out.println("here");
 				Writer writer=new Writer(selected,model,sqli);
 				ArrayList<Location>temp=writer.createLocations();
 				if(model.getItinerary()!=null)
@@ -125,6 +127,7 @@ public class GUI2 extends JFrame {
 				for(Location L:model.getItinerary()){
 					//System.out.println(L);
 					names.add(L.getBrewery());
+					System.out.println("lat "+L.getLat_dd()+" "+"long: "+L.getLon_dd());
 				}
 				setJList(list2,names.toArray(new String[0]));
 				
@@ -242,7 +245,7 @@ public class GUI2 extends JFrame {
 				clearJList(list2);
 			}
 		});
-		btnClear.setBounds(732, 406, 117, 29);
+		btnClear.setBounds(722, 375, 117, 29);
 		contentPane.add(btnClear);
 		
 		JButton btnLoad = new JButton(" Load");
@@ -250,7 +253,7 @@ public class GUI2 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnLoad.setBounds(734, 441, 117, 29);
+		btnLoad.setBounds(722, 454, 127, 29);
 		contentPane.add(btnLoad);
 		
 		JButton btnSave = new JButton("Save");
@@ -258,7 +261,7 @@ public class GUI2 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnSave.setBounds(734, 474, 117, 29);
+		btnSave.setBounds(724, 526, 127, 29);
 		contentPane.add(btnSave);
 		
 		JLabel lblOptions = new JLabel("Options");
@@ -317,6 +320,16 @@ public class GUI2 extends JFrame {
 		});
 		btnReset.setBounds(312, 274, 95, 73);
 		contentPane.add(btnReset);
+		
+		textField = new JTextField();
+		textField.setBounds(722, 427, 127, 28);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(722, 498, 127, 28);
+		contentPane.add(textField_1);
 	}
 	private void checkFlags(){
     	if(view.showID){

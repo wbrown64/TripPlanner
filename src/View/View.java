@@ -55,11 +55,9 @@ public class View {
 	void createSvg(ArrayList<Location> itinerary,String filename, String SVG){
 		try{
 			PrintWriter writer = new PrintWriter(filename, "UTF-8");
-			writer.println("<?xml version=\"1.0\"?>");
-			writer.println("<svg width=\"1024\" height=\"512\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\">");
+			//writer.println("<?xml version=\"1.0\"?>");
+			//writer.println("<svg width=\"1800\" height=\"900\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\">");
 			writeBackgroundSVG(filename,SVG,writer);		//this write's the given svg before appending our code 
-			//createBorders(writer);
-			createBorders2(writer);
 			createTitles(writer,itinerary);
 			createLegs(writer,itinerary);
 			if(showName == true){
@@ -85,7 +83,7 @@ public class View {
 		        File input = new File(SVG);
 		        File output = new File(filename);
 		        Scanner sc = new Scanner(input);
-		        sc.nextLine();					//skip the already in place xml tags 
+		      //  sc.nextLine();					//skip the already in place xml tags 
 		      //  sc.nextLine();					//skip the already in place xml tags 
 		        while(sc.hasNextLine()) {
 		            String s = sc.nextLine();
@@ -224,12 +222,7 @@ public class View {
 //		}
 		return vals;
 	}
-	private double[] toCartesian2(double x,double y){
-		double[] vals=new double[2];
-		vals[0]= (Math.abs(x-(-109)) / Math.abs((-102) - (-109)))*(1024);
-		vals[1]= (Math.abs(y-41) / (Math.abs(37-41))*(512));
-		return vals;
-	}
+	
 	
 	private void createBorders(PrintWriter writer){
 		writer.println("<g>");
@@ -272,6 +265,12 @@ public class View {
 			writer.println("<text text-anchor=\"middle\" font-family=\"Sans-serif\" font-size=\"24\" id=\"distance\" y=\"775\" x=\"531\">" + totalDistance + " kilometers</text>");	
 		}
 		writer.println("</g>");
+	}
+	private double[] toCartesian2(double x,double y){
+		double[] vals=new double[2];
+		vals[0]= 1800*((180+x)/360);
+		vals[1]= 900*((90-y)/180);
+		return vals;
 	}
 	
 	private void createLegs(PrintWriter writer, ArrayList<Location> itinerary){

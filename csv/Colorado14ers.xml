@@ -6,15 +6,15 @@ start - the name of the starting location for a leg
 finish - the name of the finishing location for a leg
 -->
 <leg>
-<sequence>1</sequence>
+<sequence>0</sequence>
 <start>
 <!-- information from the airport table -->
-<id>16703</id>
-<name>Val Air Airport</name>
-<latitude>37.337799072265625</latitude>
-<longitude>-107.85199737548828</longitude>
-<elevation>6548</elevation
-<municipality>Durango</municipality>
+<id>CO25</id>
+<name>Metrogro Farm Airport</name>
+<latitude>39.49610137939453</latitude>
+<longitude>-103.7239990234375</longitude>
+<elevation>5240</elevation
+<municipality>Agate</municipality>
 <!-- names from the other tables, not the codes -->
 <region>INSERT REGION HERE</region>
 <country>INSERT COUNTRY HERE</country>
@@ -26,126 +26,12 @@ finish - the name of the finishing location for a leg
 </start>
 <finish>
 <!-- information from the airport table -->
-<id>18302</id>
-<name>Animas Air Park</name>
-<latitude>37.203201293899994</latitude>
-<longitude>-107.869003296</longitude>
-<elevation>6684</elevation
-<municipality>Durango</municipality>
-<!-- names from the other tables, not the codes -->
-<region>INSERT REGION HERE</region>
-<country>INSERT COUNTRY HERE</country>
-<continent>INSERT CONTINENT HERE</continent>
-<!-- wikipedia links from the tables -->
-<airportURL>INSERT AIRPORTURL HERE</airportURL>
-<regionURL>INSERT REGIONURL HERE</regionURL>
-<countryURL>INSERT COUNTRYURL HERE</countryURL>
-</finish>
-<distance>0</distance>
-</leg>
-<leg>
-<sequence>2</sequence>
-<start>
-<!-- information from the airport table -->
-<id>18302</id>
-<name>Animas Air Park</name>
-<latitude>37.203201293899994</latitude>
-<longitude>-107.869003296</longitude>
-<elevation>6684</elevation
-<municipality>Durango</municipality>
-<!-- names from the other tables, not the codes -->
-<region>INSERT REGION HERE</region>
-<country>INSERT COUNTRY HERE</country>
-<continent>INSERT CONTINENT HERE</continent>
-<!-- wikipedia links from the tables -->
-<airportURL>INSERT AIRPORTURL HERE</airportURL>
-<regionURL>INSERT REGIONURL HERE</regionURL>
-<countryURL>INSERT COUNTRYURL HERE</countryURL>
-</start>
-<finish>
-<!-- information from the airport table -->
-<id>43275</id>
-<name>Iurreta Heliport</name>
-<latitude>43.18190002441406</latitude>
-<longitude>-2.646389961242676</longitude>
-<elevation>422</elevation
-<municipality>Durango</municipality>
-<!-- names from the other tables, not the codes -->
-<region>INSERT REGION HERE</region>
-<country>INSERT COUNTRY HERE</country>
-<continent>INSERT CONTINENT HERE</continent>
-<!-- wikipedia links from the tables -->
-<airportURL>INSERT AIRPORTURL HERE</airportURL>
-<regionURL>INSERT REGIONURL HERE</regionURL>
-<countryURL>INSERT COUNTRYURL HERE</countryURL>
-</finish>
-<distance>0</distance>
-</leg>
-<leg>
-<sequence>3</sequence>
-<start>
-<!-- information from the airport table -->
-<id>43275</id>
-<name>Iurreta Heliport</name>
-<latitude>43.18190002441406</latitude>
-<longitude>-2.646389961242676</longitude>
-<elevation>422</elevation
-<municipality>Durango</municipality>
-<!-- names from the other tables, not the codes -->
-<region>INSERT REGION HERE</region>
-<country>INSERT COUNTRY HERE</country>
-<continent>INSERT CONTINENT HERE</continent>
-<!-- wikipedia links from the tables -->
-<airportURL>INSERT AIRPORTURL HERE</airportURL>
-<regionURL>INSERT REGIONURL HERE</regionURL>
-<countryURL>INSERT COUNTRYURL HERE</countryURL>
-</start>
-<finish>
-<!-- information from the airport table -->
-<id>3971</id>
-<name>KuÃ§ovÃ« Air Base</name>
-<latitude>40.77190017700195</latitude>
-<longitude>19.901899337768555</longitude>
-<elevation>135</elevation
-<municipality>KuÃ§ovÃ«</municipality>
-<!-- names from the other tables, not the codes -->
-<region>INSERT REGION HERE</region>
-<country>INSERT COUNTRY HERE</country>
-<continent>INSERT CONTINENT HERE</continent>
-<!-- wikipedia links from the tables -->
-<airportURL>INSERT AIRPORTURL HERE</airportURL>
-<regionURL>INSERT REGIONURL HERE</regionURL>
-<countryURL>INSERT COUNTRYURL HERE</countryURL>
-</finish>
-<distance>0</distance>
-</leg>
-<leg>
-<sequence>3</sequence>
-<start>
-<!-- information from the airport table -->
-<id>3971</id>
-<name>KuÃ§ovÃ« Air Base</name>
-<latitude>40.77190017700195</latitude>
-<longitude>19.901899337768555</longitude>
-<elevation>135</elevation
-<municipality>KuÃ§ovÃ«</municipality>
-<!-- names from the other tables, not the codes -->
-<region>INSERT REGION HERE</region>
-<country>INSERT COUNTRY HERE</country>
-<continent>INSERT CONTINENT HERE</continent>
-<!-- wikipedia links from the tables -->
-<airportURL>INSERT AIRPORTURL HERE</airportURL>
-<regionURL>INSERT REGIONURL HERE</regionURL>
-<countryURL>INSERT COUNTRYURL HERE</countryURL>
-</start>
-<finish>
-<!-- information from the airport table -->
-<id>16703</id>
-<name>Val Air Airport</name>
-<latitude>37.337799072265625</latitude>
-<longitude>-107.85199737548828</longitude>
-<elevation>6548</elevation
-<municipality>Durango</municipality>
+<id>CO25</id>
+<name>Metrogro Farm Airport</name>
+<latitude>39.49610137939453</latitude>
+<longitude>-103.7239990234375</longitude>
+<elevation>5240</elevation
+<municipality>Agate</municipality>
 <!-- names from the other tables, not the codes -->
 <region>INSERT REGION HERE</region>
 <country>INSERT COUNTRY HERE</country>

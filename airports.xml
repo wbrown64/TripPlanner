@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trip>
+<!--
+sequence - the order of the legs
+start - the name of the starting location for a leg
+finish - the name of the finishing location for a leg
+-->
+<leg>
+<sequence>1</sequence>
+<start>
+<!-- information from the airport table -->
+<id>SDWA</id>
+<name>Aerogalo Heliport</name>
+<latitude>-23.04182</latitude>
+<longitude>-44.19357</longitude>
+<elevation>60</elevation
+<municipality>Angra dos Reis</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>CEG2</id>
+<name>Acme Airport</name>
+<latitude>51.456402</latitude>
+<longitude>-113.514999</longitude>
+<elevation>3035</elevation
+<municipality>Acme</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
+</leg>
+<leg>
+<sequence>1</sequence>
+<start>
+<!-- information from the airport table -->
+<id>CEG2</id>
+<name>Acme Airport</name>
+<latitude>51.456402</latitude>
+<longitude>-113.514999</longitude>
+<elevation>3035</elevation
+<municipality>Acme</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</start>
+<finish>
+<!-- information from the airport table -->
+<id>SDWA</id>
+<name>Aerogalo Heliport</name>
+<latitude>-23.04182</latitude>
+<longitude>-44.19357</longitude>
+<elevation>60</elevation
+<municipality>Angra dos Reis</municipality>
+<!-- names from the other tables, not the codes -->
+<region>INSERT REGION HERE</region>
+<country>INSERT COUNTRY HERE</country>
+<continent>INSERT CONTINENT HERE</continent>
+<!-- wikipedia links from the tables -->
+<airportURL>INSERT AIRPORTURL HERE</airportURL>
+<regionURL>INSERT REGIONURL HERE</regionURL>
+<countryURL>INSERT COUNTRYURL HERE</countryURL>
+</finish>
+<distance>0</distance>
+</leg>
+</trip>
