@@ -39,9 +39,10 @@ public class Model {
 		 
 		 for (int i = 0; i < itinerary.size(); ++i) {
 			 ArrayList<Location> tempItinerary = standardTrip(itinerary.get(i));
-			 if (twoOpt) {
-				 twoOpt();
-			 }
+			 /*if (twoOpt) {
+				 //FIXME must be able to give it updated itinerary, otherwise it will just use the original itinerary, which won't be changed until the last iteration of this loop
+				 tempItinerary = twoOptnew();
+			 } */
 			 double tempDistance = getTotalDistance(tempItinerary);
 			 
 			 if (tempDistance < bestDistance) {
@@ -222,6 +223,33 @@ public class Model {
 			}
 			c++;
 		}
+	}
+	
+	public ArrayList<Location> twoOptnew() {// you guys suck <--wtf bro.. 
+		ArrayList<Location> newItin = new ArrayList<>(500);
+	    double bestDistance=getTotalDistance(itinerary);
+	    double newDistance=bestDistance;
+	    // my attempt at making it run on every route
+	    for (int k = 0; k < itinerary.size(); ++k) {
+		    int c=0;
+	    	ArrayList<Location> old_route = standardTrip(itinerary.get(k));
+	    	while(c!=10){
+				ArrayList<Location> new_route;
+				for(int i=0;i<old_route.size()-1;i++){
+					for(int j=i+1;j<old_route.size();j++){
+						new_route=twoOptSwap(old_route,i,j);
+						newDistance=getTotalDistance(new_route);
+						if(newDistance<bestDistance){
+							newItin=new_route;
+							bestDistance=newDistance;
+							c=0;
+						}
+					}
+				}
+				c++;
+	    	}
+	    }
+	    	return newItin;
 	}
 
 	ArrayList<Location> twoOptSwap(ArrayList<Location> old_route,int a, int b){

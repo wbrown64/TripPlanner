@@ -272,6 +272,7 @@ public class View {
 			writer.println("<text text-anchor=\"middle\" font-family=\"Sans-serif\" font-size=\"24\" id=\"distance\" y=\"775\" x=\"531\">" + totalDistance + " kilometers</text>");	
 		}
 		writer.println("</g>");
+		System.out.println(totalDistance);
 	}
 	
 	private void createLegs(PrintWriter writer, ArrayList<Location> itinerary){

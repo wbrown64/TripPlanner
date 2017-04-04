@@ -431,7 +431,7 @@ public class GUI extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) throws Exception {
     	model.initializeModel();
     	if(model.twoOpt)
-    		model.twoOpt();
+    		model.twoOptnew();
 
 		view.createSvg(model.getItinerary(),view.filename+".svg",view.SVG);
 		view.createXML(model.getItinerary(),view.filename+".xml");
