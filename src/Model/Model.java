@@ -234,11 +234,15 @@ public class Model {
 		    int c=0;
 	    	ArrayList<Location> old_route = standardTrip(itinerary.get(k));
 	    	while(c!=10){
+	    		
 				ArrayList<Location> new_route;
 				for(int i=0;i<old_route.size()-1;i++){
+					
 					for(int j=i+1;j<old_route.size();j++){
+						
 						new_route=twoOptSwap(old_route,i,j);
 						newDistance=getTotalDistance(new_route);
+						
 						if(newDistance<bestDistance){
 							newItin=new_route;
 							bestDistance=newDistance;
